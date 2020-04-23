@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDCardClieck", "IDCardClieck\IDCardClieck.csproj", "{0F066088-3B66-462B-A394-3271C994884B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HZH_Controls", "C:\Users\Administrator\Desktop\资料\kwwwvagaa-net_winform_custom_control-master\net_winform_custom_control\HZH_Controls\HZH_Controls\HZH_Controls.csproj", "{AF32E163-C577-4CBC-A072-0DC1CE0E1DA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INVSReadCardActiceX", "C:\Users\Administrator\Desktop\居民身份证读卡系统\身份证读卡器二次开发\ReadCardControl2010\INVSReadCardActiveX\INVSReadCardActiceX.csproj", "{42A0F620-06BD-45FB-8B93-E91D02A21723}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadCardActiceX", "C:\Users\Administrator\Desktop\居民身份证读卡系统\身份证读卡器二次开发\ReadCardControl2010\ReadCardActiveX\ReadCardActiceX.csproj", "{DC5247DC-A3B1-45FA-A52A-A16141560466}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F066088-3B66-462B-A394-3271C994884B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F066088-3B66-462B-A394-3271C994884B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F066088-3B66-462B-A394-3271C994884B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F066088-3B66-462B-A394-3271C994884B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF32E163-C577-4CBC-A072-0DC1CE0E1DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF32E163-C577-4CBC-A072-0DC1CE0E1DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF32E163-C577-4CBC-A072-0DC1CE0E1DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF32E163-C577-4CBC-A072-0DC1CE0E1DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A0F620-06BD-45FB-8B93-E91D02A21723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A0F620-06BD-45FB-8B93-E91D02A21723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A0F620-06BD-45FB-8B93-E91D02A21723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A0F620-06BD-45FB-8B93-E91D02A21723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA8A4D82-1C91-463F-8FF6-87DF8FB1F6BD}
+	EndGlobalSection
+EndGlobal
