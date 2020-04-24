@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>IDCardClieck</RootNamespace>
     <AssemblyName>IDCardClieck</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -124,6 +124,7 @@
     <Compile Include="Common\LogHelper.cs" />
     <Compile Include="Common\OracleHelper.cs" />
     <Compile Include="Common\RegeditTime.cs" />
+    <Compile Include="Common\SplashScreenManager.cs" />
     <Compile Include="Common\SqlHelper.cs" />
     <Compile Include="Common\TestGridModel.cs" />
     <Compile Include="Controls\PanelEnhanced.cs">
@@ -172,12 +173,6 @@
       <DependentUpon>UCTestGridTable_CustomCellIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\User_InfosDAL.cs" />
-    <Compile Include="Forms\frmSplash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmSplash.Designer.cs">
-      <DependentUpon>frmSplash.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,14 +185,18 @@
     <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ISplashForm.cs" />
     <Compile Include="Forms\ReadIdCardFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ReadIdCardFrm.Designer.cs">
       <DependentUpon>ReadIdCardFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Splasher.cs" />
+    <Compile Include="Forms\SimpleLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SimpleLoading.Designer.cs">
+      <DependentUpon>SimpleLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\CheckData.cs" />
     <Compile Include="Model\CheckoutModel.cs" />
     <Compile Include="Model\HistoryCheckData.cs" />
@@ -234,9 +233,6 @@
     <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCell.resx">
       <DependentUpon>UCTestGridTable_CustomCell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSplash.resx">
-      <DependentUpon>frmSplash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReadIdCardFrm.resx">
       <DependentUpon>ReadIdCardFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SimpleLoading.resx">
+      <DependentUpon>SimpleLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterFrm.resx">
       <DependentUpon>RegisterFrm.cs</DependentUpon>
@@ -360,6 +359,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\loading3.gif" />
     <Content Include="公司图标64.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

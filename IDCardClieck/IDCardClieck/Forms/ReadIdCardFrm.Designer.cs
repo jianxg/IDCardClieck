@@ -113,6 +113,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(433, 279);
             this.panel1.TabIndex = 16;
+            this.panel1.Visible = false;
             // 
             // btn_Start
             // 

@@ -71,6 +71,7 @@ namespace IDCardClieck.Forms
                     json = HttpHelper.Deserialize<ResultJSON>(strJSON);
                     if (json.result == "true")
                     {
+                        this.json.data.checkItemList.Insert(0, new CheckModel { tempPropID = 0, propName = "全部" });
                         this.DialogResult = DialogResult.OK;//关键:设置登陆成功状态  
                         this.Close();
                     }
@@ -126,23 +127,33 @@ namespace IDCardClieck.Forms
                 else if (this.model.res == 2)//注册机器与本机不一致
                 {
                     MessageBox.Show("注册机器与本机不一致!");
+                    this.Close();
+                    this.Dispose();
                 }
                 else if (this.model.res == 3)//软件试用已到期
                 {
                     MessageBox.Show("软件试用已到期!");
+                    this.Close();
+                    this.Dispose();
                 }
                 else if (this.model.res == 4)//激活码与注册码不匹配
                 {
                     MessageBox.Show("激活码与注册码不匹配!");
+                    this.Close();
+                    this.Dispose();
                 }
                 else//软件运行已到期
                 {
                     MessageBox.Show("软件运行已到期!");
+                    this.Close();
+                    this.Dispose();
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                MessageBox.Show("服务器出错:" + e.Message.ToString());
+                this.Close();
+                this.Dispose();
             }
 
         }

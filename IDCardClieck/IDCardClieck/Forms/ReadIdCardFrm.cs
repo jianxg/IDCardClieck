@@ -38,6 +38,7 @@ namespace IDCardClieck.Forms
         private string _runState = "未启动";
         public ReadIdCardFrm(CheckoutModel checkModel, ResultJSON resultJSONTemp)
         {
+            Thread.Sleep(500);
             this.model = checkModel;
             InitializeComponent();
             this.lbl_Address.Text =
@@ -61,7 +62,22 @@ namespace IDCardClieck.Forms
 
         private void ReadIdCardFrm_Load(object sender, EventArgs e)
         {
-            Start1("5211336");
+            SimpleLoading loadingfrm = new SimpleLoading(this);
+            //将Loaing窗口，注入到 SplashScreenManager 来管理
+            SplashScreenManager loading = new SplashScreenManager(loadingfrm);
+            loading.ShowLoading();
+            try
+            {
+                Start1("5211336");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                loading.CloseWaitForm();
+            }
         }
 
         public bool SetExit
@@ -120,8 +136,8 @@ namespace IDCardClieck.Forms
             {
                 while (!_exit)
                 {
-                    Thread.Sleep(_readTimeOut);
                     ReadCardInfo();
+                    Thread.Sleep(_readTimeOut);
                 }
             }
             catch (Exception exc)
@@ -177,10 +193,11 @@ namespace IDCardClieck.Forms
 
                     this.pictureBox_error.Invoke(
                         new MethodInvoker(
-                            delegate {
+                            delegate
+                            {
                                 this.pictureBox_error.Visible = true;
                             }
-                            ) 
+                            )
                         );
 
                     SetText("  端口打开失败，重新连接读卡器或者查看是否打开多个读卡页面!", label_MessageShow);
@@ -190,7 +207,8 @@ namespace IDCardClieck.Forms
                 SetText("阅读器已开启，请放入身份证...", lbl_msg);
                 this.pictureBox_error.Invoke(
                         new MethodInvoker(
-                            delegate {
+                            delegate
+                            {
                                 this.pictureBox_error.Visible = false;
                             }
                             )
@@ -236,7 +254,8 @@ namespace IDCardClieck.Forms
                     SetText("读取失败,请重新刷卡!", lbl_msg);
                     this.pictureBox_error.Invoke(
                       new MethodInvoker(
-                          delegate {
+                          delegate
+                          {
                               this.pictureBox_error.Visible = true;
                           }
                           )
@@ -248,7 +267,8 @@ namespace IDCardClieck.Forms
 
                 this.pictureBox_error.Invoke(
                         new MethodInvoker(
-                            delegate {
+                            delegate
+                            {
                                 this.pictureBox_error.Visible = false;
                             }
                             )
@@ -318,7 +338,8 @@ namespace IDCardClieck.Forms
                 SetText("身份证信息读取成功！" + DateTime.Now.ToString("(yyyy年MM月dd日 HH:mm:ss)"), this.lbl_msg);
                 this.pictureBox_error.Invoke(
                       new MethodInvoker(
-                          delegate {
+                          delegate
+                          {
                               this.pictureBox_error.Visible = false;
                           }
                           )
@@ -341,7 +362,7 @@ namespace IDCardClieck.Forms
                 SetText(objEDZ.STARTDATE.ToString("yyyy年MM月dd日").Trim(), this.lbl_ExpireStart);
                 SetText(objEDZ.ENDDATE == DateTime.MaxValue ? "长期" : objEDZ.ENDDATE.ToString("yyyy年MM月dd日"), this.lbl_ExpireEnd);
 
-
+                objEDZ.IDC = "640202198702180034";
 
                 string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/getInitCheckData";
                 //向java端进行注册请求
@@ -357,39 +378,71 @@ namespace IDCardClieck.Forms
                 CheckData json = HttpHelper.Deserialize<CheckData>(strJSON);
                 if (json.result == "true")
                 {
-                    if (userSelectForm == null)
+                    try
                     {
-                        userSelectForm = new UserSelectForm(json, model, objEDZ, this.resultJson);
-                        userSelectForm.Owner = this;
-                        userSelectForm.Show();
-                        this.Visible = false;
-                    }
-                    else
-                    {
-                        if (userSelectForm.IsDisposed == true)
+                        if (userSelectForm == null)
                         {
-                            userSelectForm = new UserSelectForm(json, model, objEDZ, this.resultJson);
-                            userSelectForm.Owner = this;
-                            userSelectForm.Show();
-                            this.Visible = false;
+                            this.Invoke(
+                                new MethodInvoker(
+                                    delegate
+                                    {
+                                        this.Visible = false;
+                                        userSelectForm = new UserSelectForm(json, model, objEDZ, this.resultJson);
+                                        userSelectForm.Owner = this;
+                                        userSelectForm.Show();
+                                    }
+                                    )
+                                );
+
                         }
                         else
                         {
-                            userSelectForm.Visible = true;
-                            this.Visible = false;
+                            if (userSelectForm.IsDisposed == true)
+                            {
+                                this.Invoke(
+                                  new MethodInvoker(
+                                      delegate
+                                      {
+                                          this.Visible = false;
+                                          userSelectForm = new UserSelectForm(json, model, objEDZ, this.resultJson);
+                                          userSelectForm.Owner = this;
+                                          userSelectForm.Show();
+                                      }
+                                      )
+                                  );
+
+                            }
+                            else
+                            {
+                                this.Invoke(
+                                  new MethodInvoker(
+                                      delegate
+                                      {
+                                          this.Visible = false;
+                                          userSelectForm.Visible = true;
+                                      }
+                                      )
+                                  );
+                            }
                         }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw;
                     }
                 }
                 else
                 {
                     this.pictureBox_error.Invoke(
                       new MethodInvoker(
-                          delegate {
+                          delegate
+                          {
                               this.pictureBox_error.Visible = true;
                           }
                           )
                       );
-                    SetText("  "+json.message.ToString(), label_MessageShow);
+                    SetText("  " + json.message.ToString(), label_MessageShow);
                 }
             }
             catch (Exception exc)

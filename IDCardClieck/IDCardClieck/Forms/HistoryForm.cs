@@ -31,7 +31,7 @@ namespace IDCardClieck.Forms
             InitializeComponent();
         }
 
-        public HistoryForm(CheckoutModel checkoutModel,ModelTets modelTetsTemp)
+        public HistoryForm(CheckoutModel checkoutModel, ModelTets modelTetsTemp)
         {
             this.model = checkoutModel;
             this.modelTets = modelTetsTemp;
@@ -41,8 +41,23 @@ namespace IDCardClieck.Forms
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-            MySendDataTableData += this.ucTestGridTable1.BindingData;
-            SetCartesianChartData();
+            SimpleLoading loadingfrm = new SimpleLoading(this);
+            //将Loaing窗口，注入到 SplashScreenManager 来管理
+            SplashScreenManager loading = new SplashScreenManager(loadingfrm);
+            loading.ShowLoading();
+            try
+            {
+                MySendDataTableData += this.ucTestGridTable1.BindingData;
+                SetCartesianChartData();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                loading.CloseWaitForm();
+            }
         }
 
         /// <summary>

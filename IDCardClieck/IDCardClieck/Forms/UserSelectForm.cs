@@ -42,17 +42,29 @@ namespace IDCardClieck.Forms
 
         private void UserSelectForm_Load(object sender, EventArgs e)
         {
-            MySendDataUserInfoData += this.ucTestGridTableCustom1.BindingUserInfoData;
-
-            BindingData();
-            SetDataGridtableData();
+            SimpleLoading loadingfrm = new SimpleLoading(this);
+            SplashScreenManager loading = new SplashScreenManager(loadingfrm);
+            loading.ShowLoading();
+            try
+            {
+                MySendDataUserInfoData += this.ucTestGridTableCustom1.BindingUserInfoData;
+                BindingData();
+                SetDataGridtableData();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                loading.CloseWaitForm();
+            }
         }
 
         public void BindingData()
         {
             if (this.resultJSON.data.checkItemList.Count > 0)
             {
-                this.resultJSON.data.checkItemList.Insert(0, new CheckModel { tempPropID = 0, propName = "全部" });
                 this.comboBox1.DataSource = this.resultJSON.data.checkItemList;
                 this.comboBox1.DisplayMember = "propName";
                 this.comboBox1.ValueMember = "tempPropID";
@@ -265,7 +277,6 @@ namespace IDCardClieck.Forms
 
             public CheckoutModel checkoutModel { get; set; }
         }
-
         private void UserSelectForm_SizeChanged(object sender, EventArgs e)
         {
             this.ucTestGridTableCustom1.Refresh();

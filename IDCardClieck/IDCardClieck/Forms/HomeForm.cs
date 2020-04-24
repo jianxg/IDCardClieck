@@ -1,6 +1,8 @@
-﻿using IDCardClieck.Model;
+﻿using IDCardClieck.Common;
+using IDCardClieck.Model;
 using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace IDCardClieck.Forms
@@ -40,27 +42,35 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt1_BtnClick_1(object sender, EventArgs e)
         {
-            if (readIdCardFrm == null)
+            try
             {
-                readIdCardFrm = new ReadIdCardFrm(model,this.resultJSON);
-                readIdCardFrm.Show();
-                readIdCardFrm.Owner = this;
-                this.Visible = false;
-            }
-            else
-            {
-                if (readIdCardFrm.IsDisposed == true)
+                if (readIdCardFrm == null)
                 {
-                    readIdCardFrm = new ReadIdCardFrm(model,this.resultJSON);
-                    readIdCardFrm.Show();
-                    readIdCardFrm.Owner = this;
                     this.Visible = false;
+                    readIdCardFrm = new ReadIdCardFrm(model, this.resultJSON);
+                    readIdCardFrm.Owner = this;
+                    readIdCardFrm.Show();
                 }
                 else
                 {
-                    readIdCardFrm.Visible = true;
-                    this.Visible = false;
+                    if (readIdCardFrm.IsDisposed == true)
+                    {
+                        this.Visible = false;
+                        readIdCardFrm = new ReadIdCardFrm(model, this.resultJSON);
+                        readIdCardFrm.Owner = this;
+                        readIdCardFrm.Show();
+                    }
+                    else
+                    {
+                        this.Visible = false;
+                        readIdCardFrm.Visible = true;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                /*可选处理异常*/
+                LogHelper.WriteLine("HomeForm:" + ex.Message.ToString());
             }
         }
 
