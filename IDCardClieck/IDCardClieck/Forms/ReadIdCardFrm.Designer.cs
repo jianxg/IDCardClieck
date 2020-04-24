@@ -55,7 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.panel_home_fill_right = new System.Windows.Forms.Panel();
-            this.myBtnExt2 = new IDCardClieck.Controls.MyBtnExt();
             this.panel_imageShow = new System.Windows.Forms.Panel();
             this.pic_ImageShow = new System.Windows.Forms.PictureBox();
             this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
@@ -398,7 +397,6 @@
             // 
             this.panel_home_fill_right.BackColor = System.Drawing.Color.Transparent;
             this.panel_home_fill_right.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
-            this.panel_home_fill_right.Controls.Add(this.myBtnExt2);
             this.panel_home_fill_right.Controls.Add(this.panel_imageShow);
             this.panel_home_fill_right.Controls.Add(this.myBtnExt1);
             this.panel_home_fill_right.Controls.Add(this.panel_showInfo);
@@ -407,34 +405,6 @@
             this.panel_home_fill_right.Name = "panel_home_fill_right";
             this.panel_home_fill_right.Size = new System.Drawing.Size(341, 625);
             this.panel_home_fill_right.TabIndex = 0;
-            // 
-            // myBtnExt2
-            // 
-            this.myBtnExt2.BackColor = System.Drawing.Color.White;
-            this.myBtnExt2.BackgroundImage = global::IDCardClieck.Properties.Resources.确定;
-            this.myBtnExt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.myBtnExt2.BtnBackColor = System.Drawing.Color.White;
-            this.myBtnExt2.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
-            this.myBtnExt2.BtnForeColor = System.Drawing.Color.White;
-            this.myBtnExt2.BtnText = "";
-            this.myBtnExt2.ConerRadius = 56;
-            this.myBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myBtnExt2.FillColor = System.Drawing.Color.White;
-            this.myBtnExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.myBtnExt2.ForeColor = System.Drawing.Color.White;
-            this.myBtnExt2.IsRadius = true;
-            this.myBtnExt2.IsShowRect = true;
-            this.myBtnExt2.IsShowTips = false;
-            this.myBtnExt2.Location = new System.Drawing.Point(94, 83);
-            this.myBtnExt2.Margin = new System.Windows.Forms.Padding(0);
-            this.myBtnExt2.Name = "myBtnExt2";
-            this.myBtnExt2.RectColor = System.Drawing.Color.White;
-            this.myBtnExt2.RectWidth = 0;
-            this.myBtnExt2.Size = new System.Drawing.Size(176, 56);
-            this.myBtnExt2.TabIndex = 3;
-            this.myBtnExt2.TabStop = false;
-            this.myBtnExt2.TipsText = "";
-            this.myBtnExt2.BtnClick += new System.EventHandler(this.myBtnExt2_BtnClick);
             // 
             // panel_imageShow
             // 
@@ -614,6 +584,5 @@
         private System.Windows.Forms.Label label_MessageShow;
         private System.Windows.Forms.PictureBox pictureBox_error;
         private System.Windows.Forms.PictureBox pic_showIdCard;
-        private Controls.MyBtnExt myBtnExt2;
     }
 }

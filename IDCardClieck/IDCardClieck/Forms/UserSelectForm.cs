@@ -24,13 +24,14 @@ namespace IDCardClieck.Forms
         CheckoutModel model = new CheckoutModel();
         EDZ objEDZ = null;
         ResultJSON resultJSON = null;
+        CheckData checkData = null;
 
-        public UserSelectForm(CheckoutModel checkoutModel, EDZ eDZ,ResultJSON resultJSONTemp)
+        public UserSelectForm(CheckData checkModel, CheckoutModel checkoutModel, EDZ eDZ,ResultJSON resultJSONTemp)
         {
             this.objEDZ = eDZ;
             this.resultJSON = resultJSONTemp;
             this.model = checkoutModel;
-
+            this.checkData = checkModel;
             InitializeComponent();
         }
 
@@ -91,43 +92,17 @@ namespace IDCardClieck.Forms
         /// </summary>
         public void SetDataGridtableData()
         {
-            if (this.model.res == 0)
-            {
-                string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/getInitCheckData";
-                //向java端进行注册请求
-                StringBuilder postData = new StringBuilder();
-                postData.Append("{");
-                postData.Append("licence_code:\"" + this.model.sericalNumber + "\",");
-                postData.Append("mac_code:\"" + this.model.registerCode + "\",");
-                postData.Append("IDCard_code:\"" + this.objEDZ.IDC + "\"");
-                postData.Append("}");
-                //接口调用
-                string strJSON = HttpHelper.PostUrl(apistr, postData.ToString());
-                //返回结果
-                CheckData json = HttpHelper.Deserialize<CheckData>(strJSON);
-                if (json.result == "true")
+                this.lbl_userInfo.Text = this.objEDZ.Name + "   " + this.objEDZ.IDC;
+                if (checkData.data.Count > 0)
                 {
-                    this.lbl_userInfo.Text = this.objEDZ.Name + "   " + this.objEDZ.IDC;
-                    if (json.data.Count>0)
-                    {
-                        myEventArgsUserInfoData = new MyEventArgsUserInfoData();
-                        myEventArgsUserInfoData.data = json.data;
-                        myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
-                        myEventArgsUserInfoData.eDZ = objEDZ;
-                        myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
-                        myEventArgsUserInfoData.checkoutModel = model;
-                        OnMySendDataUserInfoData(myEventArgsUserInfoData);
-                    }
+                    myEventArgsUserInfoData = new MyEventArgsUserInfoData();
+                    myEventArgsUserInfoData.data = checkData.data;
+                    myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
+                    myEventArgsUserInfoData.eDZ = objEDZ;
+                    myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
+                    myEventArgsUserInfoData.checkoutModel = model;
+                    OnMySendDataUserInfoData(myEventArgsUserInfoData);
                 }
-                else
-                {
-                    MessageBox.Show(json.message.ToString());
-                }
-            }
-            else
-            {
-
-            }
         }
 
         public void MyBtnExt_Click(object sender, EventArgs e)

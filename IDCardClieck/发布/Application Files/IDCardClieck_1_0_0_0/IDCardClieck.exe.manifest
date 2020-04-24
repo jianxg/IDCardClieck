@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="IDCardClieck.exe" version="1.0.0.0" publicKeyToken="f12f97b46fd58a87" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="公司图标64.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="IDCardClieck" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="IDCardClieck.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HZH_Controls.dll" size="12115456">
+      <assemblyIdentity name="HZH_Controls" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>YnFnbGqpNlAOc5OCE/2vPPKSP1mt0Rz6f4bKYTW+ebI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IDCardClieck.exe" size="4259848">
+      <assemblyIdentity name="IDCardClieck" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>a5XXRE9ORNCODW8DNJWWKvO8uPzL4xg9G4ZC2DFjab8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LiveCharts.dll" size="152064">
+      <assemblyIdentity name="LiveCharts" version="0.9.7.0" publicKeyToken="0BC1F845D1EBB8DF" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>n8+Jg3tg9pwcUB5M+k0oYIh6/QuPMlgDNn55Wk47yco=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LiveCharts.WinForms.dll" size="19456">
+      <assemblyIdentity name="LiveCharts.WinForms" version="0.9.7.1" publicKeyToken="0BC1F845D1EBB8DF" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>pbYcFyYwTmty4JoPNd2/UviadaTijm7QmMjR32CBtK0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LiveCharts.Wpf.dll" size="217600">
+      <assemblyIdentity name="LiveCharts.Wpf" version="0.9.7.0" publicKeyToken="0BC1F845D1EBB8DF" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>G9uxtcGlBlPlwmFh6bfAPtxRhyGm4Q6hgKhASdlnEGs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="700336">
+      <assemblyIdentity name="Newtonsoft.Json" version="12.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>f5ErKKB8Im4L46z7L1fwUFOKugEA+h8L8sOfGh8dqBQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ReadCardActiveX.dll" size="71680">
+      <assemblyIdentity name="ReadCardActiveX" version="2.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8DoYERGJFXUAOSF2K8uT6Og2sEv4tNKHSYO5GSQM5gY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="IDCardClieck.exe.config" size="1609">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1JG39tioWgvjp8mhGHQtWaqQkYM8QyMnNONTuNxBCak=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="公司图标64.ico" size="16958">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rpEiG5YDn+PJ1pm5bchbYV52MW0Vu1VTdBhkpS4vJEw=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=PC-201911071221\Administrator" issuerKeyHash="514e9f84ecbf8628a282ffb3505a6f993fb8cd6a" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>8iDfPWThVulVmN9zYiND3bjDIWQ=</DigestValue></Reference></SignedInfo><SignatureValue>jHuVk4JDDFTzmyrgOqRNMLJN8FyI87oLAqDGLfokbmdZInDb3MxSB+JKFsBdFGjqZf+5umjH6FTZsC3M7IGzSO7/olZzmjoZcShL/sVO9vpSmYuWb43G7N0qFuvNkWBtIpfAkOM/741Xx4NzKpiobIQGvvE9gyTQet2lPvKOTnM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>v8h0N77pDsnxFJOm7F7kNzauPA90tPtASPytG4Y3OHLo0H6/tgn22+fgAtMzf6uXMesuO1kgKvZgaKED/W47Xcqc9n5hNKzyfjT5hjs46YxZqcbm/h+yiV9oKtGml0KLKIx25/AVuw14NNVdNqT1JJ+gAzSrNfCiCEPXdgYMPAc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6421c3b8dd43236273df9855e956e1643ddf20f2" Description="" Url=""><as:assemblyIdentity name="IDCardClieck.exe" version="1.0.0.0" publicKeyToken="f12f97b46fd58a87" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PC-201911071221\Administrator</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>o9kdlECkmyGWcUN2vrE2LNV0dm0=</DigestValue></Reference></SignedInfo><SignatureValue>oOXaot1y/cunDJRdJIqy87udYTuV13Y82YWHNMd5anDAMydt18fj67RmXFcXaf8s1ht7zXCZR6iNwAXwKtlBZb4AsO3PgNvcxZvZOo/SEybL9FoWI8EWC5rT31qJUGUL+oGNbdymkugs2BBqhL6TTlQl/PRBbowLYCEcguEma/4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>v8h0N77pDsnxFJOm7F7kNzauPA90tPtASPytG4Y3OHLo0H6/tgn22+fgAtMzf6uXMesuO1kgKvZgaKED/W47Xcqc9n5hNKzyfjT5hjs46YxZqcbm/h+yiV9oKtGml0KLKIx25/AVuw14NNVdNqT1JJ+gAzSrNfCiCEPXdgYMPAc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICDTCCAXagAwIBAgIQa1bVVlAXhrZPR5A93r+5aTANBgkqhkiG9w0BAQUFADBFMUMwQQYDVQQDHjoAUABDAC0AMgAwADEAOQAxADEAMAA3ADEAMgAyADEAXABBAGQAbQBpAG4AaQBzAHQAcgBhAHQAbwByMB4XDTE5MTEyNjA5MDM0MloXDTIwMTEyNTE1MDM0MlowRTFDMEEGA1UEAx46AFAAQwAtADIAMAAxADkAMQAxADAANwAxADIAMgAxAFwAQQBkAG0AaQBuAGkAcwB0AHIAYQB0AG8AcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAv8h0N77pDsnxFJOm7F7kNzauPA90tPtASPytG4Y3OHLo0H6/tgn22+fgAtMzf6uXMesuO1kgKvZgaKED/W47Xcqc9n5hNKzyfjT5hjs46YxZqcbm/h+yiV9oKtGml0KLKIx25/AVuw14NNVdNqT1JJ+gAzSrNfCiCEPXdgYMPAcCAwEAATANBgkqhkiG9w0BAQUFAAOBgQC1OqnVLXtQhNmRFZ+PtxFf88Cdlj9m0qeSkNI669E69guPxaoz1elGDYij//jNDBGL4R81uGq1+/oabQnW4gu8bp4NPMCpfVurVpzFD/Ehkq0uL1V+2wE/cisCgDO0/+5SA1ueXF+ZHRKdKt2545oNHQ/oSmv5dGTTNJJI4Lsdrw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

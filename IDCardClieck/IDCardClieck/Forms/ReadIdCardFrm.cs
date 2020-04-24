@@ -343,18 +343,54 @@ namespace IDCardClieck.Forms
 
 
 
-                //Stop();
-                //this.Invoke(
-                //    new MethodInvoker(
-                //        delegate
-                //        {
-                //            this.Hide();
-                //        }
-                //        )
-                //    );
-                UserSelectForm userSelectForm = new UserSelectForm(model,objEDZ,this.resultJson);
-                userSelectForm.Show();
-
+                string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/getInitCheckData";
+                //向java端进行注册请求
+                StringBuilder postData = new StringBuilder();
+                postData.Append("{");
+                postData.Append("licence_code:\"" + this.model.sericalNumber + "\",");
+                postData.Append("mac_code:\"" + this.model.registerCode + "\",");
+                postData.Append("IDCard_code:\"" + objEDZ.IDC + "\"");
+                postData.Append("}");
+                //接口调用
+                string strJSON = HttpHelper.PostUrl(apistr, postData.ToString());
+                //返回结果
+                CheckData json = HttpHelper.Deserialize<CheckData>(strJSON);
+                if (json.result == "true")
+                {
+                    if (userSelectForm == null)
+                    {
+                        userSelectForm = new UserSelectForm(json, model, objEDZ, this.resultJson);
+                        userSelectForm.Owner = this;
+                        userSelectForm.Show();
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        if (userSelectForm.IsDisposed == true)
+                        {
+                            userSelectForm = new UserSelectForm(json, model, objEDZ, this.resultJson);
+                            userSelectForm.Owner = this;
+                            userSelectForm.Show();
+                            this.Visible = false;
+                        }
+                        else
+                        {
+                            userSelectForm.Visible = true;
+                            this.Visible = false;
+                        }
+                    }
+                }
+                else
+                {
+                    this.pictureBox_error.Invoke(
+                      new MethodInvoker(
+                          delegate {
+                              this.pictureBox_error.Visible = true;
+                          }
+                          )
+                      );
+                    SetText("  "+json.message.ToString(), label_MessageShow);
+                }
             }
             catch (Exception exc)
             {
@@ -807,41 +843,6 @@ namespace IDCardClieck.Forms
         {
             this.Visible = false;
             this.Owner.Visible = true;
-        }
-
-        /// <summary>
-        /// 确认按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void myBtnExt2_BtnClick(object sender, EventArgs e)
-        {
-
-            objEDZ.IDC = "640202198702180034";
-            objEDZ.Name = "张三";
-
-            if (userSelectForm == null)
-            {
-                userSelectForm = new UserSelectForm(model,objEDZ,this.resultJson);
-                userSelectForm.Owner = this;
-                userSelectForm.Show();
-                this.Visible = false;
-            }
-            else
-            {
-                if (userSelectForm.IsDisposed == true)
-                {
-                    userSelectForm = new UserSelectForm(model, objEDZ,this.resultJson);
-                    userSelectForm.Owner = this;
-                    userSelectForm.Show();
-                    this.Visible = false;
-                }
-                else
-                {
-                    userSelectForm.Visible = true;
-                    this.Visible = false;
-                }
-            }
         }
 
         private void ReadIdCardFrm_FormClosing(object sender, FormClosingEventArgs e)
