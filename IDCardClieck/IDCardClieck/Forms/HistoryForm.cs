@@ -26,18 +26,44 @@ namespace IDCardClieck.Forms
         private ModelTets modelTets = null;
         CheckoutModel model = new CheckoutModel();
 
+        private System.Windows.Forms.Timer Timer = null;
+
         public HistoryForm()
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             InitializeComponent();
+            Timer = new System.Windows.Forms.Timer() { Interval = 100 };
+            Timer.Tick += new EventHandler(Timer_Tick);
+            base.Opacity = 0;
+            Timer.Start();
         }
 
         public HistoryForm(CheckoutModel checkoutModel, ModelTets modelTetsTemp)
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.model = checkoutModel;
             this.modelTets = modelTetsTemp;
-            InitializeComponent();
-        }
 
+            InitializeComponent();
+            Timer = new System.Windows.Forms.Timer() { Interval = 100 };
+            Timer.Tick += new EventHandler(Timer_Tick);
+            base.Opacity = 0;
+            Timer.Start();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity >= 1)
+            {
+                Timer.Stop();
+            }
+            else
+            {
+                base.Opacity += 0.2;
+            }
+        }
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
@@ -59,6 +85,16 @@ namespace IDCardClieck.Forms
                 loading.CloseWaitForm();
             }
         }
+
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams cp = base.CreateParams;
+        //        cp.ExStyle |= 0x02000000;
+        //        return cp;
+        //    }
+        //}
 
         /// <summary>
         /// 填充cartesianChart数据
@@ -147,7 +183,6 @@ namespace IDCardClieck.Forms
         private void myBtnExt2_BtnClick(object sender, EventArgs e)
         {
             this.Close();
-            this.Visible = false;
             this.modelTets.UserSelectFormTemp.Visible = true;
             this.modelTets.HomeFormTemp.Visible = false;
         }
@@ -160,7 +195,6 @@ namespace IDCardClieck.Forms
         private void myBtnExt1_BtnClick(object sender, EventArgs e)
         {
             this.Close();
-            this.Visible = false;
             this.modelTets.HomeFormTemp.Visible = true;
         }
 

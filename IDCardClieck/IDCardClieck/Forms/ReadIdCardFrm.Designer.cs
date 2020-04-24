@@ -521,14 +521,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.panel_home);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReadIdCardFrm";
             this.Text = "身份证读取";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReadIdCardFrm_FormClosing);
             this.Load += new System.EventHandler(this.ReadIdCardFrm_Load);
             this.panel_home_fill.ResumeLayout(false);
             this.panel_home_fill_fill.ResumeLayout(false);

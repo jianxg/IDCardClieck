@@ -19,6 +19,8 @@ namespace IDCardClieck.Forms
 
         public RegisterFrm(CheckoutModel checkoutModel)
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.model = checkoutModel;
             InitializeComponent();
         }

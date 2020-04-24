@@ -25,19 +25,49 @@ namespace IDCardClieck.Forms
         EDZ objEDZ = null;
         ResultJSON resultJSON = null;
         CheckData checkData = null;
+        private System.Windows.Forms.Timer Timer = null;
+
+        ReadIdCardFrm readIdCardFrm = null;
+        HomeForm homeForm = null;
 
         public UserSelectForm(CheckData checkModel, CheckoutModel checkoutModel, EDZ eDZ,ResultJSON resultJSONTemp)
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.objEDZ = eDZ;
             this.resultJSON = resultJSONTemp;
             this.model = checkoutModel;
             this.checkData = checkModel;
+
             InitializeComponent();
+            Timer = new System.Windows.Forms.Timer() { Interval = 100 };
+            Timer.Tick += new EventHandler(Timer_Tick);
+            base.Opacity = 0;
+            Timer.Start();
         }
 
         public UserSelectForm()
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             InitializeComponent();
+            Timer = new System.Windows.Forms.Timer() { Interval = 100 };
+            Timer.Tick += new EventHandler(Timer_Tick);
+            base.Opacity = 0;
+            Timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity >= 1)
+            {
+                Timer.Stop();
+            }
+            else
+            {
+                base.Opacity += 0.2;
+            }
         }
 
         private void UserSelectForm_Load(object sender, EventArgs e)
@@ -47,6 +77,8 @@ namespace IDCardClieck.Forms
             loading.ShowLoading();
             try
             {
+                homeForm = (HomeForm)this.Owner.Owner;
+                readIdCardFrm = (ReadIdCardFrm)this.Owner;
                 MySendDataUserInfoData += this.ucTestGridTableCustom1.BindingUserInfoData;
                 BindingData();
                 SetDataGridtableData();
@@ -58,6 +90,16 @@ namespace IDCardClieck.Forms
             finally
             {
                 loading.CloseWaitForm();
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
             }
         }
 
@@ -109,7 +151,7 @@ namespace IDCardClieck.Forms
                 {
                     myEventArgsUserInfoData = new MyEventArgsUserInfoData();
                     myEventArgsUserInfoData.data = checkData.data;
-                    myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
+                    myEventArgsUserInfoData.HomeFormTemp = homeForm;
                     myEventArgsUserInfoData.eDZ = objEDZ;
                     myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
                     myEventArgsUserInfoData.checkoutModel = model;
@@ -143,12 +185,9 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt7_BtnClick(object sender, EventArgs e)
         {
-            ReadIdCardFrm readIdCardFrm = (ReadIdCardFrm)this.Owner;
-            HomeForm homeForm = (HomeForm)this.Owner.Owner;
-            this.Close();
-            this.Visible = false;
-            readIdCardFrm.Visible = true;
             homeForm.Visible = false;
+            readIdCardFrm.Visible = true;
+            this.Close();
         }
 
         /// <summary>
@@ -158,16 +197,8 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt6_BtnClick(object sender, EventArgs e)
         {
-            HomeForm homeForm = (HomeForm)this.Owner.Owner;
-            this.Close();
-            this.Visible = false;
             homeForm.Visible = true;
-        }
-
-        private void UserSelectForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Visible = false;
-            this.Owner.Owner.Visible = true;
+            this.Close();
         }
 
         public void OnMySendDataUserInfoData(MyEventArgsUserInfoData e)

@@ -403,7 +403,6 @@
             this.Name = "UserSelectForm";
             this.Text = "用户查询";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserSelectForm_FormClosing);
             this.Load += new System.EventHandler(this.UserSelectForm_Load);
             this.SizeChanged += new System.EventHandler(this.UserSelectForm_SizeChanged);
             this.pal_home.ResumeLayout(false);

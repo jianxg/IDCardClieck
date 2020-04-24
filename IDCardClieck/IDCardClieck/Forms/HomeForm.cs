@@ -13,12 +13,42 @@ namespace IDCardClieck.Forms
         ResultJSON resultJSON = null;
         CheckoutModel model = new CheckoutModel();
 
+        private System.Windows.Forms.Timer Timer = null;
+
         public HomeForm(CheckoutModel checkoutModel,ResultJSON resultJSONTemp)
         {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.model = checkoutModel;
             this.resultJSON = resultJSONTemp;
             InitializeComponent();
+   
+            Timer = new System.Windows.Forms.Timer() { Interval = 100 };
+            Timer.Tick += new EventHandler(Timer_Tick);
+            base.Opacity = 0;
+            Timer.Start();
+        }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity >= 1)
+            {
+                Timer.Stop();
+            }
+            else
+            {
+                base.Opacity += 0.2;
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

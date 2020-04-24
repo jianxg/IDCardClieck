@@ -36,22 +36,35 @@ namespace IDCardClieck.Forms
         private Thread _thread = null;
         bool _exit = true;
         private string _runState = "未启动";
+
+        private System.Windows.Forms.Timer Timer = null;
+
         public ReadIdCardFrm(CheckoutModel checkModel, ResultJSON resultJSONTemp)
         {
-            Thread.Sleep(500);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             this.model = checkModel;
-            InitializeComponent();
-            this.lbl_Address.Text =
-            this.lbl_Agency.Text =
-            this.lbl_Birthday.Text =
-            this.lbl_Code.Text =
-            this.lbl_ExpireEnd.Text =
-            this.lbl_ExpireStart.Text =
-            this.lbl_Folk.Text =
-            this.lbl_Gender.Text =
-            this.lbl_Names.Text = "";
             this.resultJson = resultJSONTemp;
-            InitFont();
+
+            InitializeComponent();
+
+            Timer = new System.Windows.Forms.Timer() { Interval = 100 };
+            Timer.Tick += new EventHandler(Timer_Tick);
+            base.Opacity = 0;
+            Timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity >= 1)
+            {
+                Timer.Stop();
+            }
+            else
+            {
+                base.Opacity += 0.2;
+            }
         }
 
         ~ReadIdCardFrm()
@@ -62,6 +75,16 @@ namespace IDCardClieck.Forms
 
         private void ReadIdCardFrm_Load(object sender, EventArgs e)
         {
+            this.lbl_Address.Text =
+            this.lbl_Agency.Text =
+            this.lbl_Birthday.Text =
+            this.lbl_Code.Text =
+            this.lbl_ExpireEnd.Text =
+            this.lbl_ExpireStart.Text =
+            this.lbl_Folk.Text =
+            this.lbl_Gender.Text =
+            this.lbl_Names.Text = "";
+            InitFont();
             SimpleLoading loadingfrm = new SimpleLoading(this);
             //将Loaing窗口，注入到 SplashScreenManager 来管理
             SplashScreenManager loading = new SplashScreenManager(loadingfrm);
@@ -79,6 +102,16 @@ namespace IDCardClieck.Forms
                 loading.CloseWaitForm();
             }
         }
+
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams cp = base.CreateParams;
+        //        cp.ExStyle |= 0x02000000;
+        //        return cp;
+        //    }
+        //}
 
         public bool SetExit
         {
@@ -894,14 +927,8 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt1_BtnClick(object sender, EventArgs e)
         {
-            this.Visible = false;
             this.Owner.Visible = true;
-        }
-
-        private void ReadIdCardFrm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Visible = false;
-            this.Owner.Visible = true;
+            this.Close();
         }
     }
 }
