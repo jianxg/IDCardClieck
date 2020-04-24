@@ -40,8 +40,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,9 +63,9 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.lbl_note);
             this.panel6.Controls.Add(this.btn_ok);
             this.panel6.Controls.Add(this.txt_cdkey);
             this.panel6.Controls.Add(this.label2);
@@ -96,12 +98,13 @@
             // 
             // lbl_note
             // 
-            this.lbl_note.AutoSize = true;
+            this.lbl_note.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_note.ForeColor = System.Drawing.Color.Red;
-            this.lbl_note.Location = new System.Drawing.Point(105, 89);
+            this.lbl_note.Location = new System.Drawing.Point(0, 0);
             this.lbl_note.Name = "lbl_note";
-            this.lbl_note.Size = new System.Drawing.Size(0, 12);
+            this.lbl_note.Size = new System.Drawing.Size(76, 54);
             this.lbl_note.TabIndex = 4;
+            this.lbl_note.Text = "    ";
             // 
             // btn_ok
             // 
@@ -167,6 +170,14 @@
             this.panel2.Size = new System.Drawing.Size(537, 73);
             this.panel2.TabIndex = 0;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lbl_note);
+            this.panel7.Location = new System.Drawing.Point(315, 72);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(76, 54);
+            this.panel7.TabIndex = 5;
+            // 
             // RegisterFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -182,6 +193,7 @@
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_note;
+        private System.Windows.Forms.Panel panel7;
     }
 }

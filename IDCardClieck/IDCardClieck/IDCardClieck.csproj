@@ -63,7 +63,13 @@
     <ManifestCertificateThumbprint>D9AC5C4E5DDCDE144A906525A0A043AEF95FDC71</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
@@ -115,6 +121,7 @@
     <Compile Include="Common\Encryption.cs" />
     <Compile Include="Common\HttpHelper.cs" />
     <Compile Include="Common\JsonHelper.cs" />
+    <Compile Include="Common\LogHelper.cs" />
     <Compile Include="Common\OracleHelper.cs" />
     <Compile Include="Common\RegeditTime.cs" />
     <Compile Include="Common\SqlHelper.cs" />
@@ -165,6 +172,12 @@
       <DependentUpon>UCTestGridTable_CustomCellIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\User_InfosDAL.cs" />
+    <Compile Include="Forms\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,12 +190,14 @@
     <Compile Include="Forms\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ISplashForm.cs" />
     <Compile Include="Forms\ReadIdCardFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ReadIdCardFrm.Designer.cs">
       <DependentUpon>ReadIdCardFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Splasher.cs" />
     <Compile Include="Model\CheckData.cs" />
     <Compile Include="Model\CheckoutModel.cs" />
     <Compile Include="Model\HistoryCheckData.cs" />
@@ -219,6 +234,9 @@
     <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCell.resx">
       <DependentUpon>UCTestGridTable_CustomCell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +262,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

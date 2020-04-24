@@ -81,39 +81,46 @@ namespace IDCardClieck.Forms
                 }
                 else if (this.model.res == 1)//软件尚未注册
                 {
-                    this.model.sericalNumber = this.txt_cdkey.Text.ToString().Trim();
-                    //date
-                    string dateNow = RegeditTime.GetNowDate();
-                    //生成序列号
-                    this.model.registerCode = RegeditTime.CreatSerialNumber(this.model.sericalNumber, dateNow);
-
-                    string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/startRegister";
-                    //向java端进行注册请求
-
-                    StringBuilder postData = new StringBuilder();
-                    postData.Append("{");
-                    postData.Append("licence_code:\"" + this.model.sericalNumber + "\",");
-                    postData.Append("mac_code:\"" + this.model.registerCode + "\"");
-                    postData.Append("}");
-                    //接口调用
-
-                    string strJSON = HttpHelper.PostUrl(apistr, postData.ToString());
-                    //返回结果
-                    json = HttpHelper.Deserialize<ResultJSON>(strJSON);
-                    if (json.result == "true")
+                    if (this.txt_cdkey.Text.ToString().Trim().Length>0)
                     {
-                        //写入到注册表
-                        RegeditTime.WriteSetting(this.model.path, this.model.registerCodeName, this.model.registerCode);
-                        DialogResult dr = MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        if (DialogResult == DialogResult.OK)
+                        this.model.sericalNumber = this.txt_cdkey.Text.ToString().Trim();
+                        //date
+                        string dateNow = RegeditTime.GetNowDate();
+                        //生成序列号
+                        this.model.registerCode = RegeditTime.CreatSerialNumber(this.model.sericalNumber, dateNow);
+
+                        string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/startRegister";
+                        //向java端进行注册请求
+
+                        StringBuilder postData = new StringBuilder();
+                        postData.Append("{");
+                        postData.Append("licence_code:\"" + this.model.sericalNumber + "\",");
+                        postData.Append("mac_code:\"" + this.model.registerCode + "\"");
+                        postData.Append("}");
+                        //接口调用
+
+                        string strJSON = HttpHelper.PostUrl(apistr, postData.ToString());
+                        //返回结果
+                        json = HttpHelper.Deserialize<ResultJSON>(strJSON);
+                        if (json.result == "true")
                         {
-                            this.DialogResult = DialogResult.OK;//关键:设置登陆成功状态  
-                            this.Close();
+                            //写入到注册表
+                            RegeditTime.WriteSetting(this.model.path, this.model.registerCodeName, this.model.registerCode);
+                            DialogResult dr = MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            if (dr == DialogResult.OK)
+                            {
+                                this.DialogResult = DialogResult.OK;//关键:设置登陆成功状态  
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            lbl_note.Text = "注册失败：" + json.message.ToString() + "";
                         }
                     }
                     else
                     {
-                        MessageBox.Show("注册失败!");
+                        lbl_note.Text = "请输入激活码";
                     }
                 }
                 else if (this.model.res == 2)//注册机器与本机不一致

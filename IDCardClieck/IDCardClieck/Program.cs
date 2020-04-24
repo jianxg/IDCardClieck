@@ -32,6 +32,8 @@ namespace IDCardClieck
                 checkoutModel.res = RegeditTime.InitRegedit(ref a, ref b, checkoutModel.path, checkoutModel.registerCodeName);
                 checkoutModel.sericalNumber = a;
                 checkoutModel.registerCode = b;
+                LogHelper.WriteLine("程序主入口: 注册结果:" + checkoutModel.res + ",激活码:" + checkoutModel.sericalNumber + ",注册码:" +
+                    "" + checkoutModel.registerCode + "");
                 RegisterFrm registerFrm = new RegisterFrm(checkoutModel);
                 registerFrm.ShowDialog();//显示注册激活窗体
                 if (registerFrm.DialogResult==DialogResult.OK)
