@@ -272,6 +272,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="帮助\gsdll注册.bat" />
+    <None Include="帮助\ss628驱动.rar" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -359,6 +361,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GSDll.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="帮助\GSDLL.txt" />
     <None Include="Resources\loading3.gif" />
     <Content Include="公司图标64.ico" />
   </ItemGroup>
