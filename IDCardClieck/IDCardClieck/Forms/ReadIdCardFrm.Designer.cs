@@ -57,13 +57,11 @@
             this.panel_home_fill_right = new System.Windows.Forms.Panel();
             this.panel_imageShow = new System.Windows.Forms.Panel();
             this.pic_ImageShow = new System.Windows.Forms.PictureBox();
-            this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
             this.panel_showInfo = new System.Windows.Forms.Panel();
             this.pictureBox_error = new System.Windows.Forms.PictureBox();
             this.label_MessageShow = new System.Windows.Forms.Label();
             this.panel_home = new System.Windows.Forms.Panel();
             this.panel_homt_top = new System.Windows.Forms.Panel();
-            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.panel_home_fill.SuspendLayout();
             this.panel_home_fill_fill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,7 +74,6 @@
             this.panel_showInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_error)).BeginInit();
             this.panel_home.SuspendLayout();
-            this.panel_homt_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_home_fill
@@ -109,11 +106,10 @@
             this.panel1.Controls.Add(this.btn_Start);
             this.panel1.Controls.Add(this.lbl_msg);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(82, 57);
+            this.panel1.Location = new System.Drawing.Point(55, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 279);
+            this.panel1.Size = new System.Drawing.Size(460, 308);
             this.panel1.TabIndex = 16;
-            this.panel1.Visible = false;
             // 
             // btn_Start
             // 
@@ -399,7 +395,6 @@
             this.panel_home_fill_right.BackColor = System.Drawing.Color.Transparent;
             this.panel_home_fill_right.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
             this.panel_home_fill_right.Controls.Add(this.panel_imageShow);
-            this.panel_home_fill_right.Controls.Add(this.myBtnExt1);
             this.panel_home_fill_right.Controls.Add(this.panel_showInfo);
             this.panel_home_fill_right.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel_home_fill_right.Location = new System.Drawing.Point(667, 5);
@@ -426,34 +421,6 @@
             this.pic_ImageShow.Size = new System.Drawing.Size(315, 225);
             this.pic_ImageShow.TabIndex = 1;
             this.pic_ImageShow.TabStop = false;
-            // 
-            // myBtnExt1
-            // 
-            this.myBtnExt1.BackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
-            this.myBtnExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.myBtnExt1.BtnBackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
-            this.myBtnExt1.BtnForeColor = System.Drawing.Color.White;
-            this.myBtnExt1.BtnText = "";
-            this.myBtnExt1.ConerRadius = 56;
-            this.myBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myBtnExt1.FillColor = System.Drawing.Color.White;
-            this.myBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.myBtnExt1.ForeColor = System.Drawing.Color.White;
-            this.myBtnExt1.IsRadius = true;
-            this.myBtnExt1.IsShowRect = true;
-            this.myBtnExt1.IsShowTips = false;
-            this.myBtnExt1.Location = new System.Drawing.Point(94, 569);
-            this.myBtnExt1.Margin = new System.Windows.Forms.Padding(0);
-            this.myBtnExt1.Name = "myBtnExt1";
-            this.myBtnExt1.RectColor = System.Drawing.Color.White;
-            this.myBtnExt1.RectWidth = 0;
-            this.myBtnExt1.Size = new System.Drawing.Size(176, 56);
-            this.myBtnExt1.TabIndex = 2;
-            this.myBtnExt1.TabStop = false;
-            this.myBtnExt1.TipsText = "";
-            this.myBtnExt1.BtnClick += new System.EventHandler(this.myBtnExt1_BtnClick);
             // 
             // panel_showInfo
             // 
@@ -500,20 +467,11 @@
             // panel_homt_top
             // 
             this.panel_homt_top.BackColor = System.Drawing.Color.White;
-            this.panel_homt_top.Controls.Add(this.realTime1);
             this.panel_homt_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_homt_top.Location = new System.Drawing.Point(0, 0);
             this.panel_homt_top.Name = "panel_homt_top";
             this.panel_homt_top.Size = new System.Drawing.Size(1008, 100);
             this.panel_homt_top.TabIndex = 0;
-            // 
-            // realTime1
-            // 
-            this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.realTime1.Location = new System.Drawing.Point(0, 0);
-            this.realTime1.Name = "realTime1";
-            this.realTime1.Size = new System.Drawing.Size(1008, 100);
-            this.realTime1.TabIndex = 0;
             // 
             // ReadIdCardFrm
             // 
@@ -527,6 +485,7 @@
             this.Name = "ReadIdCardFrm";
             this.Text = "身份证读取";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReadIdCardFrm_FormClosing);
             this.Load += new System.EventHandler(this.ReadIdCardFrm_Load);
             this.panel_home_fill.ResumeLayout(false);
             this.panel_home_fill_fill.ResumeLayout(false);
@@ -542,7 +501,6 @@
             this.panel_showInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_error)).EndInit();
             this.panel_home.ResumeLayout(false);
-            this.panel_homt_top.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -552,7 +510,6 @@
         private System.Windows.Forms.Panel panel_home_fill;
         private System.Windows.Forms.Panel panel_home;
         private System.Windows.Forms.Panel panel_homt_top;
-        private Controls.RealTime realTime1;
         private System.Windows.Forms.Panel panel_home_fill_fill;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -580,7 +537,6 @@
         private System.Windows.Forms.Panel panel_home_fill_right;
         private System.Windows.Forms.Panel panel_imageShow;
         private System.Windows.Forms.PictureBox pic_ImageShow;
-        private Controls.MyBtnExt myBtnExt1;
         private System.Windows.Forms.Panel panel_showInfo;
         private System.Windows.Forms.Label label_MessageShow;
         private System.Windows.Forms.PictureBox pictureBox_error;

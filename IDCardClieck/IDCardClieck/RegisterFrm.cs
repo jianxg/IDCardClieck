@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,9 @@ namespace IDCardClieck.Forms
     {
         CheckoutModel model = null;
         public ResultJSON json { get; set; }
+
+        SimpleLoading loadingfrm = null;
+        SplashScreenManager loading = null;
 
         public RegisterFrm(CheckoutModel checkoutModel)
         {
@@ -32,7 +36,15 @@ namespace IDCardClieck.Forms
 
         private void RegisterFrm_Load(object sender, EventArgs e)
         {
-            GetRegisterCode();
+            try
+            {
+                GetRegisterCode();
+            }
+            catch (Exception ex)
+            {
+                /*可选处理异常*/
+                LogHelper.WriteLine("RegisterFrm:" + ex.Message.ToString());
+            }
         }
 
         private void RegisterFrm_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,8 +59,22 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            //读取注册表，判断是否已经激活
-            GetRegisterCode();
+            loadingfrm = new SimpleLoading(this);
+            //将Loaing窗口，注入到 SplashScreenManager 来管理
+            loading = new SplashScreenManager(loadingfrm);
+            loading.ShowLoading();
+            try
+            {
+                //读取注册表，判断是否已经激活
+                GetRegisterCode();
+            }
+            catch (Exception ex)
+            {                 /*可选处理异常*/
+                LogHelper.WriteLine("程序主入口:" + ex.Message.ToString());
+            }
+            finally {
+                loading.CloseWaitForm();
+            }
         }
 
         /// <summary>
@@ -109,6 +135,7 @@ namespace IDCardClieck.Forms
                         {
                             //写入到注册表
                             RegeditTime.WriteSetting(this.model.path, this.model.registerCodeName, this.model.registerCode);
+                            loading.CloseWaitForm();
                             DialogResult dr = MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             if (dr == DialogResult.OK)
                             {
@@ -118,34 +145,40 @@ namespace IDCardClieck.Forms
                         }
                         else
                         {
+                            loading.CloseWaitForm();
                             lbl_note.Text = "注册失败：" + json.message.ToString() + "";
                         }
                     }
                     else
                     {
+                        loading.CloseWaitForm();
                         lbl_note.Text = "请输入激活码";
                     }
                 }
                 else if (this.model.res == 2)//注册机器与本机不一致
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("注册机器与本机不一致!");
                     this.Close();
                     this.Dispose();
                 }
                 else if (this.model.res == 3)//软件试用已到期
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("软件试用已到期!");
                     this.Close();
                     this.Dispose();
                 }
                 else if (this.model.res == 4)//激活码与注册码不匹配
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("激活码与注册码不匹配!");
                     this.Close();
                     this.Dispose();
                 }
                 else//软件运行已到期
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("软件运行已到期!");
                     this.Close();
                     this.Dispose();
@@ -153,6 +186,7 @@ namespace IDCardClieck.Forms
             }
             catch (Exception e)
             {
+                loading.CloseWaitForm();
                 MessageBox.Show("服务器出错:" + e.Message.ToString());
                 this.Close();
                 this.Dispose();

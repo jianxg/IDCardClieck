@@ -930,5 +930,14 @@ namespace IDCardClieck.Forms
             this.Owner.Visible = true;
             this.Close();
         }
+
+        private void ReadIdCardFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            if (this.Owner.Visible != true)
+            {
+                this.Owner.Visible = true;
+            }
+        }
     }
 }

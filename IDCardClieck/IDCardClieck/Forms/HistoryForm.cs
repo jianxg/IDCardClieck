@@ -201,7 +201,10 @@ namespace IDCardClieck.Forms
         private void HistoryForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Visible = false;
-            this.modelTets.HomeFormTemp.Visible = true;
+            if (modelTets.HomeFormTemp.Visible!=true)
+            {
+                this.modelTets.HomeFormTemp.Visible = true;
+            }
         }
     }
 }

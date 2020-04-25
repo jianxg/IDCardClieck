@@ -83,9 +83,9 @@ namespace IDCardClieck.Forms
                 BindingData();
                 SetDataGridtableData();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                LogHelper.WriteLine("UserSelectForm: " + ex.Message.ToString());
             }
             finally
             {
@@ -311,6 +311,15 @@ namespace IDCardClieck.Forms
         private void UserSelectForm_SizeChanged(object sender, EventArgs e)
         {
             this.ucTestGridTableCustom1.Refresh();
+        }
+
+        private void UserSelectForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            if (homeForm.Visible != true)
+            {
+                homeForm.Visible = true;
+            }
         }
     }
 }
