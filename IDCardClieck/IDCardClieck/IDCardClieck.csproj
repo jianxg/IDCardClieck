@@ -364,6 +364,8 @@
     <Content Include="GSDll.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\banner1.png" />
+    <None Include="Resources\banner2.png" />
     <Content Include="帮助\GSDLL.txt" />
     <None Include="Resources\loading3.gif" />
     <Content Include="公司图标64.ico" />

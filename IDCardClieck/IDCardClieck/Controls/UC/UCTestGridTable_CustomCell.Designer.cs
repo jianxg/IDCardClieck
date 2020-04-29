@@ -40,7 +40,7 @@
             this.ucBtnExt1.BackColor = System.Drawing.Color.Transparent;
             this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Transparent;
             this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucBtnExt1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ucBtnExt1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(173)))), ((int)(((byte)(201)))));
             this.ucBtnExt1.BtnText = "【历史操作】";
             this.ucBtnExt1.ConerRadius = 5;
             this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -51,12 +51,12 @@
             this.ucBtnExt1.IsRadius = true;
             this.ucBtnExt1.IsShowRect = true;
             this.ucBtnExt1.IsShowTips = false;
-            this.ucBtnExt1.Location = new System.Drawing.Point(16, 4);
+            this.ucBtnExt1.Location = new System.Drawing.Point(16, 0);
             this.ucBtnExt1.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt1.Name = "ucBtnExt1";
             this.ucBtnExt1.RectColor = System.Drawing.Color.Transparent;
             this.ucBtnExt1.RectWidth = 1;
-            this.ucBtnExt1.Size = new System.Drawing.Size(106, 25);
+            this.ucBtnExt1.Size = new System.Drawing.Size(692, 25);
             this.ucBtnExt1.TabIndex = 0;
             this.ucBtnExt1.TabStop = false;
             this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
@@ -69,7 +69,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.ucBtnExt1);
             this.Name = "UCTestGridTable_CustomCell";
-            this.Size = new System.Drawing.Size(155, 35);
+            this.Size = new System.Drawing.Size(708, 35);
             this.ResumeLayout(false);
             this.PerformLayout();
 

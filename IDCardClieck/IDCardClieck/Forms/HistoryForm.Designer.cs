@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.pal_home = new IDCardClieck.Controls.PanelEnhanced();
             this.pal_home_fill = new IDCardClieck.Controls.PanelEnhanced();
             this.pan_home_fill_fill = new IDCardClieck.Controls.PanelEnhanced();
@@ -35,6 +36,8 @@
             this.pal_home_fill_fill_fill_fill = new System.Windows.Forms.Panel();
             this.ucTestGridTable1 = new IDCardClieck.Controls.UC.UCTestGridTable();
             this.pal_home_fill_fill_fill_top = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.pal_home_fill_fill_fill_1 = new System.Windows.Forms.Panel();
             this.lbl_userInfo = new System.Windows.Forms.Label();
@@ -43,14 +46,17 @@
             this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
             this.myBtnExt2 = new IDCardClieck.Controls.MyBtnExt();
             this.realTime1 = new IDCardClieck.Controls.RealTime();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pal_home.SuspendLayout();
             this.pal_home_fill.SuspendLayout();
             this.pan_home_fill_fill.SuspendLayout();
             this.pal_home_fill_fill_fill.SuspendLayout();
             this.pal_home_fill_fill_fill_fill.SuspendLayout();
             this.pal_home_fill_fill_fill_top.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pal_home_fill_fill_fill_1.SuspendLayout();
             this.pan_home_top.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pal_home
@@ -120,6 +126,7 @@
             // 
             // pal_home_fill_fill_fill_top
             // 
+            this.pal_home_fill_fill_fill_top.Controls.Add(this.panel1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.cartesianChart1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.pal_home_fill_fill_fill_1);
             this.pal_home_fill_fill_fill_top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -128,15 +135,37 @@
             this.pal_home_fill_fill_fill_top.Size = new System.Drawing.Size(928, 291);
             this.pal_home_fill_fill_fill_top.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(928, 28);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(162)))), ((int)(((byte)(178)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(928, 28);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "检测项折线图";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cartesianChart1
             // 
             this.cartesianChart1.BackColor = System.Drawing.Color.White;
             this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cartesianChart1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cartesianChart1.ForeColor = System.Drawing.Color.Transparent;
-            this.cartesianChart1.Location = new System.Drawing.Point(0, 37);
+            this.cartesianChart1.Location = new System.Drawing.Point(0, 31);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(928, 254);
+            this.cartesianChart1.Size = new System.Drawing.Size(928, 260);
             this.cartesianChart1.TabIndex = 2;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -146,7 +175,7 @@
             this.pal_home_fill_fill_fill_1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pal_home_fill_fill_fill_1.Location = new System.Drawing.Point(0, 0);
             this.pal_home_fill_fill_fill_1.Name = "pal_home_fill_fill_fill_1";
-            this.pal_home_fill_fill_fill_1.Size = new System.Drawing.Size(928, 37);
+            this.pal_home_fill_fill_fill_1.Size = new System.Drawing.Size(928, 31);
             this.pal_home_fill_fill_fill_1.TabIndex = 1;
             // 
             // lbl_userInfo
@@ -172,8 +201,7 @@
             // 
             // pan_home_top
             // 
-            this.pan_home_top.Controls.Add(this.myBtnExt1);
-            this.pan_home_top.Controls.Add(this.myBtnExt2);
+            this.pan_home_top.Controls.Add(this.panel2);
             this.pan_home_top.Controls.Add(this.realTime1);
             this.pan_home_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_home_top.Location = new System.Drawing.Point(0, 0);
@@ -183,6 +211,7 @@
             // 
             // myBtnExt1
             // 
+            this.myBtnExt1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.myBtnExt1.BackColor = System.Drawing.Color.White;
             this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
             this.myBtnExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -190,7 +219,7 @@
             this.myBtnExt1.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
             this.myBtnExt1.BtnForeColor = System.Drawing.Color.White;
             this.myBtnExt1.BtnText = "";
-            this.myBtnExt1.ConerRadius = 56;
+            this.myBtnExt1.ConerRadius = 25;
             this.myBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.myBtnExt1.FillColor = System.Drawing.Color.White;
             this.myBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -198,12 +227,12 @@
             this.myBtnExt1.IsRadius = true;
             this.myBtnExt1.IsShowRect = true;
             this.myBtnExt1.IsShowTips = false;
-            this.myBtnExt1.Location = new System.Drawing.Point(873, 9);
+            this.myBtnExt1.Location = new System.Drawing.Point(79, 57);
             this.myBtnExt1.Margin = new System.Windows.Forms.Padding(0);
             this.myBtnExt1.Name = "myBtnExt1";
             this.myBtnExt1.RectColor = System.Drawing.Color.White;
             this.myBtnExt1.RectWidth = 0;
-            this.myBtnExt1.Size = new System.Drawing.Size(115, 50);
+            this.myBtnExt1.Size = new System.Drawing.Size(70, 30);
             this.myBtnExt1.TabIndex = 3;
             this.myBtnExt1.TabStop = false;
             this.myBtnExt1.TipsText = "";
@@ -211,6 +240,7 @@
             // 
             // myBtnExt2
             // 
+            this.myBtnExt2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.myBtnExt2.BackColor = System.Drawing.Color.White;
             this.myBtnExt2.BackgroundImage = global::IDCardClieck.Properties.Resources.返回;
             this.myBtnExt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -218,7 +248,7 @@
             this.myBtnExt2.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
             this.myBtnExt2.BtnForeColor = System.Drawing.Color.White;
             this.myBtnExt2.BtnText = "";
-            this.myBtnExt2.ConerRadius = 56;
+            this.myBtnExt2.ConerRadius = 25;
             this.myBtnExt2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.myBtnExt2.FillColor = System.Drawing.Color.White;
             this.myBtnExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -226,12 +256,12 @@
             this.myBtnExt2.IsRadius = true;
             this.myBtnExt2.IsShowRect = true;
             this.myBtnExt2.IsShowTips = false;
-            this.myBtnExt2.Location = new System.Drawing.Point(739, 9);
+            this.myBtnExt2.Location = new System.Drawing.Point(0, 57);
             this.myBtnExt2.Margin = new System.Windows.Forms.Padding(0);
             this.myBtnExt2.Name = "myBtnExt2";
             this.myBtnExt2.RectColor = System.Drawing.Color.White;
             this.myBtnExt2.RectWidth = 0;
-            this.myBtnExt2.Size = new System.Drawing.Size(115, 50);
+            this.myBtnExt2.Size = new System.Drawing.Size(70, 30);
             this.myBtnExt2.TabIndex = 4;
             this.myBtnExt2.TabStop = false;
             this.myBtnExt2.TipsText = "";
@@ -245,6 +275,19 @@
             this.realTime1.Size = new System.Drawing.Size(1008, 100);
             this.realTime1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.myBtnExt2);
+            this.panel2.Controls.Add(this.myBtnExt1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(857, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 100);
+            this.panel2.TabIndex = 8;
+            // 
             // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -253,8 +296,8 @@
             this.Controls.Add(this.pal_home);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "HistoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -267,9 +310,11 @@
             this.pal_home_fill_fill_fill.ResumeLayout(false);
             this.pal_home_fill_fill_fill_fill.ResumeLayout(false);
             this.pal_home_fill_fill_fill_top.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.pal_home_fill_fill_fill_1.ResumeLayout(false);
             this.pal_home_fill_fill_fill_1.PerformLayout();
             this.pan_home_top.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -291,5 +336,8 @@
         private Controls.UC.UCTestGridTable ucTestGridTable1;
         private Controls.MyBtnExt myBtnExt2;
         private Controls.MyBtnExt myBtnExt1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

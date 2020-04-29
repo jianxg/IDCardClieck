@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSelectForm));
             this.pal_home = new IDCardClieck.Controls.PanelEnhanced();
             this.pal_home_fill = new IDCardClieck.Controls.PanelEnhanced();
             this.pan_home_fill_fill = new IDCardClieck.Controls.PanelEnhanced();
@@ -38,7 +39,7 @@
             this.pal_home_fill_fill_fill_3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pal_home_fill_fill_fill_2 = new System.Windows.Forms.Panel();
-            this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
+            this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
@@ -52,6 +53,7 @@
             this.myBtnExt6 = new IDCardClieck.Controls.MyBtnExt();
             this.myBtnExt7 = new IDCardClieck.Controls.MyBtnExt();
             this.realTime1 = new IDCardClieck.Controls.RealTime();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pal_home.SuspendLayout();
             this.pal_home_fill.SuspendLayout();
             this.pan_home_fill_fill.SuspendLayout();
@@ -62,6 +64,7 @@
             this.pal_home_fill_fill_fill_2.SuspendLayout();
             this.pal_home_fill_fill_fill_1.SuspendLayout();
             this.pan_home_top.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pal_home
@@ -114,17 +117,19 @@
             // 
             this.panel1.Controls.Add(this.ucTestGridTableCustom1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(20, 143);
+            this.panel1.Location = new System.Drawing.Point(20, 167);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(928, 447);
+            this.panel1.Size = new System.Drawing.Size(928, 423);
             this.panel1.TabIndex = 1;
             // 
             // ucTestGridTableCustom1
             // 
+            this.ucTestGridTableCustom1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ucTestGridTableCustom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTestGridTableCustom1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(173)))), ((int)(((byte)(201)))));
             this.ucTestGridTableCustom1.Location = new System.Drawing.Point(0, 0);
             this.ucTestGridTableCustom1.Name = "ucTestGridTableCustom1";
-            this.ucTestGridTableCustom1.Size = new System.Drawing.Size(928, 447);
+            this.ucTestGridTableCustom1.Size = new System.Drawing.Size(928, 423);
             this.ucTestGridTableCustom1.TabIndex = 0;
             // 
             // pal_home_fill_fill_fill_top
@@ -135,14 +140,14 @@
             this.pal_home_fill_fill_fill_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pal_home_fill_fill_fill_top.Location = new System.Drawing.Point(20, 20);
             this.pal_home_fill_fill_fill_top.Name = "pal_home_fill_fill_fill_top";
-            this.pal_home_fill_fill_fill_top.Size = new System.Drawing.Size(928, 123);
+            this.pal_home_fill_fill_fill_top.Size = new System.Drawing.Size(928, 147);
             this.pal_home_fill_fill_fill_top.TabIndex = 0;
             // 
             // pal_home_fill_fill_fill_3
             // 
             this.pal_home_fill_fill_fill_3.Controls.Add(this.label3);
             this.pal_home_fill_fill_fill_3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pal_home_fill_fill_fill_3.Location = new System.Drawing.Point(0, 74);
+            this.pal_home_fill_fill_fill_3.Location = new System.Drawing.Point(0, 94);
             this.pal_home_fill_fill_fill_3.Name = "pal_home_fill_fill_fill_3";
             this.pal_home_fill_fill_fill_3.Size = new System.Drawing.Size(928, 37);
             this.pal_home_fill_fill_fill_3.TabIndex = 3;
@@ -160,7 +165,7 @@
             // 
             // pal_home_fill_fill_fill_2
             // 
-            this.pal_home_fill_fill_fill_2.Controls.Add(this.myBtnExt1);
+            this.pal_home_fill_fill_fill_2.Controls.Add(this.ucBtnExt1);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.comboBox1);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.label4);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.ucDatePickerExt2);
@@ -170,42 +175,41 @@
             this.pal_home_fill_fill_fill_2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pal_home_fill_fill_fill_2.Location = new System.Drawing.Point(0, 37);
             this.pal_home_fill_fill_fill_2.Name = "pal_home_fill_fill_fill_2";
-            this.pal_home_fill_fill_fill_2.Size = new System.Drawing.Size(928, 37);
+            this.pal_home_fill_fill_fill_2.Size = new System.Drawing.Size(928, 57);
             this.pal_home_fill_fill_fill_2.TabIndex = 2;
             // 
-            // myBtnExt1
+            // ucBtnExt1
             // 
-            this.myBtnExt1.BackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.确定;
-            this.myBtnExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.myBtnExt1.BtnBackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
-            this.myBtnExt1.BtnForeColor = System.Drawing.Color.White;
-            this.myBtnExt1.BtnText = "";
-            this.myBtnExt1.ConerRadius = 56;
-            this.myBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myBtnExt1.FillColor = System.Drawing.Color.White;
-            this.myBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.myBtnExt1.ForeColor = System.Drawing.Color.White;
-            this.myBtnExt1.IsRadius = true;
-            this.myBtnExt1.IsShowRect = true;
-            this.myBtnExt1.IsShowTips = false;
-            this.myBtnExt1.Location = new System.Drawing.Point(901, 3);
-            this.myBtnExt1.Margin = new System.Windows.Forms.Padding(0);
-            this.myBtnExt1.Name = "myBtnExt1";
-            this.myBtnExt1.RectColor = System.Drawing.Color.White;
-            this.myBtnExt1.RectWidth = 0;
-            this.myBtnExt1.Size = new System.Drawing.Size(99, 34);
-            this.myBtnExt1.TabIndex = 17;
-            this.myBtnExt1.TabStop = false;
-            this.myBtnExt1.TipsText = "";
-            this.myBtnExt1.BtnClick += new System.EventHandler(this.myBtnExt1_BtnClick);
+            this.ucBtnExt1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(160)))));
+            this.ucBtnExt1.BtnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(160)))));
+            this.ucBtnExt1.BtnFont = new System.Drawing.Font("新宋体", 14.25F, System.Drawing.FontStyle.Bold);
+            this.ucBtnExt1.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt1.BtnText = "查询";
+            this.ucBtnExt1.ConerRadius = 25;
+            this.ucBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt1.EnabledMouseEffect = true;
+            this.ucBtnExt1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(160)))));
+            this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt1.IsRadius = true;
+            this.ucBtnExt1.IsShowRect = false;
+            this.ucBtnExt1.IsShowTips = false;
+            this.ucBtnExt1.Location = new System.Drawing.Point(891, 7);
+            this.ucBtnExt1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt1.Name = "ucBtnExt1";
+            this.ucBtnExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt1.RectWidth = 1;
+            this.ucBtnExt1.Size = new System.Drawing.Size(100, 35);
+            this.ucBtnExt1.TabIndex = 17;
+            this.ucBtnExt1.TabStop = false;
+            this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt1.TipsText = "";
+            this.ucBtnExt1.BtnClick += new System.EventHandler(this.ucBtnExt1_BtnClick);
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("宋体", 14F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(141, 7);
+            this.comboBox1.Location = new System.Drawing.Point(141, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 27);
             this.comboBox1.TabIndex = 16;
@@ -217,7 +221,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(631, 10);
+            this.label4.Location = new System.Drawing.Point(631, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 15;
@@ -232,7 +236,7 @@
             this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt2.IsRadius = true;
             this.ucDatePickerExt2.IsShowRect = true;
-            this.ucDatePickerExt2.Location = new System.Drawing.Point(672, 5);
+            this.ucDatePickerExt2.Location = new System.Drawing.Point(672, 11);
             this.ucDatePickerExt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucDatePickerExt2.Name = "ucDatePickerExt2";
             this.ucDatePickerExt2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -252,7 +256,7 @@
             this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt1.IsRadius = true;
             this.ucDatePickerExt1.IsShowRect = true;
-            this.ucDatePickerExt1.Location = new System.Drawing.Point(412, 5);
+            this.ucDatePickerExt1.Location = new System.Drawing.Point(412, 11);
             this.ucDatePickerExt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucDatePickerExt1.Name = "ucDatePickerExt1";
             this.ucDatePickerExt1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -268,7 +272,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 15.5F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(295, 14);
+            this.label2.Location = new System.Drawing.Point(295, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 21);
             this.label2.TabIndex = 12;
@@ -279,7 +283,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15.5F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 13);
+            this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 21);
             this.label1.TabIndex = 3;
@@ -317,8 +321,7 @@
             // 
             // pan_home_top
             // 
-            this.pan_home_top.Controls.Add(this.myBtnExt6);
-            this.pan_home_top.Controls.Add(this.myBtnExt7);
+            this.pan_home_top.Controls.Add(this.panel2);
             this.pan_home_top.Controls.Add(this.realTime1);
             this.pan_home_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_home_top.Location = new System.Drawing.Point(0, 0);
@@ -335,7 +338,7 @@
             this.myBtnExt6.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
             this.myBtnExt6.BtnForeColor = System.Drawing.Color.White;
             this.myBtnExt6.BtnText = "";
-            this.myBtnExt6.ConerRadius = 56;
+            this.myBtnExt6.ConerRadius = 25;
             this.myBtnExt6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.myBtnExt6.FillColor = System.Drawing.Color.White;
             this.myBtnExt6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -343,12 +346,12 @@
             this.myBtnExt6.IsRadius = true;
             this.myBtnExt6.IsShowRect = true;
             this.myBtnExt6.IsShowTips = false;
-            this.myBtnExt6.Location = new System.Drawing.Point(968, 9);
+            this.myBtnExt6.Location = new System.Drawing.Point(79, 57);
             this.myBtnExt6.Margin = new System.Windows.Forms.Padding(0);
             this.myBtnExt6.Name = "myBtnExt6";
             this.myBtnExt6.RectColor = System.Drawing.Color.White;
             this.myBtnExt6.RectWidth = 0;
-            this.myBtnExt6.Size = new System.Drawing.Size(115, 50);
+            this.myBtnExt6.Size = new System.Drawing.Size(70, 30);
             this.myBtnExt6.TabIndex = 5;
             this.myBtnExt6.TabStop = false;
             this.myBtnExt6.TipsText = "";
@@ -363,7 +366,7 @@
             this.myBtnExt7.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
             this.myBtnExt7.BtnForeColor = System.Drawing.Color.White;
             this.myBtnExt7.BtnText = "";
-            this.myBtnExt7.ConerRadius = 56;
+            this.myBtnExt7.ConerRadius = 25;
             this.myBtnExt7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.myBtnExt7.FillColor = System.Drawing.Color.White;
             this.myBtnExt7.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -371,12 +374,12 @@
             this.myBtnExt7.IsRadius = true;
             this.myBtnExt7.IsShowRect = true;
             this.myBtnExt7.IsShowTips = false;
-            this.myBtnExt7.Location = new System.Drawing.Point(843, 9);
+            this.myBtnExt7.Location = new System.Drawing.Point(0, 57);
             this.myBtnExt7.Margin = new System.Windows.Forms.Padding(0);
             this.myBtnExt7.Name = "myBtnExt7";
             this.myBtnExt7.RectColor = System.Drawing.Color.White;
             this.myBtnExt7.RectWidth = 0;
-            this.myBtnExt7.Size = new System.Drawing.Size(115, 50);
+            this.myBtnExt7.Size = new System.Drawing.Size(70, 30);
             this.myBtnExt7.TabIndex = 6;
             this.myBtnExt7.TabStop = false;
             this.myBtnExt7.TipsText = "";
@@ -384,11 +387,26 @@
             // 
             // realTime1
             // 
+            this.realTime1.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
+            this.realTime1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.realTime1.Location = new System.Drawing.Point(0, 0);
             this.realTime1.Name = "realTime1";
             this.realTime1.Size = new System.Drawing.Size(1008, 100);
             this.realTime1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.myBtnExt7);
+            this.panel2.Controls.Add(this.myBtnExt6);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(857, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 100);
+            this.panel2.TabIndex = 7;
             // 
             // UserSelectForm
             // 
@@ -398,8 +416,7 @@
             this.Controls.Add(this.pal_home);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserSelectForm";
             this.Text = "用户查询";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -419,6 +436,7 @@
             this.pal_home_fill_fill_fill_1.ResumeLayout(false);
             this.pal_home_fill_fill_fill_1.PerformLayout();
             this.pan_home_top.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -427,7 +445,6 @@
 
         private Controls.PanelEnhanced pal_home;
         private Controls.PanelEnhanced pan_home_top;
-        private Controls.RealTime realTime1;
         private Controls.PanelEnhanced pal_home_fill;
         private Controls.PanelEnhanced pal_home_fill_top;
         private Controls.PanelEnhanced pan_home_fill_fill;
@@ -448,6 +465,8 @@
         private Controls.MyBtnExt myBtnExt6;
         private Controls.MyBtnExt myBtnExt7;
         private System.Windows.Forms.ComboBox comboBox1;
-        private Controls.MyBtnExt myBtnExt1;
+        private HZH_Controls.Controls.UCBtnExt ucBtnExt1;
+        private System.Windows.Forms.Panel panel2;
+        private Controls.RealTime realTime1;
     }
 }

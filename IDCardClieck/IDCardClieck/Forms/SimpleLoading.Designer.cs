@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleLoading));
             this.lbl_tips_son = new System.Windows.Forms.Label();
             this.lbl_tips = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,7 +37,7 @@
             // lbl_tips_son
             // 
             this.lbl_tips_son.AutoSize = true;
-            this.lbl_tips_son.Location = new System.Drawing.Point(89, 44);
+            this.lbl_tips_son.Location = new System.Drawing.Point(64, 31);
             this.lbl_tips_son.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_tips_son.Name = "lbl_tips_son";
             this.lbl_tips_son.Size = new System.Drawing.Size(113, 12);
@@ -46,7 +47,7 @@
             // lbl_tips
             // 
             this.lbl_tips.AutoSize = true;
-            this.lbl_tips.Location = new System.Drawing.Point(89, 19);
+            this.lbl_tips.Location = new System.Drawing.Point(64, 6);
             this.lbl_tips.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_tips.Name = "lbl_tips";
             this.lbl_tips.Size = new System.Drawing.Size(107, 12);
@@ -56,10 +57,10 @@
             // label1
             // 
             this.label1.Image = global::IDCardClieck.Properties.Resources.loading3;
-            this.label1.Location = new System.Drawing.Point(1, 1);
+            this.label1.Location = new System.Drawing.Point(1, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 69);
+            this.label1.Size = new System.Drawing.Size(47, 42);
             this.label1.TabIndex = 8;
             // 
             // SimpleLoading
@@ -67,11 +68,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(203, 68);
+            this.ClientSize = new System.Drawing.Size(176, 47);
             this.Controls.Add(this.lbl_tips_son);
             this.Controls.Add(this.lbl_tips);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleLoading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SimpleLoading";

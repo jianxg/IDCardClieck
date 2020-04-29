@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel_home = new System.Windows.Forms.Panel();
             this.panel_home_fill = new System.Windows.Forms.Panel();
             this.panel_home_fill_fill = new System.Windows.Forms.Panel();
@@ -127,8 +128,7 @@
             this.Controls.Add(this.panel_home);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "居民健康体检查询终端";

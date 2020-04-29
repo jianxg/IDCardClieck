@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadIdCardFrm));
             this.panel_home_fill = new System.Windows.Forms.Panel();
             this.panel_home_fill_fill = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,13 +56,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.panel_home_fill_right = new System.Windows.Forms.Panel();
-            this.panel_imageShow = new System.Windows.Forms.Panel();
-            this.pic_ImageShow = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel_showInfo = new System.Windows.Forms.Panel();
             this.pictureBox_error = new System.Windows.Forms.PictureBox();
             this.label_MessageShow = new System.Windows.Forms.Label();
+            this.panel_imageShow = new System.Windows.Forms.Panel();
+            this.pic_ImageShow = new System.Windows.Forms.PictureBox();
             this.panel_home = new System.Windows.Forms.Panel();
             this.panel_homt_top = new System.Windows.Forms.Panel();
+            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.panel_home_fill.SuspendLayout();
             this.panel_home_fill_fill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,11 +72,13 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showIdCard)).BeginInit();
             this.panel_home_fill_right.SuspendLayout();
-            this.panel_imageShow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageShow)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel_showInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_error)).BeginInit();
+            this.panel_imageShow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageShow)).BeginInit();
             this.panel_home.SuspendLayout();
+            this.panel_homt_top.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_home_fill
@@ -97,7 +102,7 @@
             this.panel_home_fill_fill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_home_fill_fill.Location = new System.Drawing.Point(0, 5);
             this.panel_home_fill_fill.Name = "panel_home_fill_fill";
-            this.panel_home_fill_fill.Size = new System.Drawing.Size(667, 625);
+            this.panel_home_fill_fill.Size = new System.Drawing.Size(617, 625);
             this.panel_home_fill_fill.TabIndex = 1;
             // 
             // panel1
@@ -110,6 +115,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 308);
             this.panel1.TabIndex = 16;
+            this.panel1.Visible = false;
             // 
             // btn_Start
             // 
@@ -394,39 +400,31 @@
             // 
             this.panel_home_fill_right.BackColor = System.Drawing.Color.Transparent;
             this.panel_home_fill_right.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
-            this.panel_home_fill_right.Controls.Add(this.panel_imageShow);
-            this.panel_home_fill_right.Controls.Add(this.panel_showInfo);
+            this.panel_home_fill_right.Controls.Add(this.panel4);
             this.panel_home_fill_right.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_home_fill_right.Location = new System.Drawing.Point(667, 5);
+            this.panel_home_fill_right.Location = new System.Drawing.Point(617, 5);
             this.panel_home_fill_right.Name = "panel_home_fill_right";
-            this.panel_home_fill_right.Size = new System.Drawing.Size(341, 625);
+            this.panel_home_fill_right.Padding = new System.Windows.Forms.Padding(30, 20, 30, 20);
+            this.panel_home_fill_right.Size = new System.Drawing.Size(391, 625);
             this.panel_home_fill_right.TabIndex = 0;
             // 
-            // panel_imageShow
+            // panel4
             // 
-            this.panel_imageShow.Controls.Add(this.pic_ImageShow);
-            this.panel_imageShow.Location = new System.Drawing.Point(14, 283);
-            this.panel_imageShow.Name = "panel_imageShow";
-            this.panel_imageShow.Size = new System.Drawing.Size(315, 225);
-            this.panel_imageShow.TabIndex = 3;
-            // 
-            // pic_ImageShow
-            // 
-            this.pic_ImageShow.BackColor = System.Drawing.Color.White;
-            this.pic_ImageShow.BackgroundImage = global::IDCardClieck.Properties.Resources.手持身份证;
-            this.pic_ImageShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_ImageShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_ImageShow.Location = new System.Drawing.Point(0, 0);
-            this.pic_ImageShow.Name = "pic_ImageShow";
-            this.pic_ImageShow.Size = new System.Drawing.Size(315, 225);
-            this.pic_ImageShow.TabIndex = 1;
-            this.pic_ImageShow.TabStop = false;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(192)))), ((int)(((byte)(209)))));
+            this.panel4.Controls.Add(this.panel_showInfo);
+            this.panel4.Controls.Add(this.panel_imageShow);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(192)))), ((int)(((byte)(209)))));
+            this.panel4.Location = new System.Drawing.Point(30, 20);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(331, 585);
+            this.panel4.TabIndex = 6;
             // 
             // panel_showInfo
             // 
             this.panel_showInfo.Controls.Add(this.pictureBox_error);
             this.panel_showInfo.Controls.Add(this.label_MessageShow);
-            this.panel_showInfo.Location = new System.Drawing.Point(13, 213);
+            this.panel_showInfo.Location = new System.Drawing.Point(8, 140);
             this.panel_showInfo.Name = "panel_showInfo";
             this.panel_showInfo.Size = new System.Drawing.Size(314, 68);
             this.panel_showInfo.TabIndex = 0;
@@ -444,7 +442,7 @@
             // 
             // label_MessageShow
             // 
-            this.label_MessageShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_MessageShow.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_MessageShow.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_MessageShow.ForeColor = System.Drawing.Color.White;
             this.label_MessageShow.Location = new System.Drawing.Point(0, 0);
@@ -452,6 +450,27 @@
             this.label_MessageShow.Size = new System.Drawing.Size(314, 68);
             this.label_MessageShow.TabIndex = 2;
             this.label_MessageShow.Text = "请将二代居民身份证放置在识读区";
+            // 
+            // panel_imageShow
+            // 
+            this.panel_imageShow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_imageShow.Controls.Add(this.pic_ImageShow);
+            this.panel_imageShow.Location = new System.Drawing.Point(8, 210);
+            this.panel_imageShow.Name = "panel_imageShow";
+            this.panel_imageShow.Size = new System.Drawing.Size(314, 225);
+            this.panel_imageShow.TabIndex = 3;
+            // 
+            // pic_ImageShow
+            // 
+            this.pic_ImageShow.BackColor = System.Drawing.Color.White;
+            this.pic_ImageShow.BackgroundImage = global::IDCardClieck.Properties.Resources.手持身份证;
+            this.pic_ImageShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_ImageShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_ImageShow.Location = new System.Drawing.Point(0, 0);
+            this.pic_ImageShow.Name = "pic_ImageShow";
+            this.pic_ImageShow.Size = new System.Drawing.Size(314, 225);
+            this.pic_ImageShow.TabIndex = 1;
+            this.pic_ImageShow.TabStop = false;
             // 
             // panel_home
             // 
@@ -467,11 +486,20 @@
             // panel_homt_top
             // 
             this.panel_homt_top.BackColor = System.Drawing.Color.White;
+            this.panel_homt_top.Controls.Add(this.realTime1);
             this.panel_homt_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_homt_top.Location = new System.Drawing.Point(0, 0);
             this.panel_homt_top.Name = "panel_homt_top";
             this.panel_homt_top.Size = new System.Drawing.Size(1008, 100);
             this.panel_homt_top.TabIndex = 0;
+            // 
+            // realTime1
+            // 
+            this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.realTime1.Location = new System.Drawing.Point(0, 0);
+            this.realTime1.Name = "realTime1";
+            this.realTime1.Size = new System.Drawing.Size(1008, 100);
+            this.realTime1.TabIndex = 1;
             // 
             // ReadIdCardFrm
             // 
@@ -480,8 +508,8 @@
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.panel_home);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "ReadIdCardFrm";
             this.Text = "身份证读取";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -496,11 +524,13 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_showIdCard)).EndInit();
             this.panel_home_fill_right.ResumeLayout(false);
-            this.panel_imageShow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageShow)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel_showInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_error)).EndInit();
+            this.panel_imageShow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ImageShow)).EndInit();
             this.panel_home.ResumeLayout(false);
+            this.panel_homt_top.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -541,5 +571,7 @@
         private System.Windows.Forms.Label label_MessageShow;
         private System.Windows.Forms.PictureBox pictureBox_error;
         private System.Windows.Forms.PictureBox pic_showIdCard;
+        private Controls.RealTime realTime1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

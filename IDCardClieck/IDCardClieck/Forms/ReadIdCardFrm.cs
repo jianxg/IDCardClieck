@@ -246,7 +246,7 @@ namespace IDCardClieck.Forms
                             }
                             )
                         );
-                SetText("请将二代居民身份证放置在识读区", label_MessageShow);
+                SetText("请将二代居民身份证放置在下方识读区", label_MessageShow);
 
                 _runState = "已开启";
 
@@ -284,7 +284,7 @@ namespace IDCardClieck.Forms
                 int intReadBaseInfosRet = ReadBaseInfosPhoto(Name, Gender, Folk, BirthDay, Code, Address, Agency, ExpireStart, ExpireEnd, photoPath);
                 if (intReadBaseInfosRet != 1)
                 {
-                    SetText("读取失败,请重新刷卡!", lbl_msg);
+                    SetText("  读取失败,请重新刷卡!", lbl_msg);
                     this.pictureBox_error.Invoke(
                       new MethodInvoker(
                           delegate
@@ -397,7 +397,7 @@ namespace IDCardClieck.Forms
 
                 if (objEDZ.IDC=="610323199304191615")
                 {
-                    objEDZ.IDC = "640202198702180034";
+                    objEDZ.IDC = "140821199307080015";
                 }
 
 
@@ -524,7 +524,7 @@ namespace IDCardClieck.Forms
             }
         }
 
-        private int _readTimeOut = 3000;
+        private int _readTimeOut = 5000;
         /// <summary>
         /// 轮训读卡间隔时间，单位毫秒
         /// </summary>

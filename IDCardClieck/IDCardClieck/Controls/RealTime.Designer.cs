@@ -58,7 +58,7 @@
             this.lbl_time.BackColor = System.Drawing.Color.Transparent;
             this.lbl_time.Font = new System.Drawing.Font("黑体", 15F, System.Drawing.FontStyle.Bold);
             this.lbl_time.ForeColor = System.Drawing.Color.White;
-            this.lbl_time.Location = new System.Drawing.Point(663, 63);
+            this.lbl_time.Location = new System.Drawing.Point(534, 64);
             this.lbl_time.Name = "lbl_time";
             this.lbl_time.Size = new System.Drawing.Size(284, 20);
             this.lbl_time.TabIndex = 0;

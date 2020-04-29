@@ -1,4 +1,5 @@
 ﻿using GSFramework;
+using HZH_Controls.Controls;
 using IDCardClieck.Common;
 using IDCardClieck.Controls;
 using IDCardClieck.Model;
@@ -115,25 +116,25 @@ namespace IDCardClieck.Forms
             {
                 for (int i = 0; i < this.resultJSON.data.hotCheckItemList.Count; i++)
                 {
-                    int x = 137 + (72 * i) + (72 * i);
+                    int x = 114 + (83 * i) + (83 * i);
                     if (x<this.pal_home_fill_fill_fill_3.Width)
                     {
-                        MyBtnExt myBtnExt = new MyBtnExt();
+                        UCBtnExt myBtnExt = new UCBtnExt();
                         myBtnExt.ConerRadius = 25;
                         myBtnExt.IsRadius = true;
-                        myBtnExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-                        myBtnExt.BtnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+                        myBtnExt.BackColor = System.Drawing.Color.Transparent;
+                        myBtnExt.BtnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(212)))), ((int)(((byte)(197)))));
                         myBtnExt.BtnFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
                         myBtnExt.BtnForeColor = System.Drawing.Color.White;
                         myBtnExt.BtnText = this.resultJSON.data.hotCheckItemList[i].propName;
                         myBtnExt.Tag = this.resultJSON.data.hotCheckItemList[i].tempPropID;
                         myBtnExt.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
                         myBtnExt.ForeColor = System.Drawing.Color.White;
-                        myBtnExt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-                        myBtnExt.Location = new System.Drawing.Point(x, 10);
+                        myBtnExt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(212)))), ((int)(((byte)(197)))));
+                        myBtnExt.Location = new System.Drawing.Point(x, 6);
                         myBtnExt.RectColor = System.Drawing.Color.Transparent;
                         myBtnExt.RectWidth = 1;
-                        myBtnExt.Size = new System.Drawing.Size(72, 28);
+                        myBtnExt.Size = new System.Drawing.Size(83, 32);
                         myBtnExt.BtnClick += new EventHandler(MyBtnExt_Click); 
                         this.pal_home_fill_fill_fill_3.Controls.Add(myBtnExt);
                     }
@@ -146,7 +147,8 @@ namespace IDCardClieck.Forms
         /// </summary>
         public void SetDataGridtableData()
         {
-                this.lbl_userInfo.Text = this.objEDZ.Name + "   " + this.objEDZ.IDC;
+            string idcrardStr = this.objEDZ.IDC.Substring(0, 4) + "xxxxxxxxxx" + this.objEDZ.IDC.Substring(this.objEDZ.IDC.Length - 4, 4);
+                this.lbl_userInfo.Text = this.objEDZ.Name + "   " + idcrardStr;
                 if (checkData.data.Count > 0)
                 {
                     myEventArgsUserInfoData = new MyEventArgsUserInfoData();
@@ -161,7 +163,7 @@ namespace IDCardClieck.Forms
 
         public void MyBtnExt_Click(object sender, EventArgs e)
         {
-            SelectCheckData selectCheckData = GetCheckData(((MyBtnExt)sender).Tag.ToString(), null, null);
+            SelectCheckData selectCheckData = GetCheckData(((UCBtnExt)sender).Tag.ToString(), null, null);
             if (selectCheckData.result == "true")
             {
                 myEventArgsUserInfoData = new MyEventArgsUserInfoData();
@@ -169,6 +171,7 @@ namespace IDCardClieck.Forms
                 myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
                 myEventArgsUserInfoData.eDZ = objEDZ;
                 myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
+
                 myEventArgsUserInfoData.checkoutModel = model;
                 OnMySendDataUserInfoData(myEventArgsUserInfoData);
             }
@@ -185,9 +188,12 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt7_BtnClick(object sender, EventArgs e)
         {
-            homeForm.Visible = false;
-            readIdCardFrm.Visible = true;
             this.Close();
+            homeForm.Visible = false;
+            if (this.readIdCardFrm.Visible != true)
+            {
+                readIdCardFrm.Visible = true;
+            }
         }
 
         /// <summary>
@@ -197,8 +203,11 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt6_BtnClick(object sender, EventArgs e)
         {
-            homeForm.Visible = true;
-            this.Close();
+            this.Visible = false;
+            if (this.homeForm.Visible != true)
+            {
+                this.homeForm.Visible = true;
+            }
         }
 
         public void OnMySendDataUserInfoData(MyEventArgsUserInfoData e)
@@ -316,9 +325,28 @@ namespace IDCardClieck.Forms
         private void UserSelectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Visible = false;
-            if (homeForm.Visible != true)
+            if (homeForm.IsDisposed == false)
             {
                 homeForm.Visible = true;
+            }
+        }
+
+        private void ucBtnExt1_BtnClick(object sender, EventArgs e)
+        {
+            SelectCheckData selectCheckData = GetCheckData(((CheckModel)this.comboBox1.SelectedItem).tempPropID.ToString(), this.ucDatePickerExt1.CurrentTime.ToString(), this.ucDatePickerExt2.CurrentTime.ToString());
+            if (selectCheckData.result == "true")
+            {
+                myEventArgsUserInfoData = new MyEventArgsUserInfoData();
+                myEventArgsUserInfoData.data = selectCheckData.data.checkDataList;
+                myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
+                myEventArgsUserInfoData.eDZ = objEDZ;
+                myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
+                myEventArgsUserInfoData.checkoutModel = model;
+                OnMySendDataUserInfoData(myEventArgsUserInfoData);
+            }
+            else
+            {
+                MessageBox.Show(selectCheckData.message.ToString());
             }
         }
     }

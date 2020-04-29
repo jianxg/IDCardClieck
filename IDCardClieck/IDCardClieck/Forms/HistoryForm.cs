@@ -12,7 +12,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
 using static IDCardClieck.Controls.UCTestGridTableCustom;
 using Brushes = System.Windows.Media.Brushes;
 using HorizontalAlignment = System.Windows.HorizontalAlignment;
@@ -67,6 +70,7 @@ namespace IDCardClieck.Forms
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
+            this.label1.Text = modelTets.propName + "检测项折线图";
             SimpleLoading loadingfrm = new SimpleLoading(this);
             //将Loaing窗口，注入到 SplashScreenManager 来管理
             SplashScreenManager loading = new SplashScreenManager(loadingfrm);
@@ -118,7 +122,8 @@ namespace IDCardClieck.Forms
                 HistoryCheckData json = HttpHelper.Deserialize<HistoryCheckData>(strJSON);
                 if (json.result == "true")
                 {
-                    this.lbl_userInfo.Text = this.modelTets.edzTemp.Name + "   " + this.modelTets.edzTemp.IDC;
+                    string idcrardStr = this.modelTets.edzTemp.IDC.Substring(0, 4) + "xxxxxxxxxx" + this.modelTets.edzTemp.IDC.Substring(this.modelTets.edzTemp.IDC.Length - 4, 4);
+                    this.lbl_userInfo.Text = this.modelTets.edzTemp.Name + "   " + idcrardStr;
                     if (json.data.Count > 0)
                     {
                         double d;
@@ -133,12 +138,17 @@ namespace IDCardClieck.Forms
                             Fill = Brushes.Transparent,
                             StrokeThickness = 1,
                             PointGeometry = null,
-                            Stroke = System.Windows.Media.Brushes.OrangeRed
+                            Stroke = System.Windows.Media.Brushes.OrangeRed,
+                            DataLabels = true,
+                            Title = this.modelTets.propName + "检测项折线图"
+                            //LabelPoint = point => point.Y.ToString()
                         };
                         var barSeries = new ColumnSeries
                         {
-                            Values = new ChartValues<double>(listY),                                                                                                                                           
-                            Stroke = System.Windows.Media.Brushes.Turquoise
+                            Values = new ChartValues<double>(listY),                                             
+                            Stroke = System.Windows.Media.Brushes.Turquoise,
+                            //DataLabels = true
+                            Title = this.modelTets.propName + "检测项折线图"
                         };
 
                         cartesianChart1.Series.Add(lineSeries);
@@ -157,7 +167,7 @@ namespace IDCardClieck.Forms
                 }
                 else
                 {
-                    MessageBox.Show(json.message.ToString());
+                    System.Windows.Forms.MessageBox.Show(json.message.ToString());
                 }
             }
         }
@@ -183,7 +193,10 @@ namespace IDCardClieck.Forms
         private void myBtnExt2_BtnClick(object sender, EventArgs e)
         {
             this.Close();
-            this.modelTets.UserSelectFormTemp.Visible = true;
+            if (this.modelTets.UserSelectFormTemp.Visible != true)
+            {
+                this.modelTets.UserSelectFormTemp.Visible = true;
+            }
             this.modelTets.HomeFormTemp.Visible = false;
         }
 
@@ -195,13 +208,16 @@ namespace IDCardClieck.Forms
         private void myBtnExt1_BtnClick(object sender, EventArgs e)
         {
             this.Close();
-            this.modelTets.HomeFormTemp.Visible = true;
+            if (this.modelTets.HomeFormTemp.Visible != true)
+            {
+                this.modelTets.HomeFormTemp.Visible = true;
+            }
         }
 
         private void HistoryForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Visible = false;
-            if (modelTets.HomeFormTemp.Visible!=true)
+            if (modelTets.HomeFormTemp.IsDisposed == false)
             {
                 this.modelTets.HomeFormTemp.Visible = true;
             }
