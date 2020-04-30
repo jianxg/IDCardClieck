@@ -36,6 +36,7 @@
             this.pal_home_fill_fill_fill_fill = new System.Windows.Forms.Panel();
             this.ucTestGridTable1 = new IDCardClieck.Controls.UC.UCTestGridTable();
             this.pal_home_fill_fill_fill_top = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
@@ -43,10 +44,10 @@
             this.lbl_userInfo = new System.Windows.Forms.Label();
             this.pal_home_fill_top = new IDCardClieck.Controls.PanelEnhanced();
             this.pan_home_top = new IDCardClieck.Controls.PanelEnhanced();
-            this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
-            this.myBtnExt2 = new IDCardClieck.Controls.MyBtnExt();
-            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.myBtnExt2 = new IDCardClieck.Controls.MyBtnExt();
+            this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
+            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.pal_home.SuspendLayout();
             this.pal_home_fill.SuspendLayout();
             this.pan_home_fill_fill.SuspendLayout();
@@ -126,6 +127,7 @@
             // 
             // pal_home_fill_fill_fill_top
             // 
+            this.pal_home_fill_fill_fill_top.Controls.Add(this.webBrowser1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.panel1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.cartesianChart1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.pal_home_fill_fill_fill_1);
@@ -135,6 +137,17 @@
             this.pal_home_fill_fill_fill_top.Size = new System.Drawing.Size(928, 291);
             this.pal_home_fill_fill_fill_top.TabIndex = 0;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 59);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(928, 232);
+            this.webBrowser1.TabIndex = 9;
+            this.webBrowser1.Visible = false;
+            this.webBrowser1.Resize += new System.EventHandler(this.webBrowser1_Resize_1);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -142,7 +155,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(928, 28);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 5;
             // 
             // label1
             // 
@@ -166,7 +179,7 @@
             this.cartesianChart1.Location = new System.Drawing.Point(0, 31);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(928, 260);
-            this.cartesianChart1.TabIndex = 2;
+            this.cartesianChart1.TabIndex = 4;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
             // pal_home_fill_fill_fill_1
@@ -209,34 +222,18 @@
             this.pan_home_top.Size = new System.Drawing.Size(1008, 100);
             this.pan_home_top.TabIndex = 0;
             // 
-            // myBtnExt1
+            // panel2
             // 
-            this.myBtnExt1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.myBtnExt1.BackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
-            this.myBtnExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.myBtnExt1.BtnBackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
-            this.myBtnExt1.BtnForeColor = System.Drawing.Color.White;
-            this.myBtnExt1.BtnText = "";
-            this.myBtnExt1.ConerRadius = 25;
-            this.myBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myBtnExt1.FillColor = System.Drawing.Color.White;
-            this.myBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.myBtnExt1.ForeColor = System.Drawing.Color.White;
-            this.myBtnExt1.IsRadius = true;
-            this.myBtnExt1.IsShowRect = true;
-            this.myBtnExt1.IsShowTips = false;
-            this.myBtnExt1.Location = new System.Drawing.Point(79, 57);
-            this.myBtnExt1.Margin = new System.Windows.Forms.Padding(0);
-            this.myBtnExt1.Name = "myBtnExt1";
-            this.myBtnExt1.RectColor = System.Drawing.Color.White;
-            this.myBtnExt1.RectWidth = 0;
-            this.myBtnExt1.Size = new System.Drawing.Size(70, 30);
-            this.myBtnExt1.TabIndex = 3;
-            this.myBtnExt1.TabStop = false;
-            this.myBtnExt1.TipsText = "";
-            this.myBtnExt1.BtnClick += new System.EventHandler(this.myBtnExt1_BtnClick);
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.myBtnExt2);
+            this.panel2.Controls.Add(this.myBtnExt1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(857, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 100);
+            this.panel2.TabIndex = 8;
             // 
             // myBtnExt2
             // 
@@ -267,6 +264,35 @@
             this.myBtnExt2.TipsText = "";
             this.myBtnExt2.BtnClick += new System.EventHandler(this.myBtnExt2_BtnClick);
             // 
+            // myBtnExt1
+            // 
+            this.myBtnExt1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.myBtnExt1.BackColor = System.Drawing.Color.White;
+            this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
+            this.myBtnExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.myBtnExt1.BtnBackColor = System.Drawing.Color.White;
+            this.myBtnExt1.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
+            this.myBtnExt1.BtnForeColor = System.Drawing.Color.White;
+            this.myBtnExt1.BtnText = "";
+            this.myBtnExt1.ConerRadius = 25;
+            this.myBtnExt1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.myBtnExt1.FillColor = System.Drawing.Color.White;
+            this.myBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.myBtnExt1.ForeColor = System.Drawing.Color.White;
+            this.myBtnExt1.IsRadius = true;
+            this.myBtnExt1.IsShowRect = true;
+            this.myBtnExt1.IsShowTips = false;
+            this.myBtnExt1.Location = new System.Drawing.Point(79, 57);
+            this.myBtnExt1.Margin = new System.Windows.Forms.Padding(0);
+            this.myBtnExt1.Name = "myBtnExt1";
+            this.myBtnExt1.RectColor = System.Drawing.Color.White;
+            this.myBtnExt1.RectWidth = 0;
+            this.myBtnExt1.Size = new System.Drawing.Size(70, 30);
+            this.myBtnExt1.TabIndex = 3;
+            this.myBtnExt1.TabStop = false;
+            this.myBtnExt1.TipsText = "";
+            this.myBtnExt1.BtnClick += new System.EventHandler(this.myBtnExt1_BtnClick);
+            // 
             // realTime1
             // 
             this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -274,19 +300,6 @@
             this.realTime1.Name = "realTime1";
             this.realTime1.Size = new System.Drawing.Size(1008, 100);
             this.realTime1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.myBtnExt2);
-            this.panel2.Controls.Add(this.myBtnExt1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(857, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 100);
-            this.panel2.TabIndex = 8;
             // 
             // HistoryForm
             // 
@@ -332,12 +345,13 @@
         private System.Windows.Forms.Panel pal_home_fill_fill_fill_top;
         private System.Windows.Forms.Panel pal_home_fill_fill_fill_1;
         private System.Windows.Forms.Label lbl_userInfo;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private Controls.UC.UCTestGridTable ucTestGridTable1;
         private Controls.MyBtnExt myBtnExt2;
         private Controls.MyBtnExt myBtnExt1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

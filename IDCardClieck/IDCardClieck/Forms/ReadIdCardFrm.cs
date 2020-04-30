@@ -397,11 +397,16 @@ namespace IDCardClieck.Forms
 
                 if (objEDZ.IDC=="610323199304191615")
                 {
-                    objEDZ.IDC = "140821199307080015";
+                    objEDZ.IDC = "610113197107192157";
+                }
+                if (objEDZ.IDC == "1408211199307080015")
+                {
+                    objEDZ.IDC = "610113197107192157";
                 }
 
 
-                string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/getInitCheckData";
+                string url = EnConfigHelper.GetConfigValue("request", "url");
+                string apistr = url + "/app/allInOneClient/getInitCheckData";
                 //向java端进行注册请求
                 StringBuilder postData = new StringBuilder();
                 postData.Append("{");

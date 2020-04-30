@@ -118,6 +118,7 @@
     <Compile Include="Common\ConfigHelper.cs" />
     <Compile Include="Common\DataCache.cs" />
     <Compile Include="Common\DbHelperSQL.cs" />
+    <Compile Include="Common\EnConfigHelper.cs" />
     <Compile Include="Common\Encryption.cs" />
     <Compile Include="Common\HttpHelper.cs" />
     <Compile Include="Common\JsonHelper.cs" />

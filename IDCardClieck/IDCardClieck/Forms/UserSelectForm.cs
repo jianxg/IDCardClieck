@@ -245,7 +245,8 @@ namespace IDCardClieck.Forms
         {
             if (this.model.res ==0)
             {
-                string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/getCheckData";
+                string url = EnConfigHelper.GetConfigValue("request", "url");
+                string apistr = url + "/app/allInOneClient/getCheckData";
                 //向java端进行注册请求
                 StringBuilder postData = new StringBuilder();
                 postData.Append("{");

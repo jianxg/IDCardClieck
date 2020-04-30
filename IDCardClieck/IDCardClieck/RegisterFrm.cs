@@ -3,6 +3,7 @@ using IDCardClieck.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -78,7 +79,8 @@ namespace IDCardClieck.Forms
                     loading.ShowLoading();
                     try
                     {
-                        string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/getClientStatus";
+                        string url = EnConfigHelper.GetConfigValue("request", "url");
+                        string apistr = url + "/app/allInOneClient/getClientStatus";
                         //向java端进行注册请求
                         StringBuilder postData = new StringBuilder();
                         postData.Append("{");
@@ -125,7 +127,8 @@ namespace IDCardClieck.Forms
                             //生成序列号
                             this.model.registerCode = RegeditTime.CreatSerialNumber(this.model.sericalNumber, dateNow);
 
-                            string apistr = "http://26526tu163.zicp.vip/app/allInOneClient/startRegister";
+                            string url = EnConfigHelper.GetConfigValue("request", "url");
+                            string apistr = url + "/app/allInOneClient/startRegister";
                             //向java端进行注册请求
 
                             StringBuilder postData = new StringBuilder();

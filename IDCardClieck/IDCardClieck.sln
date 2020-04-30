@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INVSReadCardActiceX", "C:\U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadCardActiceX", "C:\Users\Administrator\Desktop\居民身份证读卡系统\身份证读卡器二次开发\ReadCardControl2010\ReadCardActiveX\ReadCardActiceX.csproj", "{DC5247DC-A3B1-45FA-A52A-A16141560466}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatagridviewTest", "DatagridviewTest\DatagridviewTest.csproj", "{C2DE37D3-B890-4670-9AAE-3BED6AE52FFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC5247DC-A3B1-45FA-A52A-A16141560466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2DE37D3-B890-4670-9AAE-3BED6AE52FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DE37D3-B890-4670-9AAE-3BED6AE52FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2DE37D3-B890-4670-9AAE-3BED6AE52FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DE37D3-B890-4670-9AAE-3BED6AE52FFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
