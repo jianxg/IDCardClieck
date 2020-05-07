@@ -58,9 +58,6 @@ namespace IDCardClieck.Forms
             Timer.Tick += new EventHandler(Timer_Tick);
             base.Opacity = 0;
             Timer.Start();
-
-            this.webBrowser1.Url = new System.Uri(System.Windows.Forms.Application.StartupPath + "\\kindeditor\\e.html", System.UriKind.Absolute);
-            this.webBrowser1.ObjectForScripting = this;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -84,12 +81,10 @@ namespace IDCardClieck.Forms
             loading.ShowLoading();
             try
             {
-                //if (modelTets.propName == "中医体质辨识")
-                //{
-                //    this.cartesianChart1.Visible = false;
-                //    this.webBrowser1.Visible = true;
-                //    this.webBrowser1.Document.Write("<b>test</b>");
-                //}
+                if (modelTets.propName == "中医体质辨识")
+                {
+                    this.pal_home_fill_fill_fill_top.Visible = false;
+                }
                 MySendDataTableData += this.ucTestGridTable1.BindingData;
                 SetCartesianChartData();
             }
@@ -236,11 +231,5 @@ namespace IDCardClieck.Forms
                 this.modelTets.HomeFormTemp.Visible = true;
             }
         }
-
-        private void webBrowser1_Resize_1(object sender, EventArgs e)
-        {
-            this.webBrowser1.Refresh();
-        }
-
     }
 }

@@ -131,6 +131,12 @@
     <Compile Include="Controls\PanelEnhanced.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\RealTimeRight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RealTimeRight.Designer.cs">
+      <DependentUpon>RealTimeRight.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UC\MyBtnExt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +221,7 @@
     <Compile Include="Model\HistoryCheckData.cs" />
     <Compile Include="Model\RegeditItem.cs" />
     <Compile Include="Model\ResultJSON.cs" />
+    <Compile Include="Model\ResultJson_Zytzbs.cs" />
     <Compile Include="Model\SelectCheckData.cs" />
     <Compile Include="RegisterFrm.cs">
       <SubType>Form</SubType>
@@ -231,6 +238,9 @@
     <Compile Include="Model\User_InfosItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\RealTimeRight.resx">
+      <DependentUpon>RealTimeRight.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UC\MyBtnExt.resx">
       <DependentUpon>MyBtnExt.cs</DependentUpon>
     </EmbeddedResource>

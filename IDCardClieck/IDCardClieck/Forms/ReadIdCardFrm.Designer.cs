@@ -64,7 +64,7 @@
             this.pic_ImageShow = new System.Windows.Forms.PictureBox();
             this.panel_home = new System.Windows.Forms.Panel();
             this.panel_homt_top = new System.Windows.Forms.Panel();
-            this.realTime1 = new IDCardClieck.Controls.RealTime();
+            this.realTimeRight1 = new IDCardClieck.Controls.RealTimeRight();
             this.panel_home_fill.SuspendLayout();
             this.panel_home_fill_fill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -486,20 +486,20 @@
             // panel_homt_top
             // 
             this.panel_homt_top.BackColor = System.Drawing.Color.White;
-            this.panel_homt_top.Controls.Add(this.realTime1);
+            this.panel_homt_top.Controls.Add(this.realTimeRight1);
             this.panel_homt_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_homt_top.Location = new System.Drawing.Point(0, 0);
             this.panel_homt_top.Name = "panel_homt_top";
             this.panel_homt_top.Size = new System.Drawing.Size(1008, 100);
             this.panel_homt_top.TabIndex = 0;
             // 
-            // realTime1
+            // realTimeRight1
             // 
-            this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.realTime1.Location = new System.Drawing.Point(0, 0);
-            this.realTime1.Name = "realTime1";
-            this.realTime1.Size = new System.Drawing.Size(1008, 100);
-            this.realTime1.TabIndex = 1;
+            this.realTimeRight1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.realTimeRight1.Location = new System.Drawing.Point(0, 0);
+            this.realTimeRight1.Name = "realTimeRight1";
+            this.realTimeRight1.Size = new System.Drawing.Size(1008, 100);
+            this.realTimeRight1.TabIndex = 0;
             // 
             // ReadIdCardFrm
             // 
@@ -571,7 +571,7 @@
         private System.Windows.Forms.Label label_MessageShow;
         private System.Windows.Forms.PictureBox pictureBox_error;
         private System.Windows.Forms.PictureBox pic_showIdCard;
-        private Controls.RealTime realTime1;
         private System.Windows.Forms.Panel panel4;
+        private Controls.RealTimeRight realTimeRight1;
     }
 }

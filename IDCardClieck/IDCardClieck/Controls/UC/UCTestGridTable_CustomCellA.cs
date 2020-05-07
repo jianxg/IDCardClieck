@@ -71,7 +71,7 @@ namespace IDCardClieck.Controls.UC
 
         void CustomBtn_Click(object sender, EventArgs e)
         {
-            ZytzbsShowInfo zytzbsShowInfo = new ZytzbsShowInfo("<b>123</b>",((Label)sender).Text);
+            ZytzbsShowInfo zytzbsShowInfo = new ZytzbsShowInfo(((Label)sender).Text);
             zytzbsShowInfo.Show();
         }
 

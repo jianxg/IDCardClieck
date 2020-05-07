@@ -34,7 +34,7 @@
             this.panel_home_fill_fill = new System.Windows.Forms.Panel();
             this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
             this.panel_homt_top = new System.Windows.Forms.Panel();
-            this.realTime1 = new IDCardClieck.Controls.RealTime();
+            this.realTimeRight1 = new IDCardClieck.Controls.RealTimeRight();
             this.panel_home.SuspendLayout();
             this.panel_home_fill.SuspendLayout();
             this.panel_home_fill_fill.SuspendLayout();
@@ -105,20 +105,20 @@
             // 
             // panel_homt_top
             // 
-            this.panel_homt_top.Controls.Add(this.realTime1);
+            this.panel_homt_top.Controls.Add(this.realTimeRight1);
             this.panel_homt_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_homt_top.Location = new System.Drawing.Point(0, 0);
             this.panel_homt_top.Name = "panel_homt_top";
             this.panel_homt_top.Size = new System.Drawing.Size(1008, 100);
             this.panel_homt_top.TabIndex = 0;
             // 
-            // realTime1
+            // realTimeRight1
             // 
-            this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.realTime1.Location = new System.Drawing.Point(0, 0);
-            this.realTime1.Name = "realTime1";
-            this.realTime1.Size = new System.Drawing.Size(1008, 100);
-            this.realTime1.TabIndex = 0;
+            this.realTimeRight1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.realTimeRight1.Location = new System.Drawing.Point(0, 0);
+            this.realTimeRight1.Name = "realTimeRight1";
+            this.realTimeRight1.Size = new System.Drawing.Size(1008, 100);
+            this.realTimeRight1.TabIndex = 0;
             // 
             // HomeForm
             // 
@@ -148,8 +148,8 @@
         private System.Windows.Forms.Panel panel_home;
         private System.Windows.Forms.Panel panel_homt_top;
         private System.Windows.Forms.Panel panel_home_fill;
-        private Controls.RealTime realTime1;
         private System.Windows.Forms.Panel panel_home_fill_fill;
         private Controls.MyBtnExt myBtnExt1;
+        private Controls.RealTimeRight realTimeRight1;
     }
 }

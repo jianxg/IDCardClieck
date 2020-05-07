@@ -1,6 +1,6 @@
 ﻿namespace IDCardClieck.Controls
 {
-    partial class RealTime
+    partial class RealTimeRight
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -29,11 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.lbl_time = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelEnhanced1 = new IDCardClieck.Controls.PanelEnhanced();
-            this.lbl_time = new System.Windows.Forms.Label();
             this.panelEnhanced1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lbl_time
+            // 
+            this.lbl_time.AutoSize = true;
+            this.lbl_time.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_time.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_time.Font = new System.Drawing.Font("黑体", 15F, System.Drawing.FontStyle.Bold);
+            this.lbl_time.ForeColor = System.Drawing.Color.White;
+            this.lbl_time.Location = new System.Drawing.Point(740, 55);
+            this.lbl_time.Name = "lbl_time";
+            this.lbl_time.Size = new System.Drawing.Size(284, 20);
+            this.lbl_time.TabIndex = 0;
+            this.lbl_time.Text = "                         ";
+            this.lbl_time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timer1
             // 
@@ -48,32 +62,18 @@
             this.panelEnhanced1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEnhanced1.Location = new System.Drawing.Point(0, 0);
             this.panelEnhanced1.Name = "panelEnhanced1";
-            this.panelEnhanced1.Padding = new System.Windows.Forms.Padding(0, 65, 160, 0);
+            this.panelEnhanced1.Padding = new System.Windows.Forms.Padding(0, 55, 0, 0);
             this.panelEnhanced1.Size = new System.Drawing.Size(1024, 110);
-            this.panelEnhanced1.TabIndex = 3;
+            this.panelEnhanced1.TabIndex = 4;
             // 
-            // lbl_time
-            // 
-            this.lbl_time.AutoSize = true;
-            this.lbl_time.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_time.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl_time.Font = new System.Drawing.Font("黑体", 15F, System.Drawing.FontStyle.Bold);
-            this.lbl_time.ForeColor = System.Drawing.Color.White;
-            this.lbl_time.Location = new System.Drawing.Point(580, 65);
-            this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(284, 20);
-            this.lbl_time.TabIndex = 0;
-            this.lbl_time.Text = "                         ";
-            this.lbl_time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // RealTime
+            // RealTimeRight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelEnhanced1);
-            this.Name = "RealTime";
+            this.Name = "RealTimeRight";
             this.Size = new System.Drawing.Size(1024, 110);
-            this.Load += new System.EventHandler(this.RealTime_Load);
+            this.Load += new System.EventHandler(this.RealTimeRight_Load);
             this.panelEnhanced1.ResumeLayout(false);
             this.panelEnhanced1.PerformLayout();
             this.ResumeLayout(false);
@@ -81,8 +81,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbl_time;
         private System.Windows.Forms.Timer timer1;
         private PanelEnhanced panelEnhanced1;
-        private System.Windows.Forms.Label lbl_time;
     }
 }

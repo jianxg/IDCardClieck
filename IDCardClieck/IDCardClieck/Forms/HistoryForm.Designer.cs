@@ -36,7 +36,6 @@
             this.pal_home_fill_fill_fill_fill = new System.Windows.Forms.Panel();
             this.ucTestGridTable1 = new IDCardClieck.Controls.UC.UCTestGridTable();
             this.pal_home_fill_fill_fill_top = new System.Windows.Forms.Panel();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
@@ -127,7 +126,6 @@
             // 
             // pal_home_fill_fill_fill_top
             // 
-            this.pal_home_fill_fill_fill_top.Controls.Add(this.webBrowser1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.panel1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.cartesianChart1);
             this.pal_home_fill_fill_fill_top.Controls.Add(this.pal_home_fill_fill_fill_1);
@@ -136,17 +134,6 @@
             this.pal_home_fill_fill_fill_top.Name = "pal_home_fill_fill_fill_top";
             this.pal_home_fill_fill_fill_top.Size = new System.Drawing.Size(928, 291);
             this.pal_home_fill_fill_fill_top.TabIndex = 0;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 59);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(928, 232);
-            this.webBrowser1.TabIndex = 9;
-            this.webBrowser1.Visible = false;
-            this.webBrowser1.Resize += new System.EventHandler(this.webBrowser1_Resize_1);
             // 
             // panel1
             // 
@@ -352,6 +339,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
