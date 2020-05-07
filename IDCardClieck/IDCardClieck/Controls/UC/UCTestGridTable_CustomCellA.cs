@@ -17,11 +17,6 @@ namespace IDCardClieck.Controls.UC
     public partial class UCTestGridTable_CustomCellA : UserControl,
         HZH_Controls.Controls.IDataGridViewCustomCell
     {
-        private HomeForm HomeFormTemp = null;
-        private UserSelectForm UserSelectFormTemp = null;
-        private HistoryForm historyForm = null;
-        private EDZ eDZ = null;
-        private CheckoutModel model = null;
         private ModelTets m_object = null;
         public UCTestGridTable_CustomCellA()
         {
@@ -32,10 +27,6 @@ namespace IDCardClieck.Controls.UC
         {
             if (obj is ModelTets)
                 m_object = (ModelTets)obj;
-            HomeFormTemp = (HomeForm)m_object.HomeFormTemp;
-            UserSelectFormTemp = (UserSelectForm)m_object.UserSelectFormTemp;
-            eDZ = (EDZ)m_object.edzTemp;
-            model = (CheckoutModel)m_object.checkoutModel;
 
             if (m_object.propName== "中医体质辨识")
             {
@@ -50,10 +41,12 @@ namespace IDCardClieck.Controls.UC
                             Label lab = new Label();
                             lab.Text = strList[i];
                             lab.Size = lab.Size = new System.Drawing.Size(width, 25);
-                            lab.Location = new System.Drawing.Point(width * i, 0);
+                            lab.Location = new System.Drawing.Point(width * i, 10);
                             lab.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
                             this.Controls.Add(lab);
                             lab.Click += new EventHandler(CustomBtn_Click);
+                            lab.MouseEnter += lbl_MouseEnter;
+                            lab.MouseLeave += lbl_MouseLeave;
                         }
                     }
                 }
@@ -62,7 +55,7 @@ namespace IDCardClieck.Controls.UC
             {
                 Label lab = new Label();
                 lab.Text = m_object.propvalue;
-                lab.Size = lab.Size = new System.Drawing.Size(50, 25);
+                lab.Size = lab.Size = new System.Drawing.Size(50, 35);
                 lab.Location = new System.Drawing.Point(0, 0);
                 lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))); ;
                 this.Controls.Add(lab);
@@ -73,6 +66,16 @@ namespace IDCardClieck.Controls.UC
         {
             ZytzbsShowInfo zytzbsShowInfo = new ZytzbsShowInfo(((Label)sender).Text);
             zytzbsShowInfo.Show();
+        }
+
+        void lbl_MouseLeave(object sender, EventArgs e)
+        {
+            ((Label)sender).ForeColor = Color.FromArgb(255, System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(170)))), ((int)(((byte)(205))))));
+        }
+
+        void lbl_MouseEnter(object sender, EventArgs e)
+        {
+            ((Label)sender).ForeColor= Color.FromArgb(255, System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(218)))), ((int)(((byte)(234))))));
         }
 
     }

@@ -24,5 +24,7 @@ namespace IDCardClieck.Model
         public string propName { get; set; }
 
         public string propTime { get; set; }
+
+        public int cellWidth { get; set; }
     }
 }

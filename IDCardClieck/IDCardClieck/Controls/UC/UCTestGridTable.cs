@@ -32,11 +32,11 @@ namespace IDCardClieck.Controls.UC
             List<DataGridViewColumnEntity> lstCulumns = new List<DataGridViewColumnEntity>();
             MyEventArgsTableData myEventArgsTableData = e as MyEventArgsTableData;
             HistoryCheckData historyCheckData = myEventArgsTableData.historyCheckData;
-            int columnsWidth = this.ucDataGridView1.Width / 4;
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "orderNo", HeadText = "NO", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propValue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propTime", HeadText = "检测时间", Width = columnsWidth, WidthType = SizeType.Absolute });
+            int columnsWidth = this.ucDataGridView1.Width - 500;
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "orderNo", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 200, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellB), TextAlign = ContentAlignment.BottomCenter });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
             this.ucDataGridView1.Columns = lstCulumns;
             this.ucDataGridView1.IsShowCheckBox = false;
 
@@ -48,7 +48,8 @@ namespace IDCardClieck.Controls.UC
                     orderNo = historyCheckData.data[i].orderNo,
                     propName = historyCheckData.data[i].propName,
                     propTime = historyCheckData.data[i].propTime,
-                    propValue = historyCheckData.data[i].propValue.ToString()
+                    propValue = historyCheckData.data[i].propValue.ToString(),
+                    cellWidth = columnsWidth,
                 };
                 lstSource.Add(model);
             }

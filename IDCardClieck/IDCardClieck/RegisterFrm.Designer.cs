@@ -80,29 +80,30 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.lbl_note);
-            this.panel7.Location = new System.Drawing.Point(315, 72);
+            this.panel7.Location = new System.Drawing.Point(18, 169);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(76, 54);
+            this.panel7.Size = new System.Drawing.Size(291, 25);
             this.panel7.TabIndex = 5;
             // 
             // lbl_note
             // 
             this.lbl_note.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_note.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbl_note.ForeColor = System.Drawing.Color.Red;
             this.lbl_note.Location = new System.Drawing.Point(0, 0);
             this.lbl_note.Name = "lbl_note";
-            this.lbl_note.Size = new System.Drawing.Size(76, 54);
+            this.lbl_note.Size = new System.Drawing.Size(291, 25);
             this.lbl_note.TabIndex = 4;
             this.lbl_note.Text = "    ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F);
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(35, 0);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.DarkViolet;
+            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 16);
+            this.label1.Size = new System.Drawing.Size(392, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "软件尚未激活，请联系管理员获取激活码激活";
             // 
@@ -117,9 +118,11 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(331, 132);
+            this.btn_ok.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_ok.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btn_ok.Location = new System.Drawing.Point(315, 72);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(60, 31);
+            this.btn_ok.Size = new System.Drawing.Size(60, 91);
             this.btn_ok.TabIndex = 3;
             this.btn_ok.Text = "注册";
             this.btn_ok.UseVisualStyleBackColor = true;
@@ -137,9 +140,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(16, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 12);
+            this.label2.Size = new System.Drawing.Size(122, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "请输入激活码：";
             // 
