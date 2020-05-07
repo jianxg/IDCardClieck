@@ -397,12 +397,13 @@ namespace IDCardClieck.Forms
 
                 if (objEDZ.IDC=="610323199304191615")
                 {
-                    objEDZ.IDC = "610113197107192157";
+                    //objEDZ.IDC = "610113197107192157";
+                    objEDZ.IDC = "140821199307080015";
                 }
-                if (objEDZ.IDC == "1408211199307080015")
-                {
-                    objEDZ.IDC = "610113197107192157";
-                }
+                //if (objEDZ.IDC == "140821199307080015")
+                //{
+                //    objEDZ.IDC = "610113197107192157";
+                //}
 
 
                 string url = EnConfigHelper.GetConfigValue("request", "url");

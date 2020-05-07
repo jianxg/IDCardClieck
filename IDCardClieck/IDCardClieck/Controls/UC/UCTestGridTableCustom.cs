@@ -13,6 +13,7 @@ using static IDCardClieck.Forms.UserSelectForm;
 using IDCardClieck.Forms;
 using IDCardClieck.Model;
 using GSFramework;
+using IDCardClieck.Controls.UC;
 
 namespace IDCardClieck.Controls
 {
@@ -34,12 +35,13 @@ namespace IDCardClieck.Controls
             MyEventArgsUserInfoData myEventArgsUserInfoData = e as MyEventArgsUserInfoData;
             List<CheckDataListModel> dt = myEventArgsUserInfoData.data;
 
-            int columnsWidth = this.ucDataGridView1.Width / 6;
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propID", HeadText = "NO", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "endTime", HeadText = "检测时间", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "operation", HeadText = "操作", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCell), TextAlign=ContentAlignment.BottomCenter});
+            int columnsWidth = this.ucDataGridView1.Width - 700;
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propID", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 200, WidthType = SizeType.Absolute });
+            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellA), TextAlign = ContentAlignment.BottomCenter });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "endTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "operation", HeadText = "操作", Width = 200, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCell), TextAlign = ContentAlignment.BottomCenter });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 500, WidthType = SizeType.Absolute, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 500, WidthType = SizeType.Absolute, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
             this.ucDataGridView1.Columns = lstCulumns;
@@ -58,7 +60,8 @@ namespace IDCardClieck.Controls
                     HomeFormTemp = myEventArgsUserInfoData.HomeFormTemp,
                     UserSelectFormTemp = myEventArgsUserInfoData.UserSelectFormTemp,
                     edzTemp = myEventArgsUserInfoData.eDZ,
-                    checkoutModel = myEventArgsUserInfoData.checkoutModel
+                    checkoutModel = myEventArgsUserInfoData.checkoutModel,
+                    cellWidth = columnsWidth,
                 };
                 lstSource.Add(model);
             }
@@ -77,6 +80,7 @@ namespace IDCardClieck.Controls
             public UserSelectForm UserSelectFormTemp { get; set; }
             public EDZ edzTemp { get; set; }
             public CheckoutModel checkoutModel { get; set; }
+            public int cellWidth { get; set; }
         }
     }
 }

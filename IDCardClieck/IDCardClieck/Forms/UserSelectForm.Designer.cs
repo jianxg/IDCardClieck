@@ -39,21 +39,21 @@
             this.pal_home_fill_fill_fill_3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pal_home_fill_fill_fill_2 = new System.Windows.Forms.Panel();
+            this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
+            this.ucDatePickerExt1 = new HZH_Controls.Controls.UCDatePickerExt();
             this.ucBtnExt1 = new HZH_Controls.Controls.UCBtnExt();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.ucDatePickerExt2 = new HZH_Controls.Controls.UCDatePickerExt();
-            this.ucDatePickerExt1 = new HZH_Controls.Controls.UCDatePickerExt();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pal_home_fill_fill_fill_1 = new System.Windows.Forms.Panel();
             this.lbl_userInfo = new System.Windows.Forms.Label();
             this.pal_home_fill_top = new IDCardClieck.Controls.PanelEnhanced();
             this.pan_home_top = new IDCardClieck.Controls.PanelEnhanced();
-            this.myBtnExt6 = new IDCardClieck.Controls.MyBtnExt();
-            this.myBtnExt7 = new IDCardClieck.Controls.MyBtnExt();
-            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.myBtnExt7 = new IDCardClieck.Controls.MyBtnExt();
+            this.myBtnExt6 = new IDCardClieck.Controls.MyBtnExt();
+            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.pal_home.SuspendLayout();
             this.pal_home_fill.SuspendLayout();
             this.pan_home_fill_fill.SuspendLayout();
@@ -165,11 +165,11 @@
             // 
             // pal_home_fill_fill_fill_2
             // 
+            this.pal_home_fill_fill_fill_2.Controls.Add(this.ucDatePickerExt2);
+            this.pal_home_fill_fill_fill_2.Controls.Add(this.ucDatePickerExt1);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.ucBtnExt1);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.comboBox1);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.label4);
-            this.pal_home_fill_fill_fill_2.Controls.Add(this.ucDatePickerExt2);
-            this.pal_home_fill_fill_fill_2.Controls.Add(this.ucDatePickerExt1);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.label2);
             this.pal_home_fill_fill_fill_2.Controls.Add(this.label1);
             this.pal_home_fill_fill_fill_2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -177,6 +177,46 @@
             this.pal_home_fill_fill_fill_2.Name = "pal_home_fill_fill_fill_2";
             this.pal_home_fill_fill_fill_2.Size = new System.Drawing.Size(928, 57);
             this.pal_home_fill_fill_fill_2.TabIndex = 2;
+            // 
+            // ucDatePickerExt2
+            // 
+            this.ucDatePickerExt2.BackColor = System.Drawing.Color.White;
+            this.ucDatePickerExt2.ConerRadius = 15;
+            this.ucDatePickerExt2.CurrentTime = new System.DateTime(2020, 4, 30, 16, 34, 16, 0);
+            this.ucDatePickerExt2.FillColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucDatePickerExt2.IsRadius = true;
+            this.ucDatePickerExt2.IsShowRect = true;
+            this.ucDatePickerExt2.Location = new System.Drawing.Point(662, 12);
+            this.ucDatePickerExt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucDatePickerExt2.Name = "ucDatePickerExt2";
+            this.ucDatePickerExt2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.ucDatePickerExt2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucDatePickerExt2.RectWidth = 1;
+            this.ucDatePickerExt2.Size = new System.Drawing.Size(212, 29);
+            this.ucDatePickerExt2.TabIndex = 10;
+            this.ucDatePickerExt2.TimeFontSize = 20;
+            this.ucDatePickerExt2.TimeType = HZH_Controls.Controls.DateTimePickerType.Date;
+            // 
+            // ucDatePickerExt1
+            // 
+            this.ucDatePickerExt1.BackColor = System.Drawing.Color.White;
+            this.ucDatePickerExt1.ConerRadius = 15;
+            this.ucDatePickerExt1.CurrentTime = new System.DateTime(2020, 4, 30, 16, 34, 16, 0);
+            this.ucDatePickerExt1.FillColor = System.Drawing.Color.Transparent;
+            this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucDatePickerExt1.IsRadius = true;
+            this.ucDatePickerExt1.IsShowRect = true;
+            this.ucDatePickerExt1.Location = new System.Drawing.Point(409, 13);
+            this.ucDatePickerExt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucDatePickerExt1.Name = "ucDatePickerExt1";
+            this.ucDatePickerExt1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.ucDatePickerExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.ucDatePickerExt1.RectWidth = 1;
+            this.ucDatePickerExt1.Size = new System.Drawing.Size(212, 29);
+            this.ucDatePickerExt1.TabIndex = 2;
+            this.ucDatePickerExt1.TimeFontSize = 20;
+            this.ucDatePickerExt1.TimeType = HZH_Controls.Controls.DateTimePickerType.Date;
             // 
             // ucBtnExt1
             // 
@@ -221,51 +261,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(631, 16);
+            this.label4.Location = new System.Drawing.Point(624, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 15;
             this.label4.Text = "——";
-            // 
-            // ucDatePickerExt2
-            // 
-            this.ucDatePickerExt2.BackColor = System.Drawing.Color.White;
-            this.ucDatePickerExt2.ConerRadius = 15;
-            this.ucDatePickerExt2.CurrentTime = new System.DateTime(2020, 4, 17, 9, 34, 36, 0);
-            this.ucDatePickerExt2.FillColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucDatePickerExt2.IsRadius = true;
-            this.ucDatePickerExt2.IsShowRect = true;
-            this.ucDatePickerExt2.Location = new System.Drawing.Point(672, 11);
-            this.ucDatePickerExt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucDatePickerExt2.Name = "ucDatePickerExt2";
-            this.ucDatePickerExt2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ucDatePickerExt2.RectColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt2.RectWidth = 1;
-            this.ucDatePickerExt2.Size = new System.Drawing.Size(205, 30);
-            this.ucDatePickerExt2.TabIndex = 14;
-            this.ucDatePickerExt2.TimeFontSize = 20;
-            this.ucDatePickerExt2.TimeType = HZH_Controls.Controls.DateTimePickerType.Date;
-            // 
-            // ucDatePickerExt1
-            // 
-            this.ucDatePickerExt1.BackColor = System.Drawing.Color.White;
-            this.ucDatePickerExt1.ConerRadius = 15;
-            this.ucDatePickerExt1.CurrentTime = new System.DateTime(2020, 4, 17, 9, 34, 36, 0);
-            this.ucDatePickerExt1.FillColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ucDatePickerExt1.IsRadius = true;
-            this.ucDatePickerExt1.IsShowRect = true;
-            this.ucDatePickerExt1.Location = new System.Drawing.Point(412, 11);
-            this.ucDatePickerExt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucDatePickerExt1.Name = "ucDatePickerExt1";
-            this.ucDatePickerExt1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.ucDatePickerExt1.RectColor = System.Drawing.Color.Transparent;
-            this.ucDatePickerExt1.RectWidth = 1;
-            this.ucDatePickerExt1.Size = new System.Drawing.Size(203, 29);
-            this.ucDatePickerExt1.TabIndex = 13;
-            this.ucDatePickerExt1.TimeFontSize = 20;
-            this.ucDatePickerExt1.TimeType = HZH_Controls.Controls.DateTimePickerType.Date;
             // 
             // label2
             // 
@@ -329,33 +329,18 @@
             this.pan_home_top.Size = new System.Drawing.Size(1008, 100);
             this.pan_home_top.TabIndex = 0;
             // 
-            // myBtnExt6
+            // panel2
             // 
-            this.myBtnExt6.BackColor = System.Drawing.Color.White;
-            this.myBtnExt6.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
-            this.myBtnExt6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.myBtnExt6.BtnBackColor = System.Drawing.Color.White;
-            this.myBtnExt6.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
-            this.myBtnExt6.BtnForeColor = System.Drawing.Color.White;
-            this.myBtnExt6.BtnText = "";
-            this.myBtnExt6.ConerRadius = 25;
-            this.myBtnExt6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.myBtnExt6.FillColor = System.Drawing.Color.White;
-            this.myBtnExt6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.myBtnExt6.ForeColor = System.Drawing.Color.White;
-            this.myBtnExt6.IsRadius = true;
-            this.myBtnExt6.IsShowRect = true;
-            this.myBtnExt6.IsShowTips = false;
-            this.myBtnExt6.Location = new System.Drawing.Point(79, 57);
-            this.myBtnExt6.Margin = new System.Windows.Forms.Padding(0);
-            this.myBtnExt6.Name = "myBtnExt6";
-            this.myBtnExt6.RectColor = System.Drawing.Color.White;
-            this.myBtnExt6.RectWidth = 0;
-            this.myBtnExt6.Size = new System.Drawing.Size(70, 30);
-            this.myBtnExt6.TabIndex = 5;
-            this.myBtnExt6.TabStop = false;
-            this.myBtnExt6.TipsText = "";
-            this.myBtnExt6.BtnClick += new System.EventHandler(this.myBtnExt6_BtnClick);
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.myBtnExt7);
+            this.panel2.Controls.Add(this.myBtnExt6);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(857, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 100);
+            this.panel2.TabIndex = 7;
             // 
             // myBtnExt7
             // 
@@ -385,6 +370,34 @@
             this.myBtnExt7.TipsText = "";
             this.myBtnExt7.BtnClick += new System.EventHandler(this.myBtnExt7_BtnClick);
             // 
+            // myBtnExt6
+            // 
+            this.myBtnExt6.BackColor = System.Drawing.Color.White;
+            this.myBtnExt6.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
+            this.myBtnExt6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.myBtnExt6.BtnBackColor = System.Drawing.Color.White;
+            this.myBtnExt6.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
+            this.myBtnExt6.BtnForeColor = System.Drawing.Color.White;
+            this.myBtnExt6.BtnText = "";
+            this.myBtnExt6.ConerRadius = 25;
+            this.myBtnExt6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.myBtnExt6.FillColor = System.Drawing.Color.White;
+            this.myBtnExt6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.myBtnExt6.ForeColor = System.Drawing.Color.White;
+            this.myBtnExt6.IsRadius = true;
+            this.myBtnExt6.IsShowRect = true;
+            this.myBtnExt6.IsShowTips = false;
+            this.myBtnExt6.Location = new System.Drawing.Point(79, 57);
+            this.myBtnExt6.Margin = new System.Windows.Forms.Padding(0);
+            this.myBtnExt6.Name = "myBtnExt6";
+            this.myBtnExt6.RectColor = System.Drawing.Color.White;
+            this.myBtnExt6.RectWidth = 0;
+            this.myBtnExt6.Size = new System.Drawing.Size(70, 30);
+            this.myBtnExt6.TabIndex = 5;
+            this.myBtnExt6.TabStop = false;
+            this.myBtnExt6.TipsText = "";
+            this.myBtnExt6.BtnClick += new System.EventHandler(this.myBtnExt6_BtnClick);
+            // 
             // realTime1
             // 
             this.realTime1.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
@@ -394,19 +407,6 @@
             this.realTime1.Name = "realTime1";
             this.realTime1.Size = new System.Drawing.Size(1008, 100);
             this.realTime1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::IDCardClieck.Properties.Resources.内页背景;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.myBtnExt7);
-            this.panel2.Controls.Add(this.myBtnExt6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(857, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 100);
-            this.panel2.TabIndex = 7;
             // 
             // UserSelectForm
             // 
@@ -456,8 +456,6 @@
         private System.Windows.Forms.Label lbl_userInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt2;
-        private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
@@ -468,5 +466,7 @@
         private HZH_Controls.Controls.UCBtnExt ucBtnExt1;
         private System.Windows.Forms.Panel panel2;
         private Controls.RealTime realTime1;
+        private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt1;
+        private HZH_Controls.Controls.UCDatePickerExt ucDatePickerExt2;
     }
 }

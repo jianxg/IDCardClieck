@@ -69,7 +69,7 @@ namespace IDCardClieck.Common
         /*当前时间*/
         public static string GetNowDate()
         {
-            string NowDate = DateTime.Now.ToString("yyyyMMdd"); //.Year + DateTime.Now.Month + DateTime.Now.Day).ToString();
+            string NowDate = DateTime.Now.ToString("yyyyMMddhhmmss"); //.Year + DateTime.Now.Month + DateTime.Now.Day).ToString();
 
             //     DateTime date = Convert.ToDateTime(NowDate, "yyyy/MM/dd");
             return NowDate;

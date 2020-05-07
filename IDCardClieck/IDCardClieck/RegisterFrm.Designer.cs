@@ -112,9 +112,8 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(16, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(311, 12);
+            this.label3.Size = new System.Drawing.Size(0, 12);
             this.label3.TabIndex = 0;
-            this.label3.Text = "说明:获取到激活码后，通过激活码生成注册码，进行注册";
             // 
             // btn_ok
             // 
@@ -122,7 +121,7 @@
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(60, 31);
             this.btn_ok.TabIndex = 3;
-            this.btn_ok.Text = "生成";
+            this.btn_ok.Text = "注册";
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 

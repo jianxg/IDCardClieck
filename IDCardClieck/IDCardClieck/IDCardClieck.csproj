@@ -167,6 +167,12 @@
     <Compile Include="Controls\UC\UCTestGridTable_CustomCell.Designer.cs">
       <DependentUpon>UCTestGridTable_CustomCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UC\UCTestGridTable_CustomCellA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC\UCTestGridTable_CustomCellA.Designer.cs">
+      <DependentUpon>UCTestGridTable_CustomCellA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UC\UCTestGridTable_CustomCellIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     </Compile>
     <Compile Include="Forms\SimpleLoading.Designer.cs">
       <DependentUpon>SimpleLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZytzbsShowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZytzbsShowInfo.Designer.cs">
+      <DependentUpon>ZytzbsShowInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CheckData.cs" />
     <Compile Include="Model\CheckoutModel.cs" />
@@ -234,6 +246,9 @@
     <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCell.resx">
       <DependentUpon>UCTestGridTable_CustomCell.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCellA.resx">
+      <DependentUpon>UCTestGridTable_CustomCellA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SimpleLoading.resx">
       <DependentUpon>SimpleLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZytzbsShowInfo.resx">
+      <DependentUpon>ZytzbsShowInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterFrm.resx">
       <DependentUpon>RegisterFrm.cs</DependentUpon>
