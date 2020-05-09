@@ -29,25 +29,37 @@ namespace IDCardClieck.Controls.UC
             if (obj is HistoryCheckDataDataModel)
                 m_object = (HistoryCheckDataDataModel)obj;
 
-            if (m_object.propValue.Trim().Length > 0)
+            if (m_object.propName == "中医体质辨识")
             {
-                string[] strList = m_object.propValue.Split(';');
-                if (strList.Length > 0)
+                if (m_object.propValue.Trim().Length > 0)
                 {
-                    int width = m_object.cellWidth / strList.Length;
-                    for (int i = 0; i < strList.Length; i++)
+                    string[] strList = m_object.propValue.Split(';');
+                    if (strList.Length > 0)
                     {
-                        Label lab = new Label();
-                        lab.Text = strList[i];
-                        lab.Size = lab.Size = new System.Drawing.Size(width, 25);
-                        lab.Location = new System.Drawing.Point(width * i, 10);
-                        lab.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-                        this.Controls.Add(lab);
-                        lab.Click += new EventHandler(CustomBtn_Click);
-                        lab.MouseEnter += lbl_MouseEnter;
-                        lab.MouseLeave += lbl_MouseLeave;
+                        int width = m_object.cellWidth / strList.Length;
+                        for (int i = 0; i < strList.Length; i++)
+                        {
+                            Label lab = new Label();
+                            lab.Text = strList[i];
+                            lab.Size = lab.Size = new System.Drawing.Size(width, 25);
+                            lab.Location = new System.Drawing.Point(width * i, 10);
+                            lab.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                            this.Controls.Add(lab);
+                            lab.Click += new EventHandler(CustomBtn_Click);
+                            lab.MouseEnter += lbl_MouseEnter;
+                            lab.MouseLeave += lbl_MouseLeave;
+                        }
                     }
                 }
+            }
+            else
+            {
+                Label lab = new Label();
+                lab.Text = m_object.propValue;
+                lab.Size = lab.Size = new System.Drawing.Size(50, 35);
+                lab.Location = new System.Drawing.Point(m_object.cellWidth / 2 - 25, 10);
+                lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))); ;
+                this.Controls.Add(lab);
             }
         }
 

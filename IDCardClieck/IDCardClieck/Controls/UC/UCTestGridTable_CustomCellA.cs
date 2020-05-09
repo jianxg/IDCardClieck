@@ -28,12 +28,12 @@ namespace IDCardClieck.Controls.UC
             if (obj is ModelTets)
                 m_object = (ModelTets)obj;
 
-            if (m_object.propName== "中医体质辨识")
+            if (m_object.propName == "中医体质辨识")
             {
-                if (m_object.propvalue.Trim().Length>0)
+                if (m_object.propvalue.Trim().Length > 0)
                 {
                     string[] strList = m_object.propvalue.Split(';');
-                    if (strList.Length>0)
+                    if (strList.Length > 0)
                     {
                         int width = m_object.cellWidth / strList.Length;
                         for (int i = 0; i < strList.Length; i++)
@@ -56,7 +56,7 @@ namespace IDCardClieck.Controls.UC
                 Label lab = new Label();
                 lab.Text = m_object.propvalue;
                 lab.Size = lab.Size = new System.Drawing.Size(50, 35);
-                lab.Location = new System.Drawing.Point(0, 0);
+                lab.Location = new System.Drawing.Point(m_object.cellWidth / 2 - 25, 10);
                 lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))); ;
                 this.Controls.Add(lab);
             }

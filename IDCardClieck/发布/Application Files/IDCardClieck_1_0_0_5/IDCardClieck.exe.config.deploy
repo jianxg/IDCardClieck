@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  
+<configSections>
+  <sectionGroup name="params">
+    <section name="request" type="System.Configuration.NameValueSectionHandler"/>
+    <section name="remote" type="System.Configuration.NameValueSectionHandler"/>
+    <section name="runtime" type="System.Configuration.NameValueSectionHandler"/>
+  </sectionGroup>
+</configSections>
+
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2"/>
+    </startup>
+  
+  <params>
+    <request>
+      <!--服务器-->
+      <!--<add key="url" value="http://106.12.252.101:8080"></add>--> 
+      <!--测试-->
+      <add key="url" value="http://26526tu163.zicp.vip/"></add>
+      <add key="uservalue" value="admin"></add>
+      <add key="pwdvalue" value="123456"></add>
+      <add key=" " value="true"></add>
+    </request>
+    <remote>
+      <add key="service" value="222.90.206.20"> </add>
+      <add key="port" value="5442"> </add>
+    </remote>
+    <runtime>
+      <add key="starttime" value="2018-01-01"/>
+      <add key="endtime" value="2019-12-31"/>
+    </runtime>
+  </params>
+
+  <!--本地连接 -->
+  <connectionStrings>
+    <!-- Data Source=ORCL_205;Persist Security Info=True;User ID=c##qzj_yang;Password=qzj_yang;-->
+    <!--<add name="dbsql" connectionString="D0BD81CE854D310AAC05F80EE37B3C7154C28A19D9DFC574995D2847A84104CD2FF2E2AD923502D6ADB672757D0E5C99857656D9EDAF107ECCE98FADA36FD4B2944A3EF9B80189D491225F30FF6E9CF2B9E873E8E7794BC2"/>-->
+    <!-- data Source=.;database=IDCardDB;user id=sa;pwd=123456-->
+    <add name="dbsql" connectionString="FD137BD02AA5F49F334245F430E1624CC65700DD7DF130D0845AE0FC7BBBE8582264F8B7393F5B09AEED843E11F5D445B0BAC9CB7871C686"/>
+  </connectionStrings>
+  
+</configuration>

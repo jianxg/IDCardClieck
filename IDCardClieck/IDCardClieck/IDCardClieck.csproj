@@ -16,15 +16,19 @@
     <PublishUrl>D:\jianxg\IdCardClieck\IDCardClieck\发布\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/IDCardClieck/</UpdateUrl>
+    <ProductName>居民健康体检查询终端系统</ProductName>
+    <PublisherName>通软软件有限公司</PublisherName>
+    <MinimumRequiredVersion>1.0.0.2</MinimumRequiredVersion>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -51,7 +55,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>公司图标64.ico</ApplicationIcon>
+    <ApplicationIcon>2020050702402784_easyicon_net_64.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -399,6 +403,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2020050702402784_easyicon_net_64.ico" />
     <Content Include="GSDll.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
