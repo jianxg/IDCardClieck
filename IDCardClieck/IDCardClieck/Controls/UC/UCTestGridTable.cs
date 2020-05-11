@@ -33,7 +33,7 @@ namespace IDCardClieck.Controls.UC
             MyEventArgsTableData myEventArgsTableData = e as MyEventArgsTableData;
             HistoryCheckData historyCheckData = myEventArgsTableData.historyCheckData;
             int columnsWidth = this.ucDataGridView1.Width - 500;
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "orderNo", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 200, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellB), TextAlign = ContentAlignment.BottomCenter });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
@@ -45,6 +45,7 @@ namespace IDCardClieck.Controls.UC
             {
                 HistoryCheckDataDataModel model = new HistoryCheckDataDataModel()
                 {
+                    Id=i+1,
                     orderNo = historyCheckData.data[i].orderNo,
                     propName = historyCheckData.data[i].propName,
                     propTime = historyCheckData.data[i].propTime,

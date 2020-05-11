@@ -72,16 +72,16 @@ namespace IDCardClieck.Forms
             try
             {
                 loadingfrm = new SimpleLoading(this);
+                //将Loaing窗口，注入到 SplashScreenManager 来管理
+                loading = new SplashScreenManager(loadingfrm);
+                loading.ShowLoading();
+
                 if (this.model.res == 0)
                 {
-                    //将Loaing窗口，注入到 SplashScreenManager 来管理
-                    loading = new SplashScreenManager(loadingfrm);
-                    loading.ShowLoading();
                     try
                     {
                         string url = EnConfigHelper.GetConfigValue("request", "url");
                         string apistr = url + "/app/allInOneClient/getClientStatus";
-                        //向java端进行注册请求
                         StringBuilder postData = new StringBuilder();
                         postData.Append("{");
                         postData.Append("licence_code:\"" + this.model.sericalNumber + "\",");
@@ -93,13 +93,19 @@ namespace IDCardClieck.Forms
                         json = HttpHelper.Deserialize<ResultJSON>(strJSON);
                         if (json.result == "true")
                         {
+                            loading.CloseWaitForm();
                             this.json.data.checkItemList.Insert(0, new CheckModel { tempPropID = 0, propName = "全部" });
                             this.DialogResult = DialogResult.OK;//关键:设置登陆成功状态  
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show(json.message.ToString());
+                            loading.CloseWaitForm();
+                            MessageBox.Show("激活码已存在:" + json.message.ToString());
+                            /*可选处理异常*/
+                            LogHelper.WriteLine("RegisterFrm:" + json.message.ToString());
+                            this.Close();
+                            this.Dispose();
                         }
                     }
                     catch (Exception ex)                   
@@ -114,9 +120,6 @@ namespace IDCardClieck.Forms
                 }
                 else if (this.model.res == 1)//软件尚未注册
                 {
-                    //将Loaing窗口，注入到 SplashScreenManager 来管理
-                    loading = new SplashScreenManager(loadingfrm);
-                    loading.ShowLoading();
                     try
                     {
                         if (this.txt_cdkey.Text.ToString().Trim().Length > 0)
@@ -143,14 +146,39 @@ namespace IDCardClieck.Forms
                             json = HttpHelper.Deserialize<ResultJSON>(strJSON);
                             if (json.result == "true")
                             {
-                                //写入到注册表
-                                RegeditTime.WriteSetting(this.model.path, this.model.registerCodeName, this.model.registerCode);
-                                loading.CloseWaitForm();
-                                DialogResult dr = MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                if (dr == DialogResult.OK)
+                                string url1 = EnConfigHelper.GetConfigValue("request", "url");
+                                string apistr1 = url1 + "/app/allInOneClient/getClientStatus";
+                                StringBuilder postData1 = new StringBuilder();
+                                postData1.Append("{");
+                                postData1.Append("licence_code:\"" + this.model.sericalNumber + "\",");
+                                postData1.Append("mac_code:\"" + this.model.registerCode + "\"");
+                                postData1.Append("}");
+                                //接口调用
+                                string strJSON1 = HttpHelper.PostUrl(apistr1, postData1.ToString());
+                                //返回结果
+                                json = HttpHelper.Deserialize<ResultJSON>(strJSON1);
+                                if (json.result == "true")
                                 {
-                                    this.DialogResult = DialogResult.OK;//关键:设置登陆成功状态  
-                                    this.Close();
+                                    //写入到注册表
+                                    RegeditTime.WriteSetting(this.model.path, this.model.registerCodeName, this.model.registerCode);
+
+                                    this.model.res = 0;
+                                    loading.CloseWaitForm();
+
+                                    this.json.data.checkItemList.Insert(0, new CheckModel { tempPropID = 0, propName = "全部" });
+
+                                    DialogResult dr = MessageBox.Show("注册成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    if (dr == DialogResult.OK)
+                                    {
+                                        loading.CloseWaitForm();
+                                        this.DialogResult = DialogResult.OK;//关键:设置登陆成功状态  
+                                        this.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    loading.CloseWaitForm();
+                                    lbl_note.Text = "错误：" + json.message.ToString() + "";
                                 }
                             }
                             else
@@ -161,6 +189,7 @@ namespace IDCardClieck.Forms
                         }
                         else
                         {
+                            loading.CloseWaitForm();
                             lbl_note.Text = "请输入激活码";
                         }
                     }
@@ -173,31 +202,31 @@ namespace IDCardClieck.Forms
                         this.Close();
                         this.Dispose();
                     }
-                    finally
-                    {
-                        loading.CloseWaitForm();
-                    }
                 }
                 else if (this.model.res == 2)//注册机器与本机不一致
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("注册机器与本机不一致!");
                     this.Close();
                     this.Dispose();
                 }
                 else if (this.model.res == 3)//软件试用已到期
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("软件试用已到期!");
                     this.Close();
                     this.Dispose();
                 }
                 else if (this.model.res == 4)//激活码与注册码不匹配
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("激活码与注册码不匹配!");
                     this.Close();
                     this.Dispose();
                 }
                 else//软件运行已到期
                 {
+                    loading.CloseWaitForm();
                     MessageBox.Show("软件运行已到期!");
                     this.Close();
                     this.Dispose();
@@ -205,14 +234,11 @@ namespace IDCardClieck.Forms
             }
             catch (Exception e)
             {
+                loading.CloseWaitForm();
                 MessageBox.Show("服务器出错:" + e.Message.ToString());
                 this.Close();
                 this.Dispose();
             }
-            finally {
-                loading.CloseWaitForm();
-            }
-
         }
     }
 }

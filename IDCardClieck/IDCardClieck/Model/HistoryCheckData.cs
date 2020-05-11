@@ -16,6 +16,7 @@ namespace IDCardClieck.Model
 
     public class HistoryCheckDataDataModel
     {
+        public int Id { get; set; }
         public string propID { get; set; }
         public string orderNo { get; set; }
 

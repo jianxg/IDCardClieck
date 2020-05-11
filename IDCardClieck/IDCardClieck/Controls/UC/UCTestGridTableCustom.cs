@@ -36,7 +36,7 @@ namespace IDCardClieck.Controls
             List<CheckDataListModel> dt = myEventArgsUserInfoData.data;
 
             int columnsWidth = this.ucDataGridView1.Width - 700;
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propID", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 200, WidthType = SizeType.Absolute });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellA), TextAlign = ContentAlignment.BottomCenter });
@@ -53,6 +53,7 @@ namespace IDCardClieck.Controls
             {
                 ModelTets model = new ModelTets()
                 {
+                    Id=i+1,
                     propID = dt[i].propID,
                     propvalue = dt[i].propvalue,
                     endTime = dt[i].endTime,
@@ -71,6 +72,7 @@ namespace IDCardClieck.Controls
 
         public class ModelTets
         {
+            public int Id { get; set; }
             public string propID { get; set; }
             public string propvalue { get; set; }
             public string startTime { get; set; }

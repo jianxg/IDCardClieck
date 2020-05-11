@@ -41,6 +41,7 @@ namespace IDCardClieck.Forms
             this.checkData = checkModel;
 
             InitializeComponent();
+
             Timer = new System.Windows.Forms.Timer() { Interval = 100 };
             Timer.Tick += new EventHandler(Timer_Tick);
             base.Opacity = 0;
@@ -73,6 +74,8 @@ namespace IDCardClieck.Forms
 
         private void UserSelectForm_Load(object sender, EventArgs e)
         {
+            ucDatePickerExt1.CurrentTime = DateTime.Now.AddMonths(-1);
+            ucDatePickerExt2.CurrentTime = DateTime.Now;
             SimpleLoading loadingfrm = new SimpleLoading(this);
             SplashScreenManager loading = new SplashScreenManager(loadingfrm);
             loading.ShowLoading();
@@ -221,22 +224,25 @@ namespace IDCardClieck.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string value = ((CheckModel)this.comboBox1.SelectedItem).propName.ToString();
-            if (value!="全部")
+            if (value != "全部")
             {
-                SelectCheckData selectCheckData = GetCheckData(((CheckModel)this.comboBox1.SelectedItem).tempPropID.ToString(),null,null);
-                if (selectCheckData.result == "true")
+                SelectCheckData selectCheckData = GetCheckData(((CheckModel)this.comboBox1.SelectedItem).tempPropID.ToString(), null, null);
+                if (selectCheckData != null)
                 {
-                    myEventArgsUserInfoData = new MyEventArgsUserInfoData();
-                    myEventArgsUserInfoData.data = selectCheckData.data.checkDataList;
-                    myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
-                    myEventArgsUserInfoData.eDZ = objEDZ;
-                    myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
-                    myEventArgsUserInfoData.checkoutModel = model;
-                    OnMySendDataUserInfoData(myEventArgsUserInfoData);
-                }
-                else
-                {
-                    MessageBox.Show(selectCheckData.message.ToString());
+                    if (selectCheckData.result == "true")
+                    {
+                        myEventArgsUserInfoData = new MyEventArgsUserInfoData();
+                        myEventArgsUserInfoData.data = selectCheckData.data.checkDataList;
+                        myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
+                        myEventArgsUserInfoData.eDZ = objEDZ;
+                        myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
+                        myEventArgsUserInfoData.checkoutModel = model;
+                        OnMySendDataUserInfoData(myEventArgsUserInfoData);
+                    }
+                    else
+                    {
+                        MessageBox.Show(selectCheckData.message.ToString());
+                    }
                 }
             }
         }

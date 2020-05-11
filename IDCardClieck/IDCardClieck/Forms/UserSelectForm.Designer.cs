@@ -182,7 +182,7 @@
             // 
             this.ucDatePickerExt2.BackColor = System.Drawing.Color.White;
             this.ucDatePickerExt2.ConerRadius = 15;
-            this.ucDatePickerExt2.CurrentTime = new System.DateTime(2020, 4, 30, 16, 34, 16, 0);
+            this.ucDatePickerExt2.CurrentTime = new System.DateTime(1, 1, 1, 0, 34, 0, 0);
             this.ucDatePickerExt2.FillColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt2.IsRadius = true;
@@ -202,7 +202,7 @@
             // 
             this.ucDatePickerExt1.BackColor = System.Drawing.Color.White;
             this.ucDatePickerExt1.ConerRadius = 15;
-            this.ucDatePickerExt1.CurrentTime = new System.DateTime(2020, 4, 30, 16, 34, 16, 0);
+            this.ucDatePickerExt1.CurrentTime = new System.DateTime(1, 1, 1, 0, 34, 0, 0);
             this.ucDatePickerExt1.FillColor = System.Drawing.Color.Transparent;
             this.ucDatePickerExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucDatePickerExt1.IsRadius = true;

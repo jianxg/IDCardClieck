@@ -26,14 +26,16 @@ namespace IDCardClieck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            RegisterFrm registerFrm = null;
+            SimpleLoading loadingfrm = new SimpleLoading(registerFrm);
+            //将Loaing窗口，注入到 SplashScreenManager 来管理
+            SplashScreenManager loading = new SplashScreenManager(loadingfrm);
+
             //判断是否已经有实例在运行
             Process instance = RunningInstance();
             if (instance == null) //没有实例在运行
             {
-                RegisterFrm registerFrm = null;
-                SimpleLoading loadingfrm = new SimpleLoading(registerFrm);
-                //将Loaing窗口，注入到 SplashScreenManager 来管理
-                SplashScreenManager loading = new SplashScreenManager(loadingfrm);
                 loading.ShowLoading();
                 //try catch 包起来，防止出错
                 try
@@ -41,13 +43,18 @@ namespace IDCardClieck
                     CheckoutModel checkoutModel = new CheckoutModel();
                     string a = string.Empty, b = string.Empty;
                     checkoutModel.res = RegeditTime.InitRegedit(ref a, ref b, checkoutModel.path, checkoutModel.registerCodeName);
+
                     checkoutModel.sericalNumber = a;
                     checkoutModel.registerCode = b;
+                    
                     LogHelper.WriteLine("程序主入口: 注册结果:" + checkoutModel.res + ",激活码:" + checkoutModel.sericalNumber + ",注册码:" +
                         "" + checkoutModel.registerCode + "");
+
                     loading.CloseWaitForm();
+
                     registerFrm = new RegisterFrm(checkoutModel);
                     registerFrm.ShowDialog();//显示注册激活窗体
+
                     if (registerFrm.DialogResult == DialogResult.OK)
                     {
                         Application.Run(new HomeForm(checkoutModel, registerFrm.json));
@@ -55,6 +62,7 @@ namespace IDCardClieck
                 }
                 catch (Exception e)
                 {
+                    loading.CloseWaitForm();
                     /*可选处理异常*/
                     LogHelper.WriteLine("程序主入口:" + e.Message.ToString());
                 }

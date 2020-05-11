@@ -74,7 +74,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(65, 73);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(396, 205);
+            this.panel6.Size = new System.Drawing.Size(396, 233);
             this.panel6.TabIndex = 4;
             // 
             // panel7
@@ -82,7 +82,7 @@
             this.panel7.Controls.Add(this.lbl_note);
             this.panel7.Location = new System.Drawing.Point(18, 169);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(291, 25);
+            this.panel7.Size = new System.Drawing.Size(357, 58);
             this.panel7.TabIndex = 5;
             // 
             // lbl_note
@@ -92,7 +92,7 @@
             this.lbl_note.ForeColor = System.Drawing.Color.Red;
             this.lbl_note.Location = new System.Drawing.Point(0, 0);
             this.lbl_note.Name = "lbl_note";
-            this.lbl_note.Size = new System.Drawing.Size(291, 25);
+            this.lbl_note.Size = new System.Drawing.Size(357, 58);
             this.lbl_note.TabIndex = 4;
             this.lbl_note.Text = "    ";
             // 
@@ -154,7 +154,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(461, 73);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(75, 205);
+            this.panel5.Size = new System.Drawing.Size(75, 233);
             this.panel5.TabIndex = 3;
             // 
             // panel4
@@ -163,16 +163,16 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 73);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(65, 205);
+            this.panel4.Size = new System.Drawing.Size(65, 233);
             this.panel4.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 278);
+            this.panel3.Location = new System.Drawing.Point(0, 306);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(536, 71);
+            this.panel3.Size = new System.Drawing.Size(536, 43);
             this.panel3.TabIndex = 1;
             // 
             // panel2
