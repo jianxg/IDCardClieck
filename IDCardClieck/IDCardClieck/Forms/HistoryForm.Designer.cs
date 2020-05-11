@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.pal_home = new IDCardClieck.Controls.PanelEnhanced();
             this.pal_home_fill = new IDCardClieck.Controls.PanelEnhanced();
+            this.pan_home_top = new IDCardClieck.Controls.PanelEnhanced();
+            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.pan_home_fill_fill = new IDCardClieck.Controls.PanelEnhanced();
             this.pal_home_fill_fill_fill = new System.Windows.Forms.Panel();
             this.pal_home_fill_fill_fill_fill = new System.Windows.Forms.Panel();
@@ -42,20 +44,18 @@
             this.pal_home_fill_fill_fill_1 = new System.Windows.Forms.Panel();
             this.lbl_userInfo = new System.Windows.Forms.Label();
             this.pal_home_fill_top = new IDCardClieck.Controls.PanelEnhanced();
-            this.pan_home_top = new IDCardClieck.Controls.PanelEnhanced();
             this.panel2 = new System.Windows.Forms.Panel();
             this.myBtnExt2 = new IDCardClieck.Controls.MyBtnExt();
             this.myBtnExt1 = new IDCardClieck.Controls.MyBtnExt();
-            this.realTime1 = new IDCardClieck.Controls.RealTime();
             this.pal_home.SuspendLayout();
             this.pal_home_fill.SuspendLayout();
+            this.pan_home_top.SuspendLayout();
             this.pan_home_fill_fill.SuspendLayout();
             this.pal_home_fill_fill_fill.SuspendLayout();
             this.pal_home_fill_fill_fill_fill.SuspendLayout();
             this.pal_home_fill_fill_fill_top.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pal_home_fill_fill_fill_1.SuspendLayout();
-            this.pan_home_top.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,24 @@
             this.pal_home_fill.Name = "pal_home_fill";
             this.pal_home_fill.Size = new System.Drawing.Size(1008, 630);
             this.pal_home_fill.TabIndex = 1;
+            // 
+            // pan_home_top
+            // 
+            this.pan_home_top.Controls.Add(this.panel2);
+            this.pan_home_top.Controls.Add(this.realTime1);
+            this.pan_home_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pan_home_top.Location = new System.Drawing.Point(0, 0);
+            this.pan_home_top.Name = "pan_home_top";
+            this.pan_home_top.Size = new System.Drawing.Size(1008, 100);
+            this.pan_home_top.TabIndex = 0;
+            // 
+            // realTime1
+            // 
+            this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.realTime1.Location = new System.Drawing.Point(0, 0);
+            this.realTime1.Name = "realTime1";
+            this.realTime1.Size = new System.Drawing.Size(1008, 100);
+            this.realTime1.TabIndex = 0;
             // 
             // pan_home_fill_fill
             // 
@@ -199,16 +217,6 @@
             this.pal_home_fill_top.Size = new System.Drawing.Size(1008, 10);
             this.pal_home_fill_top.TabIndex = 0;
             // 
-            // pan_home_top
-            // 
-            this.pan_home_top.Controls.Add(this.panel2);
-            this.pan_home_top.Controls.Add(this.realTime1);
-            this.pan_home_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pan_home_top.Location = new System.Drawing.Point(0, 0);
-            this.pan_home_top.Name = "pan_home_top";
-            this.pan_home_top.Size = new System.Drawing.Size(1008, 100);
-            this.pan_home_top.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -255,7 +263,7 @@
             // 
             this.myBtnExt1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.myBtnExt1.BackColor = System.Drawing.Color.White;
-            this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
+            this.myBtnExt1.BackgroundImage = global::IDCardClieck.Properties.Resources.微信图片_20200511103607;
             this.myBtnExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.myBtnExt1.BtnBackColor = System.Drawing.Color.White;
             this.myBtnExt1.BtnFont = new System.Drawing.Font("华文琥珀", 15F);
@@ -280,14 +288,6 @@
             this.myBtnExt1.TipsText = "";
             this.myBtnExt1.BtnClick += new System.EventHandler(this.myBtnExt1_BtnClick);
             // 
-            // realTime1
-            // 
-            this.realTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.realTime1.Location = new System.Drawing.Point(0, 0);
-            this.realTime1.Name = "realTime1";
-            this.realTime1.Size = new System.Drawing.Size(1008, 100);
-            this.realTime1.TabIndex = 0;
-            // 
             // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -306,6 +306,7 @@
             this.Load += new System.EventHandler(this.HistoryForm_Load);
             this.pal_home.ResumeLayout(false);
             this.pal_home_fill.ResumeLayout(false);
+            this.pan_home_top.ResumeLayout(false);
             this.pan_home_fill_fill.ResumeLayout(false);
             this.pal_home_fill_fill_fill.ResumeLayout(false);
             this.pal_home_fill_fill_fill_fill.ResumeLayout(false);
@@ -313,7 +314,6 @@
             this.panel1.ResumeLayout(false);
             this.pal_home_fill_fill_fill_1.ResumeLayout(false);
             this.pal_home_fill_fill_fill_1.PerformLayout();
-            this.pan_home_top.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -373,7 +373,7 @@
             // myBtnExt6
             // 
             this.myBtnExt6.BackColor = System.Drawing.Color.White;
-            this.myBtnExt6.BackgroundImage = global::IDCardClieck.Properties.Resources.返回首页;
+            this.myBtnExt6.BackgroundImage = global::IDCardClieck.Properties.Resources.微信图片_20200511103607;
             this.myBtnExt6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.myBtnExt6.BtnBackColor = System.Drawing.Color.White;
             this.myBtnExt6.BtnFont = new System.Drawing.Font("华文琥珀", 15F);

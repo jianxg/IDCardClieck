@@ -409,6 +409,7 @@
     </Content>
     <None Include="Resources\banner1.png" />
     <None Include="Resources\banner2.png" />
+    <None Include="Resources\微信图片_20200511103607.png" />
     <Content Include="帮助\GSDLL.txt" />
     <None Include="Resources\loading3.gif" />
     <Content Include="公司图标64.ico" />
