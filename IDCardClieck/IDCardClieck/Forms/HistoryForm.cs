@@ -27,6 +27,7 @@ namespace IDCardClieck.Forms
     [ComVisible(true)]
     public partial class HistoryForm : Form
     {
+        int closeState = 1;//0不执行关闭时间 执行关闭事件
         public event EventHandler MySendDataTableData;
         private ModelTets modelTets = null;
         CheckoutModel model = new CheckoutModel();
@@ -201,12 +202,12 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt2_BtnClick(object sender, EventArgs e)
         {
+            closeState = 0;
             this.Close();
             if (this.modelTets.UserSelectFormTemp.Visible != true)
             {
                 this.modelTets.UserSelectFormTemp.Visible = true;
             }
-            this.modelTets.HomeFormTemp.Visible = false;
         }
 
         /// <summary>
@@ -216,19 +217,28 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt1_BtnClick(object sender, EventArgs e)
         {
+            //this.Close();
+            //if (this.modelTets.HomeFormTemp.Visible != true)
+            //{
+            //    this.modelTets.HomeFormTemp.Visible = true;
+            //}
+            closeState = 0;
             this.Close();
-            if (this.modelTets.HomeFormTemp.Visible != true)
+            if (this.modelTets.ReadIdCardFrmTemp.Visible != true)
             {
-                this.modelTets.HomeFormTemp.Visible = true;
+                this.modelTets.ReadIdCardFrmTemp.Visible = true;
             }
         }
 
         private void HistoryForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Visible = false;
-            if (modelTets.HomeFormTemp.IsDisposed == false)
+            if (closeState!=0)
             {
-                this.modelTets.HomeFormTemp.Visible = true;
+                this.Visible = false;
+                if (modelTets.HomeFormTemp.IsDisposed == false)
+                {
+                    this.modelTets.HomeFormTemp.Visible = true;
+                }
             }
         }
     }

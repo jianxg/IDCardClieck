@@ -19,6 +19,7 @@ namespace IDCardClieck.Forms
 {
     public partial class UserSelectForm : Form
     {
+        int closeState = 1;//0不执行关闭时间 执行关闭事件
         public event EventHandler MySendDataUserInfoData;
         MyEventArgsUserInfoData myEventArgsUserInfoData = null;
 
@@ -33,13 +34,13 @@ namespace IDCardClieck.Forms
 
         public UserSelectForm(CheckData checkModel, CheckoutModel checkoutModel, EDZ eDZ,ResultJSON resultJSONTemp)
         {
+
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.objEDZ = eDZ;
             this.resultJSON = resultJSONTemp;
             this.model = checkoutModel;
             this.checkData = checkModel;
-
             InitializeComponent();
 
             Timer = new System.Windows.Forms.Timer() { Interval = 100 };
@@ -159,6 +160,7 @@ namespace IDCardClieck.Forms
                     myEventArgsUserInfoData.HomeFormTemp = homeForm;
                     myEventArgsUserInfoData.eDZ = objEDZ;
                     myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
+                    myEventArgsUserInfoData.ReadIdCardFrmTemp = readIdCardFrm;
                     myEventArgsUserInfoData.checkoutModel = model;
                     OnMySendDataUserInfoData(myEventArgsUserInfoData);
                 }
@@ -174,7 +176,7 @@ namespace IDCardClieck.Forms
                 myEventArgsUserInfoData.HomeFormTemp = (HomeForm)this.Owner.Owner;
                 myEventArgsUserInfoData.eDZ = objEDZ;
                 myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
-
+                myEventArgsUserInfoData.ReadIdCardFrmTemp = readIdCardFrm;
                 myEventArgsUserInfoData.checkoutModel = model;
                 OnMySendDataUserInfoData(myEventArgsUserInfoData);
             }
@@ -191,8 +193,8 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt7_BtnClick(object sender, EventArgs e)
         {
+            closeState = 0;
             this.Close();
-            homeForm.Visible = false;
             if (this.readIdCardFrm.Visible != true)
             {
                 readIdCardFrm.Visible = true;
@@ -206,11 +208,18 @@ namespace IDCardClieck.Forms
         /// <param name="e"></param>
         private void myBtnExt6_BtnClick(object sender, EventArgs e)
         {
-            this.Visible = false;
-            if (this.homeForm.Visible != true)
+            //this.Visible = false;
+            //if (this.homeForm.Visible != true)
+            //{
+            //    this.homeForm.Visible = true;
+            //}
+            closeState = 0;
+            this.Close();
+            if (this.readIdCardFrm.Visible != true)
             {
-                this.homeForm.Visible = true;
+                readIdCardFrm.Visible = true;
             }
+
         }
 
         public void OnMySendDataUserInfoData(MyEventArgsUserInfoData e)
@@ -237,6 +246,7 @@ namespace IDCardClieck.Forms
                         myEventArgsUserInfoData.eDZ = objEDZ;
                         myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
                         myEventArgsUserInfoData.checkoutModel = model;
+                        myEventArgsUserInfoData.ReadIdCardFrmTemp = readIdCardFrm;
                         OnMySendDataUserInfoData(myEventArgsUserInfoData);
                     }
                     else
@@ -304,6 +314,7 @@ namespace IDCardClieck.Forms
                 myEventArgsUserInfoData.eDZ = objEDZ;
                 myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
                 myEventArgsUserInfoData.checkoutModel = model;
+                myEventArgsUserInfoData.ReadIdCardFrmTemp = readIdCardFrm;
                 OnMySendDataUserInfoData(myEventArgsUserInfoData);
             }
             else
@@ -318,6 +329,8 @@ namespace IDCardClieck.Forms
 
             public UserSelectForm UserSelectFormTemp { get; set; }
 
+            public ReadIdCardFrm ReadIdCardFrmTemp { get; set; }
+
             public List<CheckDataListModel> data { get; set; }
 
             public EDZ eDZ { get; set; }
@@ -331,10 +344,13 @@ namespace IDCardClieck.Forms
 
         private void UserSelectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Visible = false;
-            if (homeForm.IsDisposed == false)
+            if (closeState != 0)
             {
-                homeForm.Visible = true;
+                this.Visible = false;
+                if (homeForm.IsDisposed == false)
+                {
+                    homeForm.Visible = true;
+                }
             }
         }
 
@@ -349,6 +365,7 @@ namespace IDCardClieck.Forms
                 myEventArgsUserInfoData.eDZ = objEDZ;
                 myEventArgsUserInfoData.UserSelectFormTemp = (UserSelectForm)this;
                 myEventArgsUserInfoData.checkoutModel = model;
+                myEventArgsUserInfoData.ReadIdCardFrmTemp = readIdCardFrm;
                 OnMySendDataUserInfoData(myEventArgsUserInfoData);
             }
             else

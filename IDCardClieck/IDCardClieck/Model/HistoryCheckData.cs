@@ -19,13 +19,12 @@ namespace IDCardClieck.Model
         public int Id { get; set; }
         public string propID { get; set; }
         public string orderNo { get; set; }
-
         public string propValue { get; set; }
-
+        public string punit { get; set; }
+        public string pscope { get; set; }
         public string propName { get; set; }
-
         public string propTime { get; set; }
-
         public int cellWidth { get; set; }
+        public int highLowMark { get; set; }
     }
 }

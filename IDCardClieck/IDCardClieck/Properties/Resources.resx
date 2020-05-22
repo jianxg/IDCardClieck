@@ -124,9 +124,6 @@
   <data name="banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="顶部背景+logo+文字" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\顶部背景+logo+文字.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="banner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,8 +133,14 @@
   <data name="Error Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Error Circle.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="微信图片_20200416152801" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\微信图片_20200416152801.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="手持身份证" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\手持身份证.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1bf599a9c28c72631daa35d46cbf072a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1bf599a9c28c72631daa35d46cbf072a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="确定" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\确定.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,22 +175,25 @@
   <data name="开始查询" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\开始查询.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="分界线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\分界线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="微信图片_202004161526101" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\微信图片_202004161526101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="右侧背景" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\右侧背景.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="微信图片_20200416152801" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\微信图片_20200416152801.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="微信图片_20200511103607" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\微信图片_20200511103607.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="分界线" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\分界线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="顶部背景+logo+文字" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\顶部背景+logo+文字.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="警告" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\警告.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="微信图片_20200511103607" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\微信图片_20200511103607.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="16pic_7629519_5089b8c8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16pic_7629519_5089b8c8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

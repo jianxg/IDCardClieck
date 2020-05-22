@@ -36,12 +36,13 @@ namespace IDCardClieck.Controls
             List<CheckDataListModel> dt = myEventArgsUserInfoData.data;
 
             int columnsWidth = this.ucDataGridView1.Width - 700;
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 100, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 200, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 50, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 150, WidthType = SizeType.Absolute });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellA), TextAlign = ContentAlignment.BottomCenter });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "endTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "operation", HeadText = "操作", Width = 200, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCell), TextAlign = ContentAlignment.BottomCenter });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "operation", HeadText = "操作", Width = 100, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCell), TextAlign = ContentAlignment.BottomCenter });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 500, WidthType = SizeType.Absolute, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Sex", HeadText = "性别", Width = 500, WidthType = SizeType.Absolute, Format = (a) => { return ((int)a) == 0 ? "女" : "男"; } });
             this.ucDataGridView1.Columns = lstCulumns;
@@ -55,12 +56,14 @@ namespace IDCardClieck.Controls
                 {
                     Id=i+1,
                     propID = dt[i].propID,
-                    propvalue = dt[i].propvalue,
+                    propvalue = dt[i].propvalue+dt[i].punit,
+                    pscope = dt[i].pscope,
                     endTime = dt[i].endTime,
                     propName = dt[i].propName,
                     HomeFormTemp = myEventArgsUserInfoData.HomeFormTemp,
                     UserSelectFormTemp = myEventArgsUserInfoData.UserSelectFormTemp,
                     edzTemp = myEventArgsUserInfoData.eDZ,
+                    ReadIdCardFrmTemp=myEventArgsUserInfoData.ReadIdCardFrmTemp,
                     checkoutModel = myEventArgsUserInfoData.checkoutModel,
                     cellWidth = columnsWidth,
                 };
@@ -75,10 +78,12 @@ namespace IDCardClieck.Controls
             public int Id { get; set; }
             public string propID { get; set; }
             public string propvalue { get; set; }
+            public string pscope { get; set; }
             public string startTime { get; set; }
             public string endTime { get; set; }
             public string propName { get; set; }
             public HomeForm HomeFormTemp { get; set; }
+            public ReadIdCardFrm ReadIdCardFrmTemp { get; set; }
             public UserSelectForm UserSelectFormTemp { get; set; }
             public EDZ edzTemp { get; set; }
             public CheckoutModel checkoutModel { get; set; }

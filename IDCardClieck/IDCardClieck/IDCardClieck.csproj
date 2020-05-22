@@ -410,6 +410,8 @@
     <None Include="Resources\banner1.png" />
     <None Include="Resources\banner2.png" />
     <None Include="Resources\微信图片_20200511103607.png" />
+    <None Include="Resources\1bf599a9c28c72631daa35d46cbf072a.png" />
+    <None Include="Resources\16pic_7629519_5089b8c8.png" />
     <Content Include="帮助\GSDLL.txt" />
     <None Include="Resources\loading3.gif" />
     <Content Include="公司图标64.ico" />

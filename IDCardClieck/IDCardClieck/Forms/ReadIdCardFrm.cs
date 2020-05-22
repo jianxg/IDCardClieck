@@ -529,7 +529,7 @@ namespace IDCardClieck.Forms
             }
         }
 
-        private int _readTimeOut = 5000;
+        private int _readTimeOut = 1000;
         /// <summary>
         /// 轮训读卡间隔时间，单位毫秒
         /// </summary>

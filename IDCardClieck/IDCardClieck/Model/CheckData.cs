@@ -28,6 +28,8 @@ namespace IDCardClieck.Model
         public string startTime { get; set; }
         public string endTime { get; set; }
         public string propName { get; set; }
+        public string punit { get; set; }
+        public string pscope { get; set; }
     }
 
 }
