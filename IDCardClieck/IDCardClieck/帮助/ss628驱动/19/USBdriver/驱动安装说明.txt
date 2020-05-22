@@ -1,0 +1,10 @@
+⊙ Windows 98 系统请安装98Driver目录的驱动.
+
+⊙ Windows 2000, windows XP, Windows 2003, vista, windows7 系统安装"2k,xp,2003,vista,win7"目录的驱动, 或者直接执行目录下"二代证读验机具USB驱动.exe" 安装驱动, 也可以双击运行USBDrv3.0-x86.msi进行安装。
+   USBDrv3.0-x86.msi该驱动已经通过了微软徽标认证。
+   
+⊙ 64位操作系统驱动：Winxp_Win7_64bit目录
+	Win7_64bit驱动目录下是手动安装的驱动文件。
+        USBDrv3.0-x64.msi  是经过了微软徽标认证。
+
+⊙ USBDrv3.0-x86.msi 和 USBDrv3.0-x64.msi 安装程序为MSI安装包，适用于服务器端向客户端推送安装，不会弹出交互界面。

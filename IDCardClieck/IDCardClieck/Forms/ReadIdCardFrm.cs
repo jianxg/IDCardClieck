@@ -91,7 +91,7 @@ namespace IDCardClieck.Forms
             loading.ShowLoading();
             try
             {
-                Start1("5211336");
+                Start1("5211336");  
             }
             catch (Exception)
             {

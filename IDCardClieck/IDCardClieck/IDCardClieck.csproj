@@ -330,13 +330,13 @@
     <None Include="Resources\微信图片_20200415171717.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Administrator\Desktop\居民身份证读卡系统\身份证读卡器二次开发\ReadCardControl2010\ReadCardActiveX\ReadCardActiceX.csproj">
-      <Project>{dc5247dc-a3b1-45fa-a52a-a16141560466}</Project>
-      <Name>ReadCardActiceX</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\Administrator\Desktop\资料\kwwwvagaa-net_winform_custom_control-master\net_winform_custom_control\HZH_Controls\HZH_Controls\HZH_Controls.csproj">
+    <ProjectReference Include="..\HZH_ControlsDemo\HZH_Controls\HZH_Controls.csproj">
       <Project>{af32e163-c577-4cbc-a072-0dc1ce0e1da3}</Project>
       <Name>HZH_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReadCardControl2010\ReadCardActiveX\ReadCardActiceX.csproj">
+      <Project>{dc5247dc-a3b1-45fa-a52a-a16141560466}</Project>
+      <Name>ReadCardActiceX</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
