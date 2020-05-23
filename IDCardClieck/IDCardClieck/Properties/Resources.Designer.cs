@@ -63,6 +63,16 @@ namespace IDCardClieck.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _16pic_7006840_e56326d6 {
+            get {
+                object obj = ResourceManager.GetObject("16pic_7006840_e56326d6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap _16pic_7629519_5089b8c8 {
             get {
                 object obj = ResourceManager.GetObject("16pic_7629519_5089b8c8", resourceCulture);

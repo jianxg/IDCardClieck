@@ -30,9 +30,9 @@ namespace IDCardClieck.Controls.UC
 
             if (m_object.propName == "中医体质辨识")
             {
-                if (m_object.propvalue.Trim().Length > 0)
+                if (m_object.propValue.Trim().Length > 0)
                 {
-                    string[] strList = m_object.propvalue.Split(';');
+                    string[] strList = m_object.propValue.Split(';');
                     if (strList.Length > 0)
                     {
                         int width = m_object.cellWidth / strList.Length;
@@ -54,11 +54,38 @@ namespace IDCardClieck.Controls.UC
             else
             {
                 Label lab = new Label();
-                lab.Text = m_object.propvalue;
-                lab.Size = lab.Size = new System.Drawing.Size(50, 35);
-                lab.Location = new System.Drawing.Point(m_object.cellWidth / 2 - 25, 10);
-                lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))); ;
+                lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+                lab.AutoSize = true;
+                lab.Text = m_object.propValue;
+
+                Graphics g = lab.CreateGraphics();
+                SizeF StrSize = g.MeasureString(lab.Text, lab.Font);
+                int widthValue = (int)StrSize.Width;
+
+                lab.Location = new System.Drawing.Point(m_object.cellWidth / 2 - widthValue / 2, 10);
                 this.Controls.Add(lab);
+
+
+                //@ApiModelProperty("检测值与正常值标识，0为不标，-1为低，1为高")
+                //private String highLowMark;
+                if (m_object.highLowMark != 0)
+                {
+                    PictureBox pictureBox = new PictureBox();
+                    if (m_object.highLowMark==1)
+                    {
+                        pictureBox.Image = global::IDCardClieck.Properties.Resources._1bf599a9c28c72631daa35d46cbf072a;
+                    }
+                    if (m_object.highLowMark == -1)
+                    {
+                        pictureBox.Image = global::IDCardClieck.Properties.Resources._16pic_7006840_e56326d6;
+                    }
+                    pictureBox.Name = "pictureBox1";
+                    pictureBox.Size = new System.Drawing.Size(15, 35);
+                    pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                    pictureBox.TabStop = false;
+                    pictureBox.Location = new System.Drawing.Point(lab.Location.X + lab.Width + 10, 7);
+                    this.Controls.Add(pictureBox);
+                }
             }
         }
 

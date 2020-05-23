@@ -55,24 +55,36 @@ namespace IDCardClieck.Controls.UC
             else
             {
                 Label lab = new Label();
-                lab.Text = m_object.propValue;
-                lab.Size = lab.Size = new System.Drawing.Size(50, 35);
+                lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
                 lab.AutoSize = true;
-                lab.Location = new System.Drawing.Point(m_object.cellWidth / 2 - 25, 10);
-                lab.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))); ;
+                lab.Text = m_object.propValue;
+
+                Graphics g = lab.CreateGraphics();
+                SizeF StrSize = g.MeasureString(lab.Text, lab.Font);
+                int widthValue = (int)StrSize.Width;
+
+
+                lab.Location = new System.Drawing.Point(m_object.cellWidth / 2 - widthValue / 2, 10);
                 this.Controls.Add(lab);
 
-
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Image = global::IDCardClieck.Properties.Resources._1bf599a9c28c72631daa35d46cbf072a;
-                pictureBox.Image = global::IDCardClieck.Properties.Resources._16pic_7629519_5089b8c8;
-                
-                pictureBox.Name = "pictureBox1";
-                pictureBox.Size = new System.Drawing.Size(15, 35);
-                pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                pictureBox.TabStop = false;
-                pictureBox.Location = new System.Drawing.Point(lab.Location.X + lab.Width + 10,7);
-                this.Controls.Add(pictureBox);
+                if (m_object.highLowMark!=0)
+                {
+                    PictureBox pictureBox = new PictureBox();
+                    if (m_object.highLowMark==1)
+                    {
+                        pictureBox.Image = global::IDCardClieck.Properties.Resources._1bf599a9c28c72631daa35d46cbf072a;
+                    }
+                    if (m_object.highLowMark == -1)
+                    {
+                        pictureBox.Image = global::IDCardClieck.Properties.Resources._16pic_7006840_e56326d6;
+                    }
+                    pictureBox.Name = "pictureBox1";
+                    pictureBox.Size = new System.Drawing.Size(15, 35);
+                    pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                    pictureBox.TabStop = false;
+                    pictureBox.Location = new System.Drawing.Point(lab.Location.X + lab.Width + 10, 7);
+                    this.Controls.Add(pictureBox);
+                }
             }
         }
 

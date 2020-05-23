@@ -39,7 +39,7 @@ namespace IDCardClieck.Controls
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 50, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 150, WidthType = SizeType.Absolute });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellA), TextAlign = ContentAlignment.BottomCenter });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propValue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellA), TextAlign = ContentAlignment.BottomCenter });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "endTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "operation", HeadText = "操作", Width = 100, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCell), TextAlign = ContentAlignment.BottomCenter });
@@ -56,16 +56,17 @@ namespace IDCardClieck.Controls
                 {
                     Id=i+1,
                     propID = dt[i].propID,
-                    propvalue = dt[i].propvalue+dt[i].punit,
+                    propValue = dt[i].propValue + dt[i].punit,
                     pscope = dt[i].pscope,
                     endTime = dt[i].endTime,
                     propName = dt[i].propName,
+                    highLowMark = dt[i].highLowMark,
                     HomeFormTemp = myEventArgsUserInfoData.HomeFormTemp,
                     UserSelectFormTemp = myEventArgsUserInfoData.UserSelectFormTemp,
                     edzTemp = myEventArgsUserInfoData.eDZ,
                     ReadIdCardFrmTemp=myEventArgsUserInfoData.ReadIdCardFrmTemp,
                     checkoutModel = myEventArgsUserInfoData.checkoutModel,
-                    cellWidth = columnsWidth,
+                    cellWidth = columnsWidth,                   
                 };
                 lstSource.Add(model);
             }
@@ -77,7 +78,7 @@ namespace IDCardClieck.Controls
         {
             public int Id { get; set; }
             public string propID { get; set; }
-            public string propvalue { get; set; }
+            public string propValue { get; set; }
             public string pscope { get; set; }
             public string startTime { get; set; }
             public string endTime { get; set; }
@@ -88,6 +89,7 @@ namespace IDCardClieck.Controls
             public EDZ edzTemp { get; set; }
             public CheckoutModel checkoutModel { get; set; }
             public int cellWidth { get; set; }
+            public int highLowMark { get; set; }
         }
     }
 }

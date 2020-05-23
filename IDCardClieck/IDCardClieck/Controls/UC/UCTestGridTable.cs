@@ -45,13 +45,21 @@ namespace IDCardClieck.Controls.UC
             for (int i = 0; i < historyCheckData.data.Count; i++)
             {
                 string pscopevalue = string.Empty, punitvalue = string.Empty;
-                if (historyCheckData.data[i].punit == null)
+                if (historyCheckData.data[i].punit != null)
                 {
                     punitvalue = historyCheckData.data[i].punit == null ? "" : historyCheckData.data[i].punit.ToString();
                 }
-                if (historyCheckData.data[i].pscope == null)
+                else
+                {
+                    punitvalue = "";
+                }
+                if (historyCheckData.data[i].pscope != null)
                 {
                     pscopevalue = historyCheckData.data[i].pscope == null ? "" : historyCheckData.data[i].pscope.ToString();
+                }
+                else
+                {
+                    pscopevalue = "";
                 }
 
                 HistoryCheckDataDataModel model = new HistoryCheckDataDataModel()
@@ -63,6 +71,8 @@ namespace IDCardClieck.Controls.UC
                     propValue = historyCheckData.data[i].propValue.ToString() + punitvalue,
                     pscope = pscopevalue,
                     cellWidth = columnsWidth,
+                    highLowMark= historyCheckData.data[i].highLowMark,
+                    punit= historyCheckData.data[i].punit,
                 };
                 lstSource.Add(model);
             }

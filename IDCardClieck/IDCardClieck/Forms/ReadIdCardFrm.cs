@@ -401,7 +401,7 @@ namespace IDCardClieck.Forms
                 }
                 if (objEDZ.IDC == "140821199307080015")
                 {
-                    objEDZ.IDC = "610113197107192157";
+                    objEDZ.IDC = "140821199307080015";
                 }
 
 
