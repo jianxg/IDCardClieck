@@ -73,17 +73,17 @@ namespace IDCardClieck.Controls.UC
                     PictureBox pictureBox = new PictureBox();
                     if (m_object.highLowMark==1)
                     {
-                        pictureBox.Image = global::IDCardClieck.Properties.Resources._1bf599a9c28c72631daa35d46cbf072a;
+                        pictureBox.Image = global::IDCardClieck.Properties.Resources.arrow_red_up_24px_5308_easyicon_net;
                     }
                     if (m_object.highLowMark == -1)
                     {
-                        pictureBox.Image = global::IDCardClieck.Properties.Resources._16pic_7006840_e56326d6;
+                        pictureBox.Image = global::IDCardClieck.Properties.Resources.arrow_down_download_24px_4297_easyicon_net;
                     }
                     pictureBox.Name = "pictureBox1";
-                    pictureBox.Size = new System.Drawing.Size(15, 35);
+                    pictureBox.Size = new System.Drawing.Size(10, 30);
                     pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                     pictureBox.TabStop = false;
-                    pictureBox.Location = new System.Drawing.Point(lab.Location.X + lab.Width + 10, 7);
+                    pictureBox.Location = new System.Drawing.Point(lab.Location.X + lab.Width + 10, 5);
                     this.Controls.Add(pictureBox);
                 }
             }
