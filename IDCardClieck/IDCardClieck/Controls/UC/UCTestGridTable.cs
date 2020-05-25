@@ -36,7 +36,9 @@ namespace IDCardClieck.Controls.UC
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 50, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 150, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellB), TextAlign = ContentAlignment.BottomCenter });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute });
+            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellBB), TextAlign = ContentAlignment.BottomCenter });
+
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
             this.ucDataGridView1.Columns = lstCulumns;
             this.ucDataGridView1.IsShowCheckBox = false;

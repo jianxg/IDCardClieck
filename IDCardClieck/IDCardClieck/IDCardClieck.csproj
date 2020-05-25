@@ -183,11 +183,23 @@
     <Compile Include="Controls\UC\UCTestGridTable_CustomCellA.Designer.cs">
       <DependentUpon>UCTestGridTable_CustomCellA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UC\UCTestGridTable_CustomCellAA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC\UCTestGridTable_CustomCellAA.Designer.cs">
+      <DependentUpon>UCTestGridTable_CustomCellAA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UC\UCTestGridTable_CustomCellB.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\UC\UCTestGridTable_CustomCellB.Designer.cs">
       <DependentUpon>UCTestGridTable_CustomCellB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC\UCTestGridTable_CustomCellBB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC\UCTestGridTable_CustomCellBB.Designer.cs">
+      <DependentUpon>UCTestGridTable_CustomCellBB.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\UC\UCTestGridTable_CustomCellIcon.cs">
       <SubType>UserControl</SubType>
@@ -269,8 +281,14 @@
     <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCellA.resx">
       <DependentUpon>UCTestGridTable_CustomCellA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCellAA.resx">
+      <DependentUpon>UCTestGridTable_CustomCellAA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCellB.resx">
       <DependentUpon>UCTestGridTable_CustomCellB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC\UCTestGridTable_CustomCellBB.resx">
+      <DependentUpon>UCTestGridTable_CustomCellBB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>

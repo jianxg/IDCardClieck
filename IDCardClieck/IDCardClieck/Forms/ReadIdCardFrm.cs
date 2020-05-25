@@ -199,6 +199,7 @@ namespace IDCardClieck.Forms
 
         public void ReadCardInfo()
         {
+
             StringBuilder Name = new StringBuilder(31);
             StringBuilder Gender = new StringBuilder(3);
             StringBuilder Folk = new StringBuilder(10);
@@ -338,35 +339,35 @@ namespace IDCardClieck.Forms
                     File.Delete(photoPath.ToString());
                 }
 
-                //string errstr = string.Empty;
-                //string key = new EncryptClass().Encrypt(_code,
-                //    objEDZ.IDC.ToString()
-                //    , objEDZ.Name,
-                //    objEDZ.NATION_Code,
-                //    objEDZ.Sex_Code,
-                //    objEDZ.REGORG.Length.ToString()
-                //    , out errstr);//System.Text.Encoding.GetEncoding("GB2312").GetString(SAMId).Replace("\0", "");
-                //if (errstr != string.Empty)
-                //{
-                //    SetText(errstr, lbl_msg);
-                //    return;
-                //}
-                //if (OnDataBind != null)
-                //{
-                //    OnDataBind.BeginInvoke(objEDZ.Name.ToString(), objEDZ.Sex_CName.ToString(), objEDZ.NATION_CName.ToString(),
-                //        objEDZ.BIRTH.ToString("yyyy年MM月dd日"), objEDZ.IDC.ToString(), objEDZ.ADDRESS.ToString(),
-                //        objEDZ.REGORG.ToString(), objEDZ.STARTDATE.ToString("yyyy年MM月dd日"),
-                //        objEDZ.ENDDATE == DateTime.MaxValue ? "长期" : objEDZ.ENDDATE.ToString("yyyy年MM月dd日"),
-                //        Convert.ToBase64String(objEDZ.PIC_Byte), string.IsNullOrEmpty(key) ? "ERROR:" + errstr : key, null, null);
-                //}
-                //if (owin != null && !string.IsNullOrEmpty(CardDataBindfuncName))
-                //{
-                //    this.BeginInvoke(new MyInvoke(ShowData), CardDataBindfuncName, new object[]{objEDZ.Name.ToString(), objEDZ.Sex_CName.ToString(), objEDZ.NATION_CName.ToString(),
-                //                   objEDZ.BIRTH.ToString("yyyy年MM月dd日"), objEDZ.IDC.ToString(), objEDZ.ADDRESS.ToString(),
-                //                   objEDZ.REGORG.ToString(), objEDZ.STARTDATE.ToString("yyyy年MM月dd日"),
-                //                   objEDZ.ENDDATE == DateTime.MaxValue ? "长期" : objEDZ.ENDDATE.ToString("yyyy年MM月dd日"),
-                //                   Convert.ToBase64String(objEDZ.PIC_Byte),string.IsNullOrEmpty(key)?"ERROR:"+errstr:key});
-                //}
+                string errstr = string.Empty;
+                string key = new EncryptClass().Encrypt(_code,
+                    objEDZ.IDC.ToString()
+                    , objEDZ.Name,
+                    objEDZ.NATION_Code,
+                    objEDZ.Sex_Code,
+                    objEDZ.REGORG.Length.ToString()
+                    , out errstr);//System.Text.Encoding.GetEncoding("GB2312").GetString(SAMId).Replace("\0", "");
+                if (errstr != string.Empty)
+                {
+                    SetText(errstr, lbl_msg);
+                    return;
+                }
+                if (OnDataBind != null)
+                {
+                    OnDataBind.BeginInvoke(objEDZ.Name.ToString(), objEDZ.Sex_CName.ToString(), objEDZ.NATION_CName.ToString(),
+                        objEDZ.BIRTH.ToString("yyyy年MM月dd日"), objEDZ.IDC.ToString(), objEDZ.ADDRESS.ToString(),
+                        objEDZ.REGORG.ToString(), objEDZ.STARTDATE.ToString("yyyy年MM月dd日"),
+                        objEDZ.ENDDATE == DateTime.MaxValue ? "长期" : objEDZ.ENDDATE.ToString("yyyy年MM月dd日"),
+                        Convert.ToBase64String(objEDZ.PIC_Byte), string.IsNullOrEmpty(key) ? "ERROR:" + errstr : key, null, null);
+                }
+                if (owin != null && !string.IsNullOrEmpty(CardDataBindfuncName))
+                {
+                    this.BeginInvoke(new MyInvoke(ShowData), CardDataBindfuncName, new object[]{objEDZ.Name.ToString(), objEDZ.Sex_CName.ToString(), objEDZ.NATION_CName.ToString(),
+                                   objEDZ.BIRTH.ToString("yyyy年MM月dd日"), objEDZ.IDC.ToString(), objEDZ.ADDRESS.ToString(),
+                                   objEDZ.REGORG.ToString(), objEDZ.STARTDATE.ToString("yyyy年MM月dd日"),
+                                   objEDZ.ENDDATE == DateTime.MaxValue ? "长期" : objEDZ.ENDDATE.ToString("yyyy年MM月dd日"),
+                                   Convert.ToBase64String(objEDZ.PIC_Byte),string.IsNullOrEmpty(key)?"ERROR:"+errstr:key});
+                }
 
                 SetText("身份证信息读取成功！" + DateTime.Now.ToString("(yyyy年MM月dd日 HH:mm:ss)"), this.lbl_msg);
                 this.pictureBox_error.Invoke(
@@ -404,6 +405,7 @@ namespace IDCardClieck.Forms
                     objEDZ.IDC = "140821199307080015";
                 }
 
+                //objEDZ.IDC = "140821199307080015";
 
                 string url = EnConfigHelper.GetConfigValue("request", "url");
                 string apistr = url + "/app/allInOneClient/getInitCheckData";

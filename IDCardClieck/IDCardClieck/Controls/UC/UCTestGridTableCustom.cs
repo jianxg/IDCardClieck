@@ -38,9 +38,13 @@ namespace IDCardClieck.Controls
             int columnsWidth = this.ucDataGridView1.Width - 700;
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Id", HeadText = "NO", Width = 50, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propName", HeadText = "检测项", Width = 150, WidthType = SizeType.Absolute });
+
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propvalue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "propValue", HeadText = "检测结果", Width = columnsWidth, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellA), TextAlign = ContentAlignment.BottomCenter });
-            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute });
+
+            //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute });
+            lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "pscope", HeadText = "参考范围", Width = 150, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCellAA), TextAlign = ContentAlignment.BottomCenter });
+
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "endTime", HeadText = "检测时间", Width = 200, WidthType = SizeType.Absolute });
             lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "operation", HeadText = "操作", Width = 100, WidthType = SizeType.Absolute, CustomCellType = typeof(UCTestGridTable_CustomCell), TextAlign = ContentAlignment.BottomCenter });
             //lstCulumns.Add(new DataGridViewColumnEntity() { DataField = "Birthday", HeadText = "生日", Width = 500, WidthType = SizeType.Absolute, Format = (a) => { return ((DateTime)a).ToString("yyyy-MM-dd"); } });
